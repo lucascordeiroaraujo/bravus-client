@@ -1,53 +1,35 @@
-# TypeScript & Styled Components Next.js example
+# Bravus Investimentos - Client
 
-This is a really simple project that show the usage of Next.js with TypeScript and Styled Components.
+_bravusinvestimentos.com.br_
 
-## Deploy your own
+#### 1. Requirements run project
 
-Deploy the example using [ZEIT Now](https://zeit.co/now):
+- Node.js - https://nodejs.org/en
 
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/zeit/next.js/tree/canary/examples/with-typescript-styled-components)
+- yarn https://yarnpkg.com/lang/en/docs/install/
 
-## How to use it?
+#### 2. Front-End - React.JS
 
-### Using `create-next-app`
+`> yarn` install to dependencies
 
-Execute [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+`> yarn dev` Runs the app in the development mode
 
-```bash
-npm init next-app --example with-typescript-styled-components with-typescript-app
-# or
-yarn create next-app --example with-typescript-styled-components with-typescript-app
-```
+- [x] React.Js
+- [x] Next.Js
+- [x] TypeScript
+- [x] Styled-components
+- [x] Redux
+- [x] Redux Saga
+- [x] Eslint
+- [x] Prettier
+- [x] editorconfig
+- [x] Root Import, alias ~
+- [x] Dotenv for .env's
+- [x] nodemon for custom server
+- [x] Custom config for vscode
 
-### Download manually
+#### 3. Back-End
 
-Download the example:
+WordPress REST-API.
 
-```bash
-curl https://codeload.github.com/zeit/next.js/tar.gz/canary | tar -xz --strip=2 next.js-canary/examples/with-typescript-styled-components
-cd with-typescript-styled-components
-```
-
-Install it and run:
-
-```bash
-npm install
-npm run dev
-# or
-yarn
-yarn dev
-```
-
-Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.co/download)):
-
-```bash
-now
-```
-
-## Notes
-
-This is an amalgamation of the 2 existing examples:
-
-- [with-typescript](https://github.com/zeit/next.js/tree/canary/examples/with-typescript)
-- [with-styled-components](https://github.com/zeit/next.js/tree/canary/examples/with-styled-components)
+repo `bravus-server`
