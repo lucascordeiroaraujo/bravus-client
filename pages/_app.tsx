@@ -1,10 +1,10 @@
 import React from "react";
-import App, { Container } from "next/app";
+import App from "next/app";
 import Head from "next/head";
-//import { Provider } from "react-redux";
-//import withRedux from "next-redux-wrapper";
-//import withReduxSaga from "next-redux-saga";
-//import createStore from "../store";
+import { Provider } from "react-redux";
+import withRedux from "next-redux-wrapper";
+import withReduxSaga from "next-redux-saga";
+import createStore from "../store";
 
 import GlobalStyles from "../public/styles/global";
 import "react-app-polyfill/ie9";
@@ -32,22 +32,20 @@ class MyApp extends App<IProps> {
   }
 
   render() {
-    const { Component, pageProps /*, store*/ } = this.props;
+    const { Component, pageProps, store } = this.props;
 
     return (
-      <Container>
+      <>
         <Head>
-          <title>My page</title>
+          <title>Bravus Investimentos</title>
         </Head>
-        {/* <Provider store={store}> */}
-        <GlobalStyles />
-        <Component {...pageProps} />
-        {/* </Provider> */}
-      </Container>
+        <Provider store={store}>
+          <GlobalStyles />
+          <Component {...pageProps} />
+        </Provider>
+      </>
     );
   }
 }
 
-//export default withRedux(createStore)(withReduxSaga(MyApp));
-
-export default MyApp;
+export default withRedux(createStore)(withReduxSaga(MyApp));

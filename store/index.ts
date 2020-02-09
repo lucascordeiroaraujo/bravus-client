@@ -2,7 +2,7 @@ import { applyMiddleware, createStore } from "redux";
 import createSagaMiddleware from "redux-saga";
 
 import rootReducer from "./rootReducer";
-//import rootSaga from "./rootSagas";
+import rootSaga from "./rootSagas";
 
 const bindMiddleware = (middleware: any) => {
   return applyMiddleware(...middleware);
@@ -16,7 +16,7 @@ function configureStore(initialState = {}) {
     bindMiddleware([sagaMiddleware])
   );
 
-  //store.sagaTask = sagaMiddleware.run(rootSaga); // tslint:disable-line
+  (store as any).sagaTask = sagaMiddleware.run(rootSaga);
 
   return store;
 }

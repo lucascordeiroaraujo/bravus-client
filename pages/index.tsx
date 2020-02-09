@@ -1,9 +1,30 @@
-import React from 'react'
-import styled from 'styled-components'
+import * as React from "react";
+//import styled from "styled-components";
 
-const Title = styled.h1`
-  color: red;
-  font-size: 50px;
-`
+import { useSelector } from "react-redux";
 
-export default () => <Title>My page</Title>
+import { ROBOTS } from "~/utils/config";
+
+interface Props {
+  error: any;
+  placeholderData: any;
+}
+
+const Home: React.FC<Props> = () => {
+  const { error, placeholderData } = useSelector((state: any) => ({
+    error: state.indexData.error,
+    placeholderData: state.indexData.placeholderData
+  }));
+
+  console.log(error, placeholderData);
+
+  return (
+    <div>
+      <span>1</span>
+      <span>2</span>
+      {ROBOTS}
+    </div>
+  );
+};
+
+export default Home;

@@ -1,13 +1,13 @@
 import { put, takeLatest } from "redux-saga/effects";
+import { actionTypes, loadDataSuccess, loadDataFailure } from "./actions";
 
-import { actionTypes, loadDataFailure, loadDataSuccess } from "./actions";
-
-import api from "./api";
+import { URL_API } from "../../utils/config";
 
 function* loadDataSaga() {
   try {
-    const data = yield api.getPageData();
-    yield put(loadDataSuccess(data));
+    const response = yield fetch(`${URL_API}/acf/v3/pages/7`);
+    const result = yield response.json();
+    yield put(loadDataSuccess(result));
   } catch (err) {
     yield put(loadDataFailure(err));
   }
