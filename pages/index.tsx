@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import styled from "styled-components";
 
 import { useSelector } from 'react-redux';
 
@@ -11,12 +10,12 @@ interface Props {
 }
 
 const Home: React.FC<Props> = () => {
-  const { error, placeholderData } = useSelector((state: any) => ({
+  const { error, data } = useSelector((state: any) => ({
     error: state.indexData.error,
-    placeholderData: state.indexData.placeholderData
+    data: state.indexData.data
   }));
 
-  console.log(error, placeholderData);
+  console.log('hey', error, data);
 
   return (
     <div>

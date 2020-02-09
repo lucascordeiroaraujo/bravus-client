@@ -1,7 +1,11 @@
 import { put, takeLatest } from 'redux-saga/effects';
+import es6promise from 'es6-promise';
 import { actionTypes, loadDataSuccess, loadDataFailure } from './actions';
 
 import { URL_API } from '~/utils/config';
+import 'isomorphic-unfetch';
+
+es6promise.polyfill();
 
 function* loadDataSaga() {
   try {
@@ -9,7 +13,7 @@ function* loadDataSaga() {
     const result = yield response.json();
     yield put(loadDataSuccess(result));
   } catch (err) {
-    yield put(loadDataFailure(err));
+    yield put(loadDataFailure(true));
   }
 }
 

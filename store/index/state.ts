@@ -1,4 +1,4 @@
 export default {
-  placeholderData: null,
-  error: null
+  data: null,
+  error: false
 };
