@@ -1,7 +1,7 @@
-import { put, takeLatest } from "redux-saga/effects";
-import { actionTypes, loadDataSuccess, loadDataFailure } from "./actions";
+import { put, takeLatest } from 'redux-saga/effects';
+import { actionTypes, loadDataSuccess, loadDataFailure } from './actions';
 
-import { URL_API } from "../../utils/config";
+import { URL_API } from '~/utils/config';
 
 function* loadDataSaga() {
   try {

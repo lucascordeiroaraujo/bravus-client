@@ -1,6 +1,6 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 
-import indexData from "./index/reducer";
+import indexData from './index/reducer';
 
 const rootReducer = combineReducers({
   indexData

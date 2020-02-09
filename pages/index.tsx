@@ -1,9 +1,9 @@
-import * as React from "react";
-//import styled from "styled-components";
+import * as React from 'react';
+// import styled from "styled-components";
 
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux';
 
-import { ROBOTS } from "~/utils/config";
+import { ROBOTS } from '~/utils/config';
 
 interface Props {
   error: any;
