@@ -2,7 +2,10 @@ import * as React from 'react';
 
 import { useSelector } from 'react-redux';
 
-import { ROBOTS } from '~/utils/config';
+import { Container } from '~/public/styles/global';
+import Header from '~/components/global/header';
+import CallToAction from '~/components/index/callToAction';
+import Parallax from '~/components/global/parallax';
 
 interface Props {
   error: any;
@@ -18,11 +21,13 @@ const Home: React.FC<Props> = () => {
   console.log('hey', error, data);
 
   return (
-    <div>
-      <span>1</span>
-      <span>2</span>
-      {ROBOTS}
-    </div>
+    <>
+      <Container>
+        <Header />
+        <CallToAction />
+      </Container>
+      <Parallax />
+    </>
   );
 };
 

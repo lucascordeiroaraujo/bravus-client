@@ -4,10 +4,12 @@ import Head from 'next/head';
 import { Provider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
 import withReduxSaga from 'next-redux-saga';
+import { ThemeProvider } from 'styled-components';
 import createStore from '~/store';
 
 import GlobalStyles from '~/public/styles/global';
 import 'react-app-polyfill/ie9';
+import light from '~/public/styles/themes/light';
 
 interface StoreProps {
   Component: React.Component;
@@ -40,8 +42,12 @@ class MyApp extends App<StoreProps> {
           <title>Bravus Investimentos</title>
         </Head>
         <Provider store={store}>
-          <GlobalStyles />
-          <Component {...pageProps} />
+          <ThemeProvider theme={light}>
+            <>
+              <GlobalStyles />
+              <Component {...pageProps} />
+            </>
+          </ThemeProvider>
         </Provider>
       </>
     );
