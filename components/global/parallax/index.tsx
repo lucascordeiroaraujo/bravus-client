@@ -7,11 +7,11 @@ const cpParallax: React.FC = () => (
     <Parallax
       bgImage="http://localhost/bravus-server/wp-content/uploads/2020/02/coragem-bravus-investimento.jpg"
       bgImageAlt="Bravus"
-      strength={200}
+      strength={-200}
     >
       <p>
-        "A coragem é a primeira das qualidades humanas porque garante todas as
-        outras"
+        &quot;A coragem é a primeira das qualidades humanas porque garante todas
+        as outras&ldquo;
       </p>
       <span>Aristóteles</span>
       <div style={{ height: '1030px' }} />
