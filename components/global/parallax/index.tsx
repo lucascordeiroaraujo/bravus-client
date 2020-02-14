@@ -9,11 +9,13 @@ const cpParallax: React.FC = () => (
       bgImageAlt="Bravus"
       strength={-200}
     >
-      <p>
-        &quot;A coragem é a primeira das qualidades humanas porque garante todas
-        as outras&ldquo;
-      </p>
-      <span>Aristóteles</span>
+      <div>
+        <p>
+          &quot;A coragem é a primeira das qualidades humanas porque garante
+          todas as outras&ldquo;
+        </p>
+        <span>Aristóteles</span>
+      </div>
       <div style={{ height: '1030px' }} />
     </Parallax>
   </Container>

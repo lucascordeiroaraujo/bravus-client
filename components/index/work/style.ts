@@ -13,7 +13,8 @@ export default styled.section`
     margin: 0px 0px 60px 0px;
     position: relative;
     font-family: 'DINProBold';
-    font-size: 120px;
+    font-size: calc(60px + (120 - 50) * ((100vw - 100px) / (1920 - 100)));
+    line-height: calc(60px + (120 - 50) * ((100vw - 100px) / (1920 - 100)));
     color: ${props => props.theme.colors.light};
     text-transform: uppercase;
     &:before {
@@ -24,6 +25,10 @@ export default styled.section`
       width: 4px;
       height: 100%;
       background-color: ${props => props.theme.colors.light};
+    }
+    @media (min-width: 1920px) {
+      font-size: 120px;
+      line-height: 120px;
     }
   }
   ul {
@@ -37,8 +42,13 @@ export default styled.section`
         color: #ffffff;
         text-align: center;
         font-family: 'DINProBold';
-        font-size: 33px;
         text-transform: uppercase;
+        font-size: calc(18px + (33 - 18) * ((100vw - 100px) / (1920 - 100)));
+        line-height: calc(25px + (40 - 25) * ((100vw - 100px) / (1920 - 100)));
+        @media (min-width: 1920px) {
+          font-size: 33px;
+          line-height: 36px;
+        }
       }
       &:first-child {
         span {

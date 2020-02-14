@@ -83,6 +83,13 @@ export default createGlobalStyle`
     font-family: 'DINProLight';
     outline: none;
   }
+  /*
+    ## Formula font-size calculator
+
+    font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+
+    Ex: font-size: calc(50px + (100 - 50) * ((100vw - 250px) / (1920 - 250)));
+  */
 `;
 
 export const Container = styled.div`
