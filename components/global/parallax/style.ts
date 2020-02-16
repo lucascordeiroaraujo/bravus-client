@@ -39,4 +39,8 @@ export default styled.div`
       }
     }
   }
+  &.second-index div.react-parallax-content {
+    align-items: center;
+    padding: 0px;
+  }
 `;

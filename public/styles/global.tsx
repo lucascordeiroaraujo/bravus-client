@@ -31,13 +31,14 @@ export default createGlobalStyle`
     display: block;
   }
   body{
-    line-height: 1;
-    font-family: sans-serif !important;
     overflow-x: hidden;
     transition: 0.5s;
+    height: 10000px;
+    background-color: ${props => props.theme.colors.secondary};
   }
   ol, ul{
     list-style: none;
+    padding: 0px;
   }
   a{
     text-decoration: none;
@@ -75,10 +76,6 @@ export default createGlobalStyle`
     font-style: normal;
     font-display: auto;
   }
-  body{
-    height: 5000px;
-    background-color: ${props => props.theme.colors.secondary};
-  }
   body, input, select, textarea{
     font-family: 'DINProLight';
     outline: none;
@@ -90,6 +87,41 @@ export default createGlobalStyle`
 
     Ex: font-size: calc(50px + (100 - 50) * ((100vw - 250px) / (1920 - 250)));
   */
+  h1.default-title {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 40px 0px 40px 50px;
+    margin: 0px 0px 60px 0px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 4px;
+      height: 100%;
+      background-color: ${props => props.theme.colors.light};
+    }
+    strong {
+      font-family: 'DINProBold';
+      text-transform: uppercase;
+      font-size: calc(60px + (120 - 60) * ((100vw - 100px) / (1920 - 100)));
+      line-height: calc(50px + (120 - 50) * ((100vw - 100px) / (1920 - 100)));
+      margin: 0px 0px 10px -10px;
+      @media (min-width: 1920px) {
+        font-size: 120px;
+        line-height: 120px;
+      }
+      color: ${props => props.theme.colors.light};
+    }
+    span {
+      font-size: 24px;
+      color: ${props => props.theme.colors.primary};
+    }
+  }
 `;
 
 export const Container = styled.div`

@@ -27,15 +27,13 @@ export default styled.section`
       color: ${props => props.theme.colors.light};
     }
     p {
-      font-size: 24px;
-      line-height: 30px;
       color: ${props => props.theme.colors.primary};
-      margin: 0px 0px 60px 0px;
+      margin: 0px 0px 45px 0px;
       font-size: calc(18px + (24 - 18) * ((100vw - 100px) / (1920 - 100)));
       line-height: calc(24px + (30 - 24) * ((100vw - 100px) / (1920 - 100)));
       @media (min-width: 1920px) {
-        font-size: 100px;
-        line-height: 100px;
+        font-size: 24px;
+        line-height: 30px;
       }
     }
     a {

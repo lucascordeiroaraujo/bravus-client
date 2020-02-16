@@ -2,21 +2,26 @@ import React from 'react';
 import { Parallax } from 'react-parallax';
 import Container from './style';
 
-const cpParallax: React.FC = () => (
-  <Container>
-    <Parallax
-      bgImage="http://localhost/bravus-server/wp-content/uploads/2020/02/coragem-bravus-investimento.jpg"
-      bgImageAlt="Bravus"
-      strength={-200}
-    >
+interface Iprops {
+  image: string;
+  title: string;
+  author: string;
+  customClass: string;
+}
+
+const cpParallax: React.FC<Iprops> = ({
+  image,
+  title,
+  author,
+  customClass
+}) => (
+  <Container className={customClass}>
+    <Parallax bgImage={image} bgImageAlt="Bravus" strength={400}>
       <div>
-        <p>
-          &quot;A coragem é a primeira das qualidades humanas porque garante
-          todas as outras&ldquo;
-        </p>
-        <span>Aristóteles</span>
+        <p>{title}</p>
+        <span>{author}</span>
       </div>
-      <div style={{ height: '1030px' }} />
+      <div style={{ height: '98vh' }} />
     </Parallax>
   </Container>
 );

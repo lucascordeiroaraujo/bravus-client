@@ -28,13 +28,13 @@
     "yarn": "^1.22.0"
   },
   "devDependencies": {
-    "@types/react-input-mask": "^2.0.5",
     "@types/dotenv": "^8.2.0",
     "@types/next-redux-saga": "^3.0.2",
     "@types/next-redux-wrapper": "^3.0.0",
     "@types/node": "^13.7.0",
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
+    "@types/react-input-mask": "^2.0.5",
     "@types/react-redux": "^7.1.7",
     "@types/styled-components": "4.1.16",
     "@typescript-eslint/eslint-plugin": "^2.19.0",

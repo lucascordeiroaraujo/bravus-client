@@ -7,34 +7,10 @@ export default styled.section`
   align-items: flex-start;
   flex-direction: column;
   margin: 130px 0px;
-  h1 {
-    width: 100%;
-    padding: 50px 0px 50px 50px;
-    margin: 0px 0px 60px 0px;
-    position: relative;
-    font-family: 'DINProBold';
-    font-size: calc(60px + (120 - 50) * ((100vw - 100px) / (1920 - 100)));
-    line-height: calc(60px + (120 - 50) * ((100vw - 100px) / (1920 - 100)));
-    color: ${props => props.theme.colors.light};
-    text-transform: uppercase;
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      width: 4px;
-      height: 100%;
-      background-color: ${props => props.theme.colors.light};
-    }
-    @media (min-width: 1920px) {
-      font-size: 120px;
-      line-height: 120px;
-    }
-  }
   ul {
     width: 100%;
     li {
-      height: 115px;
+      height: 100px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -43,10 +19,10 @@ export default styled.section`
         text-align: center;
         font-family: 'DINProBold';
         text-transform: uppercase;
-        font-size: calc(18px + (33 - 18) * ((100vw - 100px) / (1920 - 100)));
-        line-height: calc(25px + (40 - 25) * ((100vw - 100px) / (1920 - 100)));
+        font-size: calc(16px + (30 - 16) * ((100vw - 100px) / (1920 - 100)));
+        line-height: calc(22px + (40 - 22) * ((100vw - 100px) / (1920 - 100)));
         @media (min-width: 1920px) {
-          font-size: 33px;
+          font-size: 30px;
           line-height: 36px;
         }
       }
