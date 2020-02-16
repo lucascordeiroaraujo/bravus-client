@@ -111,7 +111,7 @@ export default styled.section`
         text-transform: uppercase;
         transition: 0.5s;
         cursor: pointer;
-        background-color: ${props => props.theme.colors.info};
+        background-color: #ffa92e;
         &:hover {
           color: ${props => props.theme.colors.light};
           background-color: ${props => props.theme.colors.primary};

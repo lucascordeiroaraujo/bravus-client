@@ -33,7 +33,7 @@ export default createGlobalStyle`
   body{
     overflow-x: hidden;
     transition: 0.5s;
-    height: 10000px;
+    height: 20000px;
     background-color: ${props => props.theme.colors.secondary};
   }
   ol, ul{
