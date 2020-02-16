@@ -33,7 +33,6 @@ export default createGlobalStyle`
   body{
     overflow-x: hidden;
     transition: 0.5s;
-    height: 20000px;
     background-color: ${props => props.theme.colors.secondary};
   }
   ol, ul{
@@ -59,19 +58,28 @@ export default createGlobalStyle`
     border-spacing: 0;
   }
   @font-face{
-    font-family: 'DINProBold';
-    src: url(${require('../fonts/DINProBold/DINProBold.woff')}) format('woff'),
-      url(${require('../fonts/DINProBold/DINProBold.woff2')}) format('woff2'),
-      url(${require('../fonts/DINProBold/DINProBold.svg')}) format('svg');
+    font-family: 'DINProLight';
+    src: url(${require('../fonts/DINProLight/DINProLight.woff')}) format('woff'),
+      url(${require('../fonts/DINProLight/DINProLight.woff2')}) format('woff2'),
+      url(${require('../fonts/DINProLight/DINProLight.svg')}) format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: auto;
   }
   @font-face{
-    font-family: 'DINProLight';
-    src: url(${require('../fonts/DINProLight/DINProLight.woff')}) format('woff'),
-      url(${require('../fonts/DINProLight/DINProLight.woff2')}) format('woff2'),
-      url(${require('../fonts/DINProLight/DINProLight.svg')}) format('svg');
+    font-family: 'DINProMedium';
+    src: url(${require('../fonts/DINProMedium/DINProMedium.woff')}) format('woff'),
+      url(${require('../fonts/DINProMedium/DINProMedium.woff2')}) format('woff2'),
+      url(${require('../fonts/DINProMedium/DINProMedium.svg')}) format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: auto;
+  }
+  @font-face{
+    font-family: 'DINProBold';
+    src: url(${require('../fonts/DINProBold/DINProBold.woff')}) format('woff'),
+      url(${require('../fonts/DINProBold/DINProBold.woff2')}) format('woff2'),
+      url(${require('../fonts/DINProBold/DINProBold.svg')}) format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: auto;

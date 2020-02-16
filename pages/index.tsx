@@ -10,6 +10,7 @@ import Parallax from '~/components/global/parallax';
 import Plans from '~/components/index/plans';
 import Blog from '~/components/index/blog';
 import Footer from '~/components/global/footer';
+import Group from '~/components/global/group';
 
 interface Props {
   error: any;
@@ -49,6 +50,7 @@ const Home: React.FC<Props> = () => {
         customClass="second-index"
       />
       <Footer />
+      <Group />
     </>
   );
 };

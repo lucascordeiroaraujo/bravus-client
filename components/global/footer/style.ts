@@ -49,6 +49,10 @@ export default styled.footer`
         line-height: calc(18px + (24 - 18) * ((100vw - 250px) / (1920 - 250)));
         color: ${props => props.theme.colors.light};
         margin-bottom: 55px;
+        @media (min-width: 1920px) {
+          font-size: 24px;
+          line-height: 24px;
+        }
         span {
           font-size: 36px;
         }
