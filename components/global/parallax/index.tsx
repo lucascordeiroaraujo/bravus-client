@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { Parallax } from 'react-parallax';
+
 import Container from './style';
 
 interface Iprops {
@@ -21,6 +23,7 @@ const cpParallax: React.FC<Iprops> = ({
         <p>{title}</p>
         <span>{author}</span>
       </div>
+
       <div style={{ height: '98vh' }} />
     </Parallax>
   </Container>

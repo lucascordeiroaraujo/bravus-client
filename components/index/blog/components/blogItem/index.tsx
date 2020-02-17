@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Link from 'next/link';
+
 import BlogItem from './style';
 
 const cpBlogItem: React.FC = () => (
@@ -9,6 +11,7 @@ const cpBlogItem: React.FC = () => (
         <img src="https://picsum.photos/300/300?random=2" alt="" />
       </a>
     </Link>
+
     <h2>
       <Link href="/sobre-nos">
         <a href="sobre-nos" title="Confira">
@@ -16,6 +19,7 @@ const cpBlogItem: React.FC = () => (
         </a>
       </Link>
     </h2>
+
     <p>
       <Link href="/sobre-nos">
         <a href="sobre-nos" title="Confira">
@@ -24,6 +28,7 @@ const cpBlogItem: React.FC = () => (
         </a>
       </Link>
     </p>
+
     <Link href="/sobre-nos">
       <a href="/sobre-nos" title="Confira" className="read-more">
         saiba mais..

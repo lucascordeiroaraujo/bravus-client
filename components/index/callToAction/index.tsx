@@ -1,5 +1,7 @@
 import React from 'react';
+
 import InputMask from 'react-input-mask';
+
 import CallToAction from './style';
 
 const cpCallToAction: React.FC = () => (
@@ -10,17 +12,22 @@ const cpCallToAction: React.FC = () => (
         <br />
         mais valor
       </h1>
+
       <p>
         A Bravus Investimento é o maior escritório credenciado da XP
         Investimentos em Londrina e Região Metropolitana.
       </p>
+
       <a href="https://bravusinvestimentos.com.br" title="Confira">
         Saiba mais
       </a>
     </div>
+
     <form>
       <strong>Abra sua conta</strong>
+
       <input type="text" placeholder="NOME" required />
+
       <InputMask
         type="tel"
         required
@@ -31,7 +38,9 @@ const cpCallToAction: React.FC = () => (
           '?': '[0-9]'
         }}
       />
+
       <input type="submit" value="Cadastrar" />
+
       <span>
         Fique tranquilo! Seus dados não serão utilizados
         <br />

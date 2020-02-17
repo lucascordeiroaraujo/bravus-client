@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Blog from './style';
+
 import BlogItem from './components/blogItem';
 
 const cpBlog: React.FC = () => (
@@ -11,9 +13,12 @@ const cpBlog: React.FC = () => (
         no Blog
       </strong>
     </h1>
+
     <div>
       <BlogItem />
+
       <BlogItem />
+
       <BlogItem />
     </div>
   </Blog>

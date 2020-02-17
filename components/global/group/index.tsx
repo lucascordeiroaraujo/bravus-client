@@ -1,6 +1,9 @@
 import React from 'react';
+
 import Link from 'next/link';
+
 import Group from './style';
+
 import { Container } from '~/public/styles/global';
 
 const cpGroup: React.FC = () => (
@@ -12,6 +15,7 @@ const cpGroup: React.FC = () => (
             <strong>Mais empresas do Grupo</strong>
           </h1>
         </div>
+
         <div>
           <Link href="/bravus-seguros">
             <a href="/bravus-seguros" title="Confira">

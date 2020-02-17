@@ -14,7 +14,17 @@ app.prepare().then(() => {
   createServer((req, res) => {
     const parsedUrl = parse(req.url!, true);
 
-    handle(req, res, parsedUrl);
+    const { pathname, query } = parsedUrl;
+
+    if (pathname === '/sobre') {
+      app.render(req, res, '/about', query);
+    } else if (pathname === '/bravus-empresas') {
+      app.render(req, res, '/bravusempresas', query);
+    } else if (pathname === '/bravus-seguros') {
+      app.render(req, res, '/bravusseguros', query);
+    } else {
+      handle(req, res, parsedUrl);
+    }
   }).listen(port);
 
   // tslint:disable-next-line:no-console
