@@ -51,4 +51,4 @@ const cpBlogPost: React.FC = () => (
   </Description>
 );
 
-export default cpBlogPost;
+export default React.memo(cpBlogPost);

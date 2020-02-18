@@ -12,6 +12,8 @@ import BlogHeader from '~/components/blog/header';
 
 import Description from '~/components/blog-post/description';
 
+import Author from '~/components/blog-post/author';
+
 import Footer from '~/components/global/footer';
 
 import Group from '~/components/global/group';
@@ -42,6 +44,7 @@ const Home: React.FC<Props> = () => {
         <Header />
         <BlogHeader />
         <Description />
+        <Author />
       </Container>
 
       <Footer />
