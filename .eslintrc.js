@@ -45,7 +45,8 @@ module.exports = {
         tsx: 'never',
         mjs: 'never'
       }
-    ]
+    ],
+    'no-var-requires': false
   },
   settings: {
     'import/parsers': {

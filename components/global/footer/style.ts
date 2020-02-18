@@ -143,7 +143,7 @@ export default styled.footer`
         height: 210px;
       }
       @media (max-width: 992px) {
-        padding: 15px;
+        padding: 30px 15px;
       }
     }
     @media (max-width: 992px) {
