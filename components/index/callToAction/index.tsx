@@ -5,7 +5,7 @@ import InputMask from 'react-input-mask';
 import CallToAction from './style';
 
 const cpCallToAction: React.FC = () => (
-  <CallToAction>
+  <CallToAction id="abra-sua-conta">
     <div>
       <h1>
         Você merece

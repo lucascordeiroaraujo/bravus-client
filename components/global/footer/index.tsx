@@ -19,7 +19,7 @@ import WhatsApp from '~/public/images/svg/whatsapp';
 import Email from '~/public/images/svg/email';
 
 const cpFooter: React.FC = () => (
-  <Footer>
+  <Footer id="contato">
     <Container className="container">
       <h1 className="default-title">
         <strong>Localização e contatos</strong>

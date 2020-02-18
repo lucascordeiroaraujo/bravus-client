@@ -5,7 +5,7 @@ import Plans from './style';
 import Plan from './components/plan';
 
 const cpPlans: React.FC = () => (
-  <Plans>
+  <Plans id="planos">
     <h1 className="default-title">
       <strong>Planos</strong>
       <span>Linha fina</span>

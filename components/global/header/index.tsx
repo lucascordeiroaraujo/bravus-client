@@ -4,6 +4,8 @@ import Link from 'next/link';
 
 import Header from './style';
 
+import Menu from './components/menu';
+
 const cpHeader: React.FC = () => (
   <Header>
     <div>
@@ -25,31 +27,7 @@ const cpHeader: React.FC = () => (
       <img src={require('~/public/images/s20.png')} alt="S20" title="S20" />
     </div>
 
-    <ul>
-      <li>
-        <Link href="/sobre-nos">
-          <a href="/sobre-nos">Sobre nós</a>
-        </Link>
-      </li>
-
-      <li>
-        <Link href="/#planos">Planos</Link>
-      </li>
-
-      <li>
-        <Link href="/blog">
-          <a href="/blog">Blog</a>
-        </Link>
-      </li>
-
-      <li>
-        <Link href="/#contato">Contato</Link>
-      </li>
-
-      <li>
-        <Link href="/#abra-sua-conta">Abra sua conta</Link>
-      </li>
-    </ul>
+    <Menu />
   </Header>
 );
 
