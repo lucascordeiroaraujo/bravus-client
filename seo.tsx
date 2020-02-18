@@ -11,7 +11,7 @@ interface Iprops {
   slug: string;
 }
 
-const cpSeo: React.FC<Iprops> = ({ title, description, image, slug }) => (
+const Seo: React.FC<Iprops> = ({ title, description, image, slug }) => (
   <Head>
     <title>{title}</title>
 
@@ -51,4 +51,4 @@ const cpSeo: React.FC<Iprops> = ({ title, description, image, slug }) => (
   </Head>
 );
 
-export default cpSeo;
+export default Seo;

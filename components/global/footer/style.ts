@@ -121,6 +121,7 @@ export default styled.footer`
           text-align: center;
           border: none;
           cursor: pointer;
+          appearance: none;
           &:hover {
             background: #50f78b;
           }
@@ -149,7 +150,8 @@ export default styled.footer`
       & > div,
       form {
         width: 100%;
-        input {
+        input,
+        textarea {
           text-align: center;
         }
       }

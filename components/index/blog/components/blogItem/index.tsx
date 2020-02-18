@@ -30,7 +30,7 @@ const cpBlogItem: React.FC = () => (
     </p>
 
     <Link href="/sobre-nos">
-      <a href="/sobre-nos" title="Confira" className="read-more">
+      <a href="/sobre-nos" title="Confira" className="default-button">
         saiba mais..
       </a>
     </Link>

@@ -7,11 +7,15 @@ import Header from './style';
 const cpHeader: React.FC = () => (
   <Header>
     <div>
-      <img
-        src={require('~/public/images/bravus-investimentos.png')}
-        alt="Bravus Investimentos"
-        title="Bravus Investimentos"
-      />
+      <Link href="/">
+        <a href="/">
+          <img
+            src={require('~/public/images/bravus-investimentos.png')}
+            alt="Bravus Investimentos"
+            title="Bravus Investimentos"
+          />
+        </a>
+      </Link>
 
       <img
         src={require('~/public/images/xp-investimentos.png')}
@@ -23,7 +27,9 @@ const cpHeader: React.FC = () => (
 
     <ul>
       <li>
-        <Link href="/sobre-nos">Sobre nós</Link>
+        <Link href="/sobre-nos">
+          <a href="/sobre-nos">Sobre nós</a>
+        </Link>
       </li>
 
       <li>
@@ -31,7 +37,9 @@ const cpHeader: React.FC = () => (
       </li>
 
       <li>
-        <Link href="/blog">Blog</Link>
+        <Link href="/blog">
+          <a href="/blog">Blog</a>
+        </Link>
       </li>
 
       <li>

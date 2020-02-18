@@ -15,8 +15,8 @@ export default styled.section`
     flex-direction: column;
     h1 {
       font-family: 'DINProBold';
-      font-size: calc(50px + (100 - 50) * ((100vw - 100px) / (1920 - 100)));
-      line-height: calc(50px + (100 - 50) * ((100vw - 100px) / (1920 - 100)));
+      font-size: calc(44px + (100 - 44) * ((100vw - 100px) / (1920 - 100)));
+      line-height: calc(44px + (100 - 44) * ((100vw - 100px) / (1920 - 100)));
       @media (min-width: 1920px) {
         font-size: 100px;
         line-height: 100px;
@@ -34,17 +34,6 @@ export default styled.section`
       @media (min-width: 1920px) {
         font-size: 24px;
         line-height: 30px;
-      }
-    }
-    a {
-      padding: 10px 20px;
-      font-size: 14px;
-      transition: 0.5s;
-      color: ${props => props.theme.colors.primary};
-      border: 1px solid ${props => props.theme.colors.primary};
-      &:hover {
-        color: ${props => props.theme.colors.light};
-        background-color: ${props => props.theme.colors.primary};
       }
     }
     @media (max-width: 992px) {
@@ -111,6 +100,7 @@ export default styled.section`
         text-transform: uppercase;
         transition: 0.5s;
         cursor: pointer;
+        appearance: none;
         background-color: #ffa92e;
         &:hover {
           color: ${props => props.theme.colors.light};
@@ -127,9 +117,10 @@ export default styled.section`
     }
     @media (max-width: 992px) {
       width: 100%;
+      padding: 20px;
       strong {
         text-align: center;
-        padding-left: 0px;
+        padding-right: 0px;
         &:after {
           display: none;
         }

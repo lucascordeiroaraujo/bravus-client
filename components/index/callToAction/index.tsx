@@ -18,7 +18,11 @@ const cpCallToAction: React.FC = () => (
         Investimentos em Londrina e Região Metropolitana.
       </p>
 
-      <a href="https://bravusinvestimentos.com.br" title="Confira">
+      <a
+        href="https://bravusinvestimentos.com.br"
+        title="Confira"
+        className="default-button"
+      >
         Saiba mais
       </a>
     </div>

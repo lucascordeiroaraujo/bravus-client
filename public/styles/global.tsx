@@ -94,6 +94,10 @@ export default createGlobalStyle`
     font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
 
     Ex: font-size: calc(50px + (100 - 50) * ((100vw - 250px) / (1920 - 250)));
+
+    @media (min-width: 1920px) {
+      font-size: 50px;
+    }
   */
   h1.default-title {
     width: 100%;
@@ -128,6 +132,53 @@ export default createGlobalStyle`
     span {
       font-size: 24px;
       color: ${props => props.theme.colors.primary};
+    }
+    @media(max-width: 992px){
+      text-align: center;
+      padding: 40px 0px;
+      justify-content: center;
+      align-items: center;
+      strong, span{
+        width: 100%;
+      }
+      br{
+        display: none;
+      }
+      &:before{
+        width: 50%;
+        height: 4px;
+        top: auto;
+        bottom: 20px;
+        left: 50%;
+        transform: translate(-50%, 0px);
+      }
+    }
+  }
+  a.default-button {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 130px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: ${props => props.theme.colors.primary};
+    border: 1px solid ${props => props.theme.colors.primary};
+    span {
+      font-size: 16px;
+      line-height: 20px;
+      text-transform: lowercase;
+      position: relative;
+      top: -1px;
+    }
+    &:hover {
+      color: ${props => props.theme.colors.light};
+      background-color: ${props => props.theme.colors.primary};
+    }
+    @media (max-width: 992px) {
+      opacity: 1;
     }
   }
 `;

@@ -5,13 +5,7 @@ export default styled.section`
   justify-content: flex-start;
   align-content: flex-start;
   flex-direction: column;
-  margin-top: 100px;
-  h1.default-title br {
-    display: none;
-    @media (max-width: 775px) {
-      display: block;
-    }
-  }
+  margin: 100px 0px;
   & > div {
     width: 100%;
     display: flex;

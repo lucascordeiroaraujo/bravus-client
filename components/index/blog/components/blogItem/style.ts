@@ -8,12 +8,11 @@ export default styled.article`
   flex-direction: column;
   position: relative;
   img,
-  h2 a,
   p,
   a {
     transition: 0.5s;
   }
-  a {
+  a:not(.default-button) {
     width: 100%;
   }
   img {
@@ -45,33 +44,9 @@ export default styled.article`
     color: ${props => props.theme.colors.light};
     opacity: 0.8;
   }
-  a.read-more {
-    position: relative;
-    z-index: 2;
-    width: 130px;
-    height: 40px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  a.default-button {
     opacity: 0;
     margin-top: 30px;
-    color: ${props => props.theme.colors.primary};
-    border: 1px solid ${props => props.theme.colors.primary};
-    span {
-      font-size: 16px;
-      line-height: 20px;
-      text-transform: lowercase;
-      position: relative;
-      top: -1px;
-    }
-    &:hover {
-      color: ${props => props.theme.colors.light};
-      background-color: ${props => props.theme.colors.primary};
-    }
-    @media (max-width: 992px) {
-      opacity: 1;
-    }
   }
   &:hover {
     img {
@@ -81,18 +56,22 @@ export default styled.article`
       color: ${props => props.theme.colors.secondary};
       background-color: #d7d7ad;
     }
-    p {
-      opacity: 1;
-    }
-    a:last-child {
+    p,
+    a {
       opacity: 1;
     }
   }
   @media (max-width: 992px) {
     width: 100%;
     margin-bottom: 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     img {
       max-height: 350px;
+    }
+    a.default-button {
+      opacity: 1;
     }
     &:last-child {
       margin-bottom: 0px;

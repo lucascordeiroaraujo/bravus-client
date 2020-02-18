@@ -7,11 +7,7 @@ import BlogItem from './components/blogItem';
 const cpBlog: React.FC = () => (
   <Blog>
     <h1 className="default-title">
-      <strong>
-        Últimas
-        <br />
-        no Blog
-      </strong>
+      <strong>Últimas no Blog</strong>
     </h1>
 
     <div>
