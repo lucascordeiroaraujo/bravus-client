@@ -7,27 +7,27 @@ import BlogItem from './style';
 interface Iprops {
   title: string;
   description: string;
-  link: string;
+  slug: string;
   image: string;
 }
 
-const cpBlogItem: React.FC<Iprops> = ({ title, description, link, image }) => (
+const cpBlogItem: React.FC<Iprops> = ({ title, description, slug, image }) => (
   <BlogItem>
     <div>
       <h1>{title}</h1>
 
       <p>{description}</p>
 
-      <Link href={link}>
-        <a href={link} title="Confira" className="default-button">
+      <Link href={`/blog/${slug}`}>
+        <a href={`/blog/${slug}`} title="Confira" className="default-button">
           saiba mais..
         </a>
       </Link>
     </div>
 
     <div>
-      <Link href={link}>
-        <a href={link} title="Confira">
+      <Link href={`/blog/${slug}`}>
+        <a href={`/blog/${slug}`} title="Confira">
           <img src={image} alt={title} title={title} />
         </a>
       </Link>

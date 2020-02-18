@@ -8,6 +8,10 @@ import Seo from '~/seo';
 
 import Header from '~/components/global/header';
 
+import BlogHeader from '~/components/blog/header';
+
+import Description from '~/components/blog-post/description';
+
 import Footer from '~/components/global/footer';
 
 import Group from '~/components/global/group';
@@ -36,6 +40,8 @@ const Home: React.FC<Props> = () => {
 
       <Container>
         <Header />
+        <BlogHeader />
+        <Description />
       </Container>
 
       <Footer />
