@@ -15,7 +15,8 @@ export default styled.div`
     200px bottom no-repeat ${props => props.theme.colors.primary};
   background-size: auto 100%;
   img {
-    width: 170px;
+    width: 100%;
+    max-width: 170px;
     height: auto;
   }
   div {
@@ -41,6 +42,26 @@ export default styled.div`
       font-size: 18px;
       line-height: 24px;
       color: ${props => props.theme.colors.light};
+    }
+  }
+  @media (max-width: 992px) {
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    background: ${props => props.theme.colors.primary};
+    img {
+      max-width: 400px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+    span.line {
+      width: 100%;
+    }
+    div {
+      width: 100%;
+      align-items: center;
+      text-align: center;
+      padding: 0px;
     }
   }
 `;
