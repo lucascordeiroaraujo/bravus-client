@@ -13,7 +13,7 @@ const cpHeader: React.FC = () => (
         <Link href="/">
           <a href="/">
             <img
-              src={require('~/public/images/bravus-seguros-companies.png')}
+              src={require('~/public/images/bravus-secure-group.png')}
               alt="Bravus Seguros"
               title="Bravus Seguros"
               width="675"

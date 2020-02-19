@@ -69,7 +69,7 @@ export default styled.section`
       }
     }
   }
-  &.seguros {
+  &.secure {
     background-color: ${props => props.theme.colors.light};
     div.container {
       h2,

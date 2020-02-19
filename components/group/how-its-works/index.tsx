@@ -2,11 +2,15 @@ import React from 'react';
 
 import HowItsWorks from './style';
 
-const cpHowItsWorks: React.FC = () => (
-  <HowItsWorks>
-    <h1>Faça seus seguros com a Bravus!</h1>
+interface Iprops {
+  customClass: string;
+}
 
-    <h2>Como Funciona?</h2>
+const cpHowItsWorks: React.FC<Iprops> = ({ customClass }) => (
+  <HowItsWorks>
+    <h1 className={customClass}>Faça seus seguros com a Bravus!</h1>
+
+    <h2 className={customClass}>Como Funciona?</h2>
 
     <div>
       <p>

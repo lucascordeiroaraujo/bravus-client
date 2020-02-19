@@ -17,19 +17,29 @@ export default styled.article`
     text-transform: uppercase;
   }
   h1 {
-    font-size: calc(30px + (60 - 30) * ((100vw - 250px) / (1920 - 250)));
-    color: ${props => props.theme.seguros.primary};
+    font-size: calc(20px + (60 - 20) * ((100vw - 250px) / (1920 - 250)));
     @media (min-width: 1920px) {
       font-size: 60px;
     }
+    &.secure {
+      color: ${props => props.theme.secure.primary};
+    }
+    &.companies {
+      color: ${props => props.theme.companies.primary};
+    }
   }
   h2 {
-    font-size: calc(50px + (100 - 50) * ((100vw - 250px) / (1920 - 250)));
-    line-height: calc(50px + (100 - 50) * ((100vw - 250px) / (1920 - 250)));
-    color: ${props => props.theme.seguros.secondary};
+    font-size: calc(30px + (100 - 30) * ((100vw - 250px) / (1920 - 250)));
+    line-height: calc(30px + (100 - 30) * ((100vw - 250px) / (1920 - 250)));
     margin-bottom: 80px;
     @media (min-width: 1920px) {
       font-size: 100px;
+    }
+    &.secure {
+      color: ${props => props.theme.secure.secondary};
+    }
+    &.companies {
+      color: ${props => props.theme.companies.secondary};
     }
   }
   & > div {
@@ -50,6 +60,22 @@ export default styled.article`
     }
     &:last-child {
       padding-top: 60px;
+    }
+  }
+  @media (max-width: 992px) {
+    h1,
+    h2,
+    p {
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 40px;
+    }
+    & > div {
+      width: 100%;
+      &:last-child {
+        padding-top: 30px;
+      }
     }
   }
 `;

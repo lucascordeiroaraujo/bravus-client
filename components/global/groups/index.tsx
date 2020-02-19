@@ -24,7 +24,7 @@ const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
           <Link href="/bravus-seguros">
             <a href="/bravus-seguros" title="Confira">
               <img
-                src={require('~/public/images/bravus-seguros.jpg')}
+                src={require('~/public/images/bravus-secure.jpg')}
                 alt="Bravus Seguros"
                 title="Bravus Seguros"
                 width="500"
@@ -36,7 +36,7 @@ const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
           <Link href="/bravus-empresas">
             <a href="/bravus-empresas" title="Confira">
               <img
-                src={require('~/public/images/bravus-empresas.jpg')}
+                src={require('~/public/images/bravus-companies.jpg')}
                 alt="Bravus Empresas"
                 title="Bravus Empresas"
                 width="500"
@@ -75,7 +75,7 @@ const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
       <div className="logos">
         <img
           src={
-            customClass !== 'seguros'
+            customClass !== 'secure' && customClass !== 'companies'
               ? require('~/public/images/logos/banco-do-brasil.png')
               : require('~/public/images/logos/banco-do-brasil-secondary.png')
           }
@@ -87,7 +87,7 @@ const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
 
         <img
           src={
-            customClass !== 'seguros'
+            customClass !== 'secure' && customClass !== 'companies'
               ? require('~/public/images/logos/cvm.png')
               : require('~/public/images/logos/cvm-secondary.png')
           }
@@ -99,7 +99,7 @@ const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
 
         <img
           src={
-            customClass !== 'seguros'
+            customClass !== 'secure' && customClass !== 'companies'
               ? require('~/public/images/logos/cetip.png')
               : require('~/public/images/logos/cetip-secondary.png')
           }
@@ -111,7 +111,7 @@ const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
 
         <img
           src={
-            customClass !== 'seguros'
+            customClass !== 'secure' && customClass !== 'companies'
               ? require('~/public/images/logos/bovespa.png')
               : require('~/public/images/logos/bovespa-secondary.png')
           }
@@ -123,7 +123,7 @@ const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
 
         <img
           src={
-            customClass !== 'seguros'
+            customClass !== 'secure' && customClass !== 'companies'
               ? require('~/public/images/logos/fgc.png')
               : require('~/public/images/logos/fgc-secondary.png')
           }
@@ -135,7 +135,7 @@ const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
 
         <img
           src={
-            customClass !== 'seguros'
+            customClass !== 'secure' && customClass !== 'companies'
               ? require('~/public/images/logos/tesouro-direto.png')
               : require('~/public/images/logos/tesouro-direto-secondary.png')
           }
@@ -147,7 +147,7 @@ const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
 
         <img
           src={
-            customClass !== 'seguros'
+            customClass !== 'secure' && customClass !== 'companies'
               ? require('~/public/images/logos/ancord.png')
               : require('~/public/images/logos/ancord-secondary.png')
           }
@@ -159,7 +159,7 @@ const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
 
         <img
           src={
-            customClass !== 'seguros'
+            customClass !== 'secure' && customClass !== 'companies'
               ? require('~/public/images/logos/anbima.png')
               : require('~/public/images/logos/anbima-secondary.png')
           }
@@ -171,7 +171,7 @@ const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
 
         <img
           src={
-            customClass !== 'seguros'
+            customClass !== 'secure' && customClass !== 'companies'
               ? require('~/public/images/logos/xp-investimentos.png')
               : require('~/public/images/logos/xp-investimentos-secondary.png')
           }

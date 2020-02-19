@@ -9,7 +9,11 @@ declare module 'styled-components' {
       info: string;
       light: string;
     };
-    seguros: {
+    secure: {
+      primary: string;
+      secondary: string;
+    };
+    companies: {
       primary: string;
       secondary: string;
     };

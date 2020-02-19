@@ -166,12 +166,12 @@ export default styled.footer`
   @media (max-width: 992px) {
     padding: 50px 0px;
   }
-  &.seguros {
+  &.secure {
     background-image: url(${require('~/public/images/background-city-footer-companies.jpg')});
     h1.default-title {
       padding: 0px;
       strong {
-        color: ${props => props.theme.seguros.primary};
+        color: ${props => props.theme.secure.primary};
         text-align: center;
       }
       &:before {
@@ -190,7 +190,7 @@ export default styled.footer`
         }
       }
       form {
-        background: ${props => props.theme.seguros.secondary};
+        background: ${props => props.theme.secure.secondary};
       }
     }
   }
