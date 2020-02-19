@@ -2,12 +2,16 @@ import React from 'react';
 
 import Link from 'next/link';
 
-import Group from './style';
+import Companies from './style';
 
 import { Container } from '~/public/styles/global';
 
-const cpGroup: React.FC = () => (
-  <Group>
+interface Iprops {
+  customClass: string;
+}
+
+const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
+  <Companies className={customClass}>
     <Container className="container">
       <div>
         <div>
@@ -70,7 +74,11 @@ const cpGroup: React.FC = () => (
 
       <div className="logos">
         <img
-          src={require('~/public/images/logos/banco-do-brasil.png')}
+          src={
+            customClass !== 'seguros'
+              ? require('~/public/images/logos/banco-do-brasil.png')
+              : require('~/public/images/logos/banco-do-brasil-secondary.png')
+          }
           alt="Banco do Brasil"
           title="Banco do Brasil"
           width="121"
@@ -78,7 +86,11 @@ const cpGroup: React.FC = () => (
         />
 
         <img
-          src={require('~/public/images/logos/cvm.png')}
+          src={
+            customClass !== 'seguros'
+              ? require('~/public/images/logos/cvm.png')
+              : require('~/public/images/logos/cvm-secondary.png')
+          }
           alt="CVM"
           title="CVM"
           width="60"
@@ -86,7 +98,11 @@ const cpGroup: React.FC = () => (
         />
 
         <img
-          src={require('~/public/images/logos/cetip.png')}
+          src={
+            customClass !== 'seguros'
+              ? require('~/public/images/logos/cetip.png')
+              : require('~/public/images/logos/cetip-secondary.png')
+          }
           alt="CVM"
           title="CVM"
           width="63"
@@ -94,7 +110,11 @@ const cpGroup: React.FC = () => (
         />
 
         <img
-          src={require('~/public/images/logos/bovespa.png')}
+          src={
+            customClass !== 'seguros'
+              ? require('~/public/images/logos/bovespa.png')
+              : require('~/public/images/logos/bovespa-secondary.png')
+          }
           alt="CVM"
           title="CVM"
           width="110"
@@ -102,7 +122,11 @@ const cpGroup: React.FC = () => (
         />
 
         <img
-          src={require('~/public/images/logos/fgc.png')}
+          src={
+            customClass !== 'seguros'
+              ? require('~/public/images/logos/fgc.png')
+              : require('~/public/images/logos/fgc-secondary.png')
+          }
           alt="CVM"
           title="CVM"
           width="28"
@@ -110,7 +134,11 @@ const cpGroup: React.FC = () => (
         />
 
         <img
-          src={require('~/public/images/logos/tesouro-direto.png')}
+          src={
+            customClass !== 'seguros'
+              ? require('~/public/images/logos/tesouro-direto.png')
+              : require('~/public/images/logos/tesouro-direto-secondary.png')
+          }
           alt="CVM"
           title="CVM"
           width="114"
@@ -118,7 +146,11 @@ const cpGroup: React.FC = () => (
         />
 
         <img
-          src={require('~/public/images/logos/ancord.png')}
+          src={
+            customClass !== 'seguros'
+              ? require('~/public/images/logos/ancord.png')
+              : require('~/public/images/logos/ancord-secondary.png')
+          }
           alt="CVM"
           title="CVM"
           width="100"
@@ -126,7 +158,11 @@ const cpGroup: React.FC = () => (
         />
 
         <img
-          src={require('~/public/images/logos/anbima.png')}
+          src={
+            customClass !== 'seguros'
+              ? require('~/public/images/logos/anbima.png')
+              : require('~/public/images/logos/anbima-secondary.png')
+          }
           alt="CVM"
           title="CVM"
           width="72"
@@ -134,7 +170,11 @@ const cpGroup: React.FC = () => (
         />
 
         <img
-          src={require('~/public/images/logos/xp-investimentos.png')}
+          src={
+            customClass !== 'seguros'
+              ? require('~/public/images/logos/xp-investimentos.png')
+              : require('~/public/images/logos/xp-investimentos-secondary.png')
+          }
           alt="CVM"
           title="CVM"
           width="93"
@@ -142,7 +182,7 @@ const cpGroup: React.FC = () => (
         />
       </div>
     </Container>
-  </Group>
+  </Companies>
 );
 
-export default cpGroup;
+export default cpCompanies;

@@ -18,8 +18,12 @@ import WhatsApp from '~/public/images/svg/whatsapp';
 
 import Email from '~/public/images/svg/email';
 
-const cpFooter: React.FC = () => (
-  <Footer id="contato">
+interface Iprops {
+  customClass: string;
+}
+
+const cpFooter: React.FC<Iprops> = ({ customClass }) => (
+  <Footer id="contato" className={customClass}>
     <Container className="container">
       <h1 className="default-title">
         <strong>Localização e contatos</strong>

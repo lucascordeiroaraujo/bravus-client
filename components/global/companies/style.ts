@@ -69,4 +69,14 @@ export default styled.section`
       }
     }
   }
+  &.seguros {
+    background-color: ${props => props.theme.colors.light};
+    div.container {
+      h2,
+      p,
+      strong {
+        color: ${props => props.theme.colors.secondary};
+      }
+    }
+  }
 `;

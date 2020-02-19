@@ -9,5 +9,9 @@ declare module 'styled-components' {
       info: string;
       light: string;
     };
+    seguros: {
+      primary: string;
+      secondary: string;
+    };
   }
 }

@@ -20,7 +20,7 @@ import Blog from '~/components/index/blog';
 
 import Footer from '~/components/global/footer';
 
-import Group from '~/components/global/group';
+import Companies from '~/components/global/companies';
 
 interface Props {
   error: any;
@@ -73,9 +73,9 @@ const Home: React.FC<Props> = () => {
         customClass="second-index"
       />
 
-      <Footer />
+      <Footer customClass="index" />
 
-      <Group />
+      <Companies customClass="index" />
     </>
   );
 };

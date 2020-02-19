@@ -14,14 +14,14 @@ import BlogList from '~/components/blog/list';
 
 import Footer from '~/components/global/footer';
 
-import Group from '~/components/global/group';
+import Companies from '~/components/global/companies';
 
 interface Props {
   error: any;
   placeholderData: any;
 }
 
-const Home: React.FC<Props> = () => {
+const Blog: React.FC<Props> = () => {
   const { error, data } = useSelector((state: any) => ({
     error: state.indexData.error,
     data: state.indexData.data
@@ -44,11 +44,11 @@ const Home: React.FC<Props> = () => {
         <BlogList />
       </Container>
 
-      <Footer />
+      <Footer customClass="blog" />
 
-      <Group />
+      <Companies customClass="blog" />
     </>
   );
 };
 
-export default Home;
+export default Blog;

@@ -166,4 +166,32 @@ export default styled.footer`
   @media (max-width: 992px) {
     padding: 50px 0px;
   }
+  &.seguros {
+    background-image: url(${require('~/public/images/background-city-footer-companies.jpg')});
+    h1.default-title {
+      padding: 0px;
+      strong {
+        color: ${props => props.theme.seguros.primary};
+        text-align: center;
+      }
+      &:before {
+        display: none;
+      }
+    }
+    div.container {
+      & > div {
+        div.address-icons svg {
+          fill: ${props => props.theme.colors.primary};
+        }
+        address,
+        p,
+        a {
+          color: ${props => props.theme.colors.primary};
+        }
+      }
+      form {
+        background: ${props => props.theme.seguros.secondary};
+      }
+    }
+  }
 `;

@@ -23,8 +23,17 @@ const cpHeader: React.FC = () => (
         src={require('~/public/images/xp-investimentos.png')}
         alt="XP Investimentos"
         title="XP Investimentos"
+        width="156"
+        height="62"
       />
-      <img src={require('~/public/images/s20.png')} alt="S20" title="S20" />
+
+      <img
+        src={require('~/public/images/s20.png')}
+        alt="S20"
+        title="S20"
+        width="148"
+        height="38"
+      />
     </div>
 
     <Menu />
