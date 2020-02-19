@@ -13,6 +13,7 @@ export default styled.header`
     flex-wrap: wrap;
     img {
       margin: 10px 30px 10px 0px;
+      height: auto;
     }
     @media (min-width: 992px) and (max-width: 1135px) {
       &:first-child {

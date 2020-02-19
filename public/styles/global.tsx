@@ -117,15 +117,18 @@ export default createGlobalStyle`
       height: 100%;
       background-color: ${props => props.theme.colors.light};
     }
+    &.before-info:before{
+      background-color: ${props => props.theme.colors.info};
+    }
     strong {
       font-family: 'DINProBold';
       text-transform: uppercase;
-      font-size: calc(60px + (120 - 60) * ((100vw - 100px) / (1920 - 100)));
-      line-height: calc(50px + (120 - 50) * ((100vw - 100px) / (1920 - 100)));
+      font-size: calc(60px + (110 - 60) * ((100vw - 100px) / (1920 - 100)));
+      line-height: calc(60px + (100 - 60) * ((100vw - 100px) / (1920 - 100)));
       margin: 0px 0px 10px -10px;
       @media (min-width: 1920px) {
-        font-size: 120px;
-        line-height: 120px;
+        font-size: 110px;
+        line-height: 110px;
       }
       color: ${props => props.theme.colors.light};
     }
@@ -164,6 +167,7 @@ export default createGlobalStyle`
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.5s;
     color: ${props => props.theme.colors.primary};
     border: 1px solid ${props => props.theme.colors.primary};
     span {

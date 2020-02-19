@@ -25,7 +25,7 @@ interface Iprops {
 const cpFooter: React.FC<Iprops> = ({ customClass }) => (
   <Footer id="contato" className={customClass}>
     <Container className="container">
-      <h1 className="default-title">
+      <h1 className="default-title before-info">
         <strong>Localização e contatos</strong>
       </h1>
 

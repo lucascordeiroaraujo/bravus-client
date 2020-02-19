@@ -15,8 +15,12 @@ const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
     <Container className="container">
       <div>
         <div>
-          <h1 className="default-title">
-            <strong>Mais empresas do Grupo</strong>
+          <h1 className="default-title before-info">
+            <strong>
+              Mais
+              <br /> empresas
+              <br /> do Grupo
+            </strong>
           </h1>
         </div>
 
