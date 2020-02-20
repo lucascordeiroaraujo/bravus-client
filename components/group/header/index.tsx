@@ -18,7 +18,7 @@ const cpHeader: React.FC<Iprops> = ({ type }) => (
           <Link href="/">
             <a href="/">
               <img
-                src={require(`~/public/images/bravus-secure-group.png`)}
+                src={require('~/public/images/bravus-secure-group.png')}
                 alt="Bravus Seguros"
                 title="Bravus Seguros"
                 width="675"
@@ -32,7 +32,7 @@ const cpHeader: React.FC<Iprops> = ({ type }) => (
           <Link href="/">
             <a href="/">
               <img
-                src={require(`~/public/images/bravus-companies-group.png`)}
+                src={require('~/public/images/bravus-companies-group.png')}
                 alt="Bravus Seguros"
                 title="Bravus Seguros"
                 width="675"
