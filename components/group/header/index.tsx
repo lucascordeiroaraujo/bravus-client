@@ -14,21 +14,33 @@ const cpHeader: React.FC<Iprops> = ({ type }) => (
   <Header>
     <Container className="container">
       <div>
-        <Link href="/">
-          <a href="/">
-            <img
-              src={
-                type === 'secure'
-                  ? require(`~/public/images/bravus-secure-group.png`)
-                  : require(`~/public/images/bravus-companies-group.png`)
-              }
-              alt="Bravus Seguros"
-              title="Bravus Seguros"
-              width="675"
-              height="196"
-            />
-          </a>
-        </Link>
+        {type === 'secure' && (
+          <Link href="/">
+            <a href="/">
+              <img
+                src={require(`~/public/images/bravus-secure-group.png`)}
+                alt="Bravus Seguros"
+                title="Bravus Seguros"
+                width="675"
+                height="196"
+              />
+            </a>
+          </Link>
+        )}
+
+        {type === 'companies' && (
+          <Link href="/">
+            <a href="/">
+              <img
+                src={require(`~/public/images/bravus-companies-group.png`)}
+                alt="Bravus Seguros"
+                title="Bravus Seguros"
+                width="675"
+                height="196"
+              />
+            </a>
+          </Link>
+        )}
       </div>
 
       <div>
