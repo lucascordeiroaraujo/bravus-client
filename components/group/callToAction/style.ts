@@ -65,6 +65,7 @@ export default styled.article`
       &.companies {
         background: ${props => props.theme.companies.primary};
         &:hover {
+          opacity: 0.9;
           background: ${props => props.theme.companies.secondary};
         }
       }

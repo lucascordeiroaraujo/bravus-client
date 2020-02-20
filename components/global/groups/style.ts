@@ -11,7 +11,7 @@ export default styled.section`
       font-size: calc(60px + (100 - 60) * ((100vw - 100px) / (1920 - 100)));
       line-height: calc(50px + (100 - 50) * ((100vw - 100px) / (1920 - 100)));
     } */
-    & > div {
+    & > div:not(.logos) {
       width: 100%;
       display: flex;
       justify-content: space-between;
@@ -41,8 +41,12 @@ export default styled.section`
           img {
             width: 100%;
             height: auto;
+            transition: 0.5s;
             &:last-child {
               margin-top: -4px;
+            }
+            &:hover {
+              opacity: 0.9;
             }
           }
         }
@@ -86,8 +90,12 @@ export default styled.section`
       }
     }
   }
-  &.secure {
+  &.secure,
+  &.companies {
     background-color: ${props => props.theme.colors.light};
+    h1.default-title strong {
+      color: ${props => props.theme.secure.secondary};
+    }
     div.container {
       h2,
       p,
@@ -95,5 +103,8 @@ export default styled.section`
         color: ${props => props.theme.colors.secondary};
       }
     }
+  }
+  &.companies h1.default-title strong {
+    color: ${props => props.theme.companies.secondary};
   }
 `;

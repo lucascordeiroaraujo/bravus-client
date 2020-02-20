@@ -166,8 +166,10 @@ export default styled.footer`
   @media (max-width: 992px) {
     padding: 50px 0px;
   }
-  &.secure {
-    background-image: url(${require('~/public/images/background-city-footer-companies.jpg')});
+  &.secure,
+  &.companies {
+    background-image: url(${require('~/public/images/background-city-footer-companies.png')});
+    background-color: ${props => props.theme.colors.light};
     h1.default-title {
       padding: 0px;
       strong {
@@ -191,6 +193,24 @@ export default styled.footer`
       }
       form {
         background: ${props => props.theme.secure.secondary};
+      }
+    }
+  }
+  &.companies {
+    background-color: ${props => props.theme.colors.info};
+    h1.default-title strong {
+      color: ${props => props.theme.companies.primary};
+    }
+    div.container {
+      & > div {
+        address,
+        p,
+        a {
+          color: ${props => props.theme.companies.primary};
+        }
+      }
+      form {
+        background: ${props => props.theme.companies.primary};
       }
     }
   }

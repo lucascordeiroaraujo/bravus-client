@@ -14,14 +14,14 @@ import Groups from '~/components/global/groups';
 
 import styled from 'styled-components';
 
-const ContainerBravusSecure = styled.div`
+const ContainerBravusCompanies = styled.div`
   width: 100%;
-  background: url(${require('~/public/images/background-bravus-secure.jpg')})
+  background: url(${require('~/public/images/background-bravus-companies.jpg')})
     center top no-repeat fixed;
   section {
     width: 100%;
     padding: 100px 0px;
-    background: ${props => props.theme.colors.light};
+    background: ${props => props.theme.colors.info};
   }
 `;
 
@@ -39,19 +39,19 @@ const BravusSeguros: React.FC<Props> = () => (
       slug="/"
     />
 
-    <ContainerBravusSecure>
+    <ContainerBravusCompanies>
       <Header />
 
       <section>
-        <HowItsWorks type="secure" />
+        <HowItsWorks type="companies" />
 
-        <CallToAction type="secure" />
+        <CallToAction type="companies" />
       </section>
-    </ContainerBravusSecure>
+    </ContainerBravusCompanies>
 
-    <Footer type="secure" />
+    <Footer type="companies" />
 
-    <Groups type="secure" />
+    <Groups type="companies" />
   </>
 );
 

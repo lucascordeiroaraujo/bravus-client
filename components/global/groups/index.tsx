@@ -7,11 +7,11 @@ import Companies from './style';
 import { Container } from '~/public/styles/global';
 
 interface Iprops {
-  customClass: string;
+  type: string;
 }
 
-const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
-  <Companies className={customClass}>
+const cpCompanies: React.FC<Iprops> = ({ type }) => (
+  <Companies className={type}>
     <Container className="container">
       <div>
         <div>
@@ -25,29 +25,47 @@ const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
         </div>
 
         <div>
-          <Link href="/bravus-seguros">
-            <a href="/bravus-seguros" title="Confira">
-              <img
-                src={require('~/public/images/bravus-secure.jpg')}
-                alt="Bravus Seguros"
-                title="Bravus Seguros"
-                width="500"
-                height="200"
-              />
-            </a>
-          </Link>
+          {(type === 'secure' || type === 'companies') && (
+            <Link href="/">
+              <a href="/" title="Confira">
+                <img
+                  src={require('~/public/images/bravus-investments.jpg')}
+                  alt="Bravus Empresas"
+                  title="Bravus Empresas"
+                  width="500"
+                  height="200"
+                />
+              </a>
+            </Link>
+          )}
 
-          <Link href="/bravus-empresas">
-            <a href="/bravus-empresas" title="Confira">
-              <img
-                src={require('~/public/images/bravus-companies.jpg')}
-                alt="Bravus Empresas"
-                title="Bravus Empresas"
-                width="500"
-                height="200"
-              />
-            </a>
-          </Link>
+          {type !== 'secure' && (
+            <Link href="/bravus-seguros">
+              <a href="/bravus-seguros" title="Confira">
+                <img
+                  src={require('~/public/images/bravus-secure.jpg')}
+                  alt="Bravus Seguros"
+                  title="Bravus Seguros"
+                  width="500"
+                  height="200"
+                />
+              </a>
+            </Link>
+          )}
+
+          {type !== 'companies' && (
+            <Link href="/bravus-empresas">
+              <a href="/bravus-empresas" title="Confira">
+                <img
+                  src={require('~/public/images/bravus-companies.jpg')}
+                  alt="Bravus Empresas"
+                  title="Bravus Empresas"
+                  width="500"
+                  height="200"
+                />
+              </a>
+            </Link>
+          )}
         </div>
       </div>
 
@@ -79,7 +97,7 @@ const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
       <div className="logos">
         <img
           src={
-            customClass !== 'secure' && customClass !== 'companies'
+            type !== 'secure' && type !== 'companies'
               ? require('~/public/images/logos/banco-do-brasil.png')
               : require('~/public/images/logos/banco-do-brasil-secondary.png')
           }
@@ -91,7 +109,7 @@ const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
 
         <img
           src={
-            customClass !== 'secure' && customClass !== 'companies'
+            type !== 'secure' && type !== 'companies'
               ? require('~/public/images/logos/cvm.png')
               : require('~/public/images/logos/cvm-secondary.png')
           }
@@ -103,7 +121,7 @@ const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
 
         <img
           src={
-            customClass !== 'secure' && customClass !== 'companies'
+            type !== 'secure' && type !== 'companies'
               ? require('~/public/images/logos/cetip.png')
               : require('~/public/images/logos/cetip-secondary.png')
           }
@@ -115,7 +133,7 @@ const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
 
         <img
           src={
-            customClass !== 'secure' && customClass !== 'companies'
+            type !== 'secure' && type !== 'companies'
               ? require('~/public/images/logos/bovespa.png')
               : require('~/public/images/logos/bovespa-secondary.png')
           }
@@ -127,7 +145,7 @@ const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
 
         <img
           src={
-            customClass !== 'secure' && customClass !== 'companies'
+            type !== 'secure' && type !== 'companies'
               ? require('~/public/images/logos/fgc.png')
               : require('~/public/images/logos/fgc-secondary.png')
           }
@@ -139,7 +157,7 @@ const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
 
         <img
           src={
-            customClass !== 'secure' && customClass !== 'companies'
+            type !== 'secure' && type !== 'companies'
               ? require('~/public/images/logos/tesouro-direto.png')
               : require('~/public/images/logos/tesouro-direto-secondary.png')
           }
@@ -151,7 +169,7 @@ const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
 
         <img
           src={
-            customClass !== 'secure' && customClass !== 'companies'
+            type !== 'secure' && type !== 'companies'
               ? require('~/public/images/logos/ancord.png')
               : require('~/public/images/logos/ancord-secondary.png')
           }
@@ -163,7 +181,7 @@ const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
 
         <img
           src={
-            customClass !== 'secure' && customClass !== 'companies'
+            type !== 'secure' && type !== 'companies'
               ? require('~/public/images/logos/anbima.png')
               : require('~/public/images/logos/anbima-secondary.png')
           }
@@ -175,7 +193,7 @@ const cpCompanies: React.FC<Iprops> = ({ customClass }) => (
 
         <img
           src={
-            customClass !== 'secure' && customClass !== 'companies'
+            type !== 'secure' && type !== 'companies'
               ? require('~/public/images/logos/xp-investimentos.png')
               : require('~/public/images/logos/xp-investimentos-secondary.png')
           }

@@ -8,16 +8,11 @@ interface Iprops {
   image: string;
   title: string;
   author: string;
-  customClass: string;
+  type: string;
 }
 
-const cpParallax: React.FC<Iprops> = ({
-  image,
-  title,
-  author,
-  customClass
-}) => (
-  <Container className={customClass}>
+const cpParallax: React.FC<Iprops> = ({ image, title, author, type }) => (
+  <Container className={type}>
     <Parallax bgImage={image} bgImageAlt="Bravus" strength={400}>
       <div>
         <p>{title}</p>

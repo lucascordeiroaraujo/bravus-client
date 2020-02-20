@@ -34,9 +34,9 @@ const Blog: React.FC<Props> = () => (
       <BlogList />
     </Container>
 
-    <Footer customClass="blog" />
+    <Footer type="blog" />
 
-    <Groups customClass="blog" />
+    <Groups type="blog" />
   </>
 );
 

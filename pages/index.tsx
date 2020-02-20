@@ -57,7 +57,7 @@ const Home: React.FC<Props> = () => {
         title='"A coragem é a primeira das qualidades humanas porque garante
           todas as outras"'
         author="Aristóteles"
-        customClass="first-index"
+        type="first-index"
       />
 
       <Container>
@@ -70,12 +70,12 @@ const Home: React.FC<Props> = () => {
         image="http://localhost/bravus-server/wp-content/uploads/2020/02/qg-bravus.jpg"
         title='""Errar, reconhecer, ser transparente, corrigir e seguir em frente"'
         author="Guilherme Benchimol"
-        customClass="second-index"
+        type="second-index"
       />
 
-      <Footer customClass="index" />
+      <Footer type="index" />
 
-      <Groups customClass="index" />
+      <Groups type="index" />
     </>
   );
 };

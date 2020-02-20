@@ -44,9 +44,9 @@ const BlogPost: React.FC<Props> = () => (
       <Relateds />
     </Container>
 
-    <Footer customClass="blog-post" />
+    <Footer type="blog-post" />
 
-    <Groups customClass="blog-post" />
+    <Groups type="blog-post" />
   </>
 );
 

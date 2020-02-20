@@ -19,11 +19,11 @@ import WhatsApp from '~/public/images/svg/whatsapp';
 import Email from '~/public/images/svg/email';
 
 interface Iprops {
-  customClass: string;
+  type: string;
 }
 
-const cpFooter: React.FC<Iprops> = ({ customClass }) => (
-  <Footer id="contato" className={customClass}>
+const cpFooter: React.FC<Iprops> = ({ type }) => (
+  <Footer id="contato" className={type}>
     <Container className="container">
       <h1 className="default-title before-info">
         <strong>Localização e contatos</strong>

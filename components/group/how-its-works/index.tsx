@@ -3,14 +3,14 @@ import React from 'react';
 import HowItsWorks from './style';
 
 interface Iprops {
-  customClass: string;
+  type: string;
 }
 
-const cpHowItsWorks: React.FC<Iprops> = ({ customClass }) => (
+const cpHowItsWorks: React.FC<Iprops> = ({ type }) => (
   <HowItsWorks>
-    <h1 className={customClass}>Faça seus seguros com a Bravus!</h1>
+    <h1 className={type}>Faça seus seguros com a Bravus!</h1>
 
-    <h2 className={customClass}>Como Funciona?</h2>
+    <h2 className={type}>Como Funciona?</h2>
 
     <div>
       <p>

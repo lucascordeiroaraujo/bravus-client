@@ -5,13 +5,13 @@ import CallToAction from './style';
 import { Container } from '~/public/styles/global';
 
 interface Iprops {
-  customClass: string;
+  type: string;
 }
 
-const cpCallToAction: React.FC<Iprops> = ({ customClass }) => (
+const cpCallToAction: React.FC<Iprops> = ({ type }) => (
   <CallToAction>
     <Container className="container">
-      <h1 className={customClass}>Traga seu dinheiro para a bravus!</h1>
+      <h1 className={type}>Traga seu dinheiro para a bravus!</h1>
       <p>
         s id interdum mollis, mi ex bibendum lacus, et varius neque purus sit
         amet ante. Praesent luctus diam tortor, auctor pulvinar felis interdum
@@ -21,7 +21,7 @@ const cpCallToAction: React.FC<Iprops> = ({ customClass }) => (
         suscipit. Quisque vel blandit odio. Suspendisse dignissim volutpat
         mauris, at fermentum enim tristiq
       </p>
-      <a href="#" title="Confira" className={customClass}>
+      <a href="#" title="Confira" className={type}>
         Quero o contato de um acesso
       </a>
     </Container>
