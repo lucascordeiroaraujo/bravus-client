@@ -25,12 +25,7 @@ const ContainerBravusCompanies = styled.div`
   }
 `;
 
-interface Props {
-  error: any;
-  placeholderData: any;
-}
-
-const BravusSeguros: React.FC<Props> = () => (
+const BravusSeguros: React.FC = () => (
   <>
     <Seo
       title="Bravus Investimentos - Sua XP Investimentos em Londrina"
@@ -40,7 +35,7 @@ const BravusSeguros: React.FC<Props> = () => (
     />
 
     <ContainerBravusCompanies>
-      <Header />
+      <Header type="companies" />
 
       <section>
         <HowItsWorks type="companies" />

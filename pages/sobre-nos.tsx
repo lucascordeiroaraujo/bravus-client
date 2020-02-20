@@ -6,19 +6,17 @@ import Seo from '~/seo';
 
 import Header from '~/components/global/header';
 
-import BlogHeader from '~/components/blog/header';
+import Description from '~/components/about/description';
 
-import Description from '~/components/blog-post/description';
+import History from '~/components/about/history';
 
-import Author from '~/components/blog-post/author';
-
-import Relateds from '~/components/blog-post/relateds';
+import Companies from '~/components/about/companies';
 
 import Footer from '~/components/global/footer';
 
 import Groups from '~/components/global/groups';
 
-const BlogPost: React.FC = () => (
+const About: React.FC = () => (
   <>
     <Seo
       title="Bravus Investimentos - Sua XP Investimentos em Londrina"
@@ -29,20 +27,18 @@ const BlogPost: React.FC = () => (
 
     <Container>
       <Header />
-
-      <BlogHeader />
-
-      <Description />
-
-      <Author />
-
-      <Relateds />
     </Container>
 
-    <Footer type="blog-post" />
+    <Description />
 
-    <Groups type="blog-post" />
+    <History />
+
+    <Companies />
+
+    <Footer type="about" />
+
+    <Groups type="about" />
   </>
 );
 
-export default BlogPost;
+export default About;

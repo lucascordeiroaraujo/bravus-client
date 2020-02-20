@@ -115,6 +115,7 @@ export default createGlobalStyle`
       left: 0px;
       width: 4px;
       height: 100%;
+      border-radius: 5px;
       background-color: ${props => props.theme.colors.light};
     }
     &.before-info:before{

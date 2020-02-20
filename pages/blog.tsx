@@ -14,12 +14,7 @@ import Footer from '~/components/global/footer';
 
 import Groups from '~/components/global/groups';
 
-interface Props {
-  error: any;
-  placeholderData: any;
-}
-
-const Blog: React.FC<Props> = () => (
+const Blog: React.FC = () => (
   <>
     <Seo
       title="Bravus Investimentos - Sua XP Investimentos em Londrina"

@@ -6,14 +6,22 @@ import Link from 'next/link';
 
 import { Container } from '~/public/styles/global';
 
-const cpHeader: React.FC = () => (
+interface Iprops {
+  type: string;
+}
+
+const cpHeader: React.FC<Iprops> = ({ type }) => (
   <Header>
     <Container className="container">
       <div>
         <Link href="/">
           <a href="/">
             <img
-              src={require('~/public/images/bravus-secure-group.png')}
+              src={
+                type === 'secure'
+                  ? require(`~/public/images/bravus-secure-group.png`)
+                  : require(`~/public/images/bravus-companies-group.png`)
+              }
               alt="Bravus Seguros"
               title="Bravus Seguros"
               width="675"
