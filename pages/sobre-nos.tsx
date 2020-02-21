@@ -10,6 +10,8 @@ import Description from '~/components/about/description';
 
 import History from '~/components/about/history';
 
+import Advisors from '~/components/about/advisors';
+
 import Companies from '~/components/about/companies';
 
 import Footer from '~/components/global/footer';
@@ -32,6 +34,8 @@ const About: React.FC = () => (
     <Description />
 
     <History />
+
+    <Advisors />
 
     <Companies />
 
