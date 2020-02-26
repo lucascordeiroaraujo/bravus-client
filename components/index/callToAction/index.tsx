@@ -1,57 +1,51 @@
 import React from 'react';
 
+import { useSelector } from 'react-redux';
+
 import InputMask from 'react-input-mask';
 
 import CallToAction from './style';
 
-const cpCallToAction: React.FC = () => (
-  <CallToAction id="abra-sua-conta">
-    <div>
-      <h1>
-        Você merece
-        <br />
-        mais valor
-      </h1>
+const cpCallToAction: React.FC = () => {
+  const { error, data } = useSelector((state: any) => ({
+    error: state.indexData.error,
+    data: state.indexData.data
+  }));
 
-      <p>
-        A Bravus Investimento é o maior escritório credenciado da XP
-        Investimentos em Londrina e Região Metropolitana.
-      </p>
+  if (error) return null;
 
-      <a
-        href="https://bravusinvestimentos.com.br"
-        title="Confira"
-        className="default-button"
-      >
-        Saiba mais
-      </a>
-    </div>
+  const { section_1_description } = data.acf;
 
-    <form>
-      <strong>Abra sua conta</strong>
+  return (
+    <CallToAction id="abra-sua-conta">
+      <div dangerouslySetInnerHTML={{ __html: section_1_description }} />
 
-      <input type="text" placeholder="NOME" required />
+      <form>
+        <strong>Abra sua conta</strong>
 
-      <InputMask
-        type="tel"
-        required
-        mask="99-99999999?"
-        placeholder="TELEFONE"
-        formatChars={{
-          9: '[0-9]',
-          '?': '[0-9]'
-        }}
-      />
+        <input type="text" placeholder="NOME" required />
 
-      <input type="submit" value="Cadastrar" />
+        <InputMask
+          type="tel"
+          required
+          mask="99-99999999?"
+          placeholder="TELEFONE"
+          formatChars={{
+            9: '[0-9]',
+            '?': '[0-9]'
+          }}
+        />
 
-      <span>
-        Fique tranquilo! Seus dados não serão utilizados
-        <br />
-        para envio de qualquer tipo de SPAM.
-      </span>
-    </form>
-  </CallToAction>
-);
+        <input type="submit" value="Cadastrar" />
+
+        <span>
+          Fique tranquilo! Seus dados não serão utilizados
+          <br />
+          para envio de qualquer tipo de SPAM.
+        </span>
+      </form>
+    </CallToAction>
+  );
+};
 
 export default cpCallToAction;

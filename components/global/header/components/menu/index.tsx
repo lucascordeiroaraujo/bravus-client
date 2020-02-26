@@ -1,11 +1,17 @@
 import React from 'react';
 
+import { Menu, MenuMobile } from './style';
+
 import Link from 'next/link';
 
 import OutsideClickHandler from 'react-outside-click-handler';
 
+import { useRouter } from 'next/router';
+
 const cpMenu: React.FC = () => {
   const [state, setState] = React.useState(false);
+
+  const router = useRouter();
 
   return (
     <OutsideClickHandler
@@ -13,8 +19,8 @@ const cpMenu: React.FC = () => {
         setState(false);
       }}
     >
-      <ul className={state ? 'active' : ''}>
-        <li>
+      <Menu className={state ? 'active' : ''}>
+        <li className={router.pathname === '/sobre-nos' ? 'active' : ''}>
           <Link href="/sobre-nos">
             <a href="/sobre-nos" onClick={() => setState(false)}>
               Sobre nós
@@ -30,7 +36,13 @@ const cpMenu: React.FC = () => {
           </Link>
         </li>
 
-        <li>
+        <li
+          className={
+            router.pathname === '/blog' || router.pathname === '/blog-post'
+              ? 'active'
+              : ''
+          }
+        >
           <Link href="/blog">
             <a href="/blog" onClick={() => setState(false)}>
               Blog
@@ -53,15 +65,15 @@ const cpMenu: React.FC = () => {
             </a>
           </Link>
         </li>
-      </ul>
+      </Menu>
 
-      <button
+      <MenuMobile
         type="button"
         className={state ? ' active' : ''}
         onClick={() => setState(!state)}
       >
         <span />
-      </button>
+      </MenuMobile>
     </OutsideClickHandler>
   );
 };

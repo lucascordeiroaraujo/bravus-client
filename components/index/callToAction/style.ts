@@ -27,6 +27,7 @@ export default styled.section`
       color: ${props => props.theme.colors.light};
     }
     p {
+      width: 100%;
       color: ${props => props.theme.colors.primary};
       margin: 0px 0px 45px 0px;
       font-size: calc(18px + (24 - 18) * ((100vw - 100px) / (1920 - 100)));
@@ -34,6 +35,36 @@ export default styled.section`
       @media (min-width: 1920px) {
         font-size: 24px;
         line-height: 30px;
+      }
+      a {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 130px;
+        height: 40px;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+        font-size: 16px;
+        text-transform: lowercase;
+        color: ${props => props.theme.colors.primary};
+        border: 1px solid ${props => props.theme.colors.primary};
+        span {
+          font-size: 16px;
+          line-height: 20px;
+          text-transform: lowercase;
+          position: relative;
+          top: -1px;
+        }
+        &:hover {
+          color: ${props => props.theme.colors.light};
+          background-color: ${props => props.theme.colors.primary};
+        }
+        @media (max-width: 992px) {
+          opacity: 1;
+        }
       }
     }
     @media (max-width: 992px) {

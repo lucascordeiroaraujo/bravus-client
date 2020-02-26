@@ -20,6 +20,18 @@ import 'react-app-polyfill/ie9';
 
 import light from '~/public/styles/themes/light';
 
+import NProgress from 'nprogress';
+
+import Router from 'next/router';
+
+Router.events.on('routeChangeStart', () => {
+  NProgress.start();
+});
+
+Router.events.on('routeChangeComplete', () => NProgress.done());
+
+Router.events.on('routeChangeError', () => NProgress.done());
+
 interface StoreProps {
   Component: React.Component;
   store: any;

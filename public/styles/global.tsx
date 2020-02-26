@@ -169,6 +169,7 @@ export default createGlobalStyle`
     justify-content: center;
     align-items: center;
     transition: 0.5s;
+    text-transform: lowercase;
     color: ${props => props.theme.colors.primary};
     border: 1px solid ${props => props.theme.colors.primary};
     span {
@@ -186,6 +187,18 @@ export default createGlobalStyle`
       opacity: 1;
     }
   }
+  #nprogress{
+		pointer-events: none;
+		.bar{
+			position: fixed;
+			z-index: 1031;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 3px;
+			background: ${props => props.theme.colors.primary};
+		}
+	}
 `;
 
 export const Container = styled.div`

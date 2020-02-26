@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-import { useSelector } from 'react-redux';
-
 import { Container } from '~/public/styles/global';
 
 import Seo from '~/seo';
@@ -22,62 +20,61 @@ import Footer from '~/components/global/footer';
 
 import Groups from '~/components/global/groups';
 
-interface Props {
-  error: any;
-  placeholderData: any;
+import { loadIndexData } from '~/store/index/actions';
+
+import { loadContactData } from '~/store/contact/actions';
+
+interface Iprops {
+  dispatch: any;
+  ctx: any;
+  getInitialProps: any;
 }
 
-const Home: React.FC<Props> = () => {
-  const { error, data } = useSelector((state: any) => ({
-    error: state.indexData.error,
-    data: state.indexData.data
-  }));
+const Home: any = () => (
+  <>
+    <Seo
+      title="Bravus Investimentos - Sua XP Investimentos em Londrina"
+      description="A Bravus Investimentos é o maior escritório credenciado da XP Investimentos em Londrina e Região Metropolitana. Nós ajudamos nossos clientes a investir melhor. Agende uma assessoria, invista de acordo com seu perfil, acesse e saiba mais."
+      image="http://localhost/bravus-server/wp-content/uploads/2020/02/bravus-social.jpg"
+      slug="/"
+    />
 
-  console.log('hey', error, data);
+    <Container>
+      <Header />
 
-  return (
-    <>
-      <Seo
-        title="Bravus Investimentos - Sua XP Investimentos em Londrina"
-        description="A Bravus Investimentos é o maior escritório credenciado da XP Investimentos em Londrina e Região Metropolitana. Nós ajudamos nossos clientes a investir melhor. Agende uma assessoria, invista de acordo com seu perfil, acesse e saiba mais."
-        image="http://localhost/bravus-server/wp-content/uploads/2020/02/bravus-social.jpg"
-        slug="/"
-      />
+      <CallToAction />
 
-      <Container>
-        <Header />
+      <Work />
+    </Container>
 
-        <CallToAction />
+    <Parallax item="section_3" type="first-index" />
 
-        <Work />
-      </Container>
+    <Container>
+      <Plans />
 
-      <Parallax
-        image="http://localhost/bravus-server/wp-content/uploads/2020/02/coragem-bravus-investimento.jpg"
-        title='"A coragem é a primeira das qualidades humanas porque garante
-          todas as outras"'
-        author="Aristóteles"
-        type="first-index"
-      />
+      <Blog />
+    </Container>
 
-      <Container>
-        <Plans />
+    <Parallax item="section_5" type="second-index" />
 
-        <Blog />
-      </Container>
+    <Footer type="index" />
 
-      <Parallax
-        image="http://localhost/bravus-server/wp-content/uploads/2020/02/qg-bravus.jpg"
-        title='""Errar, reconhecer, ser transparente, corrigir e seguir em frente"'
-        author="Guilherme Benchimol"
-        type="second-index"
-      />
+    <Groups type="index" />
+  </>
+);
 
-      <Footer type="index" />
+Home.getInitialProps = async (props: Iprops) => {
+  const { store, isServer } = props.ctx;
 
-      <Groups type="index" />
-    </>
-  );
+  if (!store.getState().data) {
+    store.dispatch(loadIndexData());
+  }
+
+  if (!store.getState().data) {
+    store.dispatch(loadContactData());
+  }
+
+  return { isServer };
 };
 
 export default Home;

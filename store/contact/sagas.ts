@@ -4,8 +4,8 @@ import es6promise from 'es6-promise';
 
 import {
   actionTypes,
-  loadIndexDataSuccess,
-  loadIndexDataFailure
+  loadContactDataSuccess,
+  loadContactDataFailure
 } from './actions';
 
 import { URL_API } from '~/utils/config';
@@ -16,16 +16,16 @@ es6promise.polyfill();
 
 function* loadDataSaga() {
   try {
-    const response = yield fetch(`${URL_API}/acf/v3/pages/7`);
+    const response = yield fetch(`${URL_API}/acf/v3/pages/41`);
 
     const result = yield response.json();
 
-    yield put(loadIndexDataSuccess(result));
+    yield put(loadContactDataSuccess(result));
   } catch (err) {
-    yield put(loadIndexDataFailure(true));
+    yield put(loadContactDataFailure(true));
   }
 }
 
-const sagas = [takeLatest(actionTypes.LOAD_INDEX_DATA, loadDataSaga)];
+const sagas = [takeLatest(actionTypes.LOAD_CONTACT_DATA, loadDataSaga)];
 
 export default sagas;

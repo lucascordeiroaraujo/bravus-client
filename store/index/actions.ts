@@ -1,25 +1,25 @@
 export const actionTypes = {
-  LOAD_DATA: 'LOAD_DATA',
-  LOAD_DATA_SUCCESS: 'LOAD_DATA_SUCCESS',
-  LOAD_DATA_FAILURE: 'LOAD_DATA_FAILURE'
+  LOAD_INDEX_DATA: 'LOAD_INDEX_DATA',
+  LOAD_INDEX_DATA_SUCCESS: 'LOAD_INDEX_DATA_SUCCESS',
+  LOAD_INDEX_DATA_FAILURE: 'LOAD_INDEX_DATA_FAILURE'
 };
 
-export function loadData() {
+export function loadIndexData() {
   return {
-    type: actionTypes.LOAD_DATA
+    type: actionTypes.LOAD_INDEX_DATA
   };
 }
 
-export function loadDataSuccess(data: any) {
+export function loadIndexDataSuccess(data: any) {
   return {
-    type: actionTypes.LOAD_DATA_SUCCESS,
+    type: actionTypes.LOAD_INDEX_DATA_SUCCESS,
     data
   };
 }
 
-export function loadDataFailure(error: any) {
+export function loadIndexDataFailure(error: any) {
   return {
-    type: actionTypes.LOAD_DATA_FAILURE,
+    type: actionTypes.LOAD_INDEX_DATA_FAILURE,
     error
   };
 }

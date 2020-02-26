@@ -1,27 +1,38 @@
 import React from 'react';
 
+import { useSelector } from 'react-redux';
+
 import Work from './style';
 
-const cpWork: React.FC = () => (
-  <Work>
-    <h1 className="default-title">
-      <strong>Nosso trabalho</strong>
-    </h1>
+interface Iprops {
+  description: string;
+}
 
-    <ul>
-      <li>
-        <span>Identificamos seu perfil de investidor</span>
-      </li>
+const cpWork: React.FC = () => {
+  const { error, data } = useSelector((state: any) => ({
+    error: state.indexData.error,
+    data: state.indexData.data
+  }));
 
-      <li>
-        <span>Oferecemos uma carteira adequada ao seu perfil</span>
-      </li>
+  if (error) return null;
 
-      <li>
-        <span>Acompanhamos sua carteira, periódicamente</span>
-      </li>
-    </ul>
-  </Work>
-);
+  const { section_2_title, section_2_itens } = data.acf;
+
+  return (
+    <Work>
+      <h1 className="default-title">
+        <strong>{section_2_title}</strong>
+      </h1>
+
+      <ul>
+        {section_2_itens.map((item: Iprops, index: number) => (
+          <li key={index}>
+            <span>{item.description}</span>
+          </li>
+        ))}
+      </ul>
+    </Work>
+  );
+};
 
 export default cpWork;

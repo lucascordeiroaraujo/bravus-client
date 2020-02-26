@@ -1,24 +1,39 @@
 import React from 'react';
 
+import { useSelector } from 'react-redux';
+
 import Plans from './style';
 
 import Plan from './components/plan';
 
-const cpPlans: React.FC = () => (
-  <Plans id="planos">
-    <h1 className="default-title">
-      <strong>Planos</strong>
-      <span>Linha fina</span>
-    </h1>
+interface Iprops {
+  title: string;
+  sub_title: string;
+  image: any;
+}
 
-    <Plan />
+const cpPlans: React.FC = () => {
+  const { error, data } = useSelector((state: any) => ({
+    error: state.indexData.error,
+    data: state.indexData.data
+  }));
 
-    <Plan />
+  if (error) return null;
 
-    <Plan />
+  const { section_4_plans } = data.acf;
 
-    <Plan />
-  </Plans>
-);
+  return (
+    <Plans id="planos">
+      <h1 className="default-title">
+        <strong>Planos</strong>
+        <span>Linha fina</span>
+      </h1>
+
+      {section_4_plans.map((item: Iprops, index: number) => (
+        <Plan key={index} {...item} />
+      ))}
+    </Plans>
+  );
+};
 
 export default cpPlans;
