@@ -2,48 +2,82 @@ import React from 'react';
 
 import AdvItem from './style';
 
-const cpAdvItem: React.FC = () => (
-  <AdvItem>
-    <img
-      src="https://i.picsum.photos/id/397/370/560.jpg"
-      alt="Nome do assessor"
-      title="Nome do assessor"
-      width="370"
-      height="500"
-    />
+interface Iprops {
+  name: string;
+  image: any;
+  whatsapp: string;
+  phone: string;
+  email: string;
+}
 
-    <div className="advisor-informations">
-      <h1>Nome do assessor</h1>
+const cpAdvItem: React.FC<Iprops> = ({
+  name,
+  image,
+  whatsapp,
+  phone,
+  email
+}) => {
+  const splitPhone = phone.split(' ');
+
+  const splitWhatsApp = whatsapp.split(' ');
+
+  return (
+    <AdvItem>
+      <img
+        src={image.url}
+        alt={name}
+        title={name}
+        width={image.width}
+        height={image.height}
+      />
+
+      <div className="advisor-informations">
+        <h1>{name}</h1>
+
+        <div>
+          {whatsapp && (
+            <a
+              href={`https://api.whatsapp.com/send?phone=${splitWhatsApp
+                .join('')
+                .replace(
+                  /[+()-]/g,
+                  ''
+                )}&text=Olá, estou entrando em contato através do site.`}
+              title="Direto no WhatsApp"
+            >
+              {whatsapp}
+            </a>
+          )}
+
+          {phone && (
+            <a
+              href={`tel:${splitPhone.join('').replace(/[+()-]/g, '')}`}
+              title="Ligar"
+            >
+              {phone}
+            </a>
+          )}
+
+          {email && (
+            <a href={`mailto:${email}`} title="Enviar E-mail">
+              {email}
+            </a>
+          )}
+        </div>
+      </div>
 
       <div>
-        <a
-          href="https://api.whatsapp.com/send?phone=5511962067029&text=oi"
-          title="Direto no WhatsApp"
-        >
-          (43) 9 9625-5476
-        </a>
-
-        <a href="tel:5543" title="Direto no WhatsApp">
-          (43) 3376-9959
-        </a>
-
-        <a href="mailto:cassio@bravusi.com.br" title="Enviar E-mail">
-          cassio@bravusi.com.br
-        </a>
+        <img
+          src={image.url}
+          alt={name}
+          title={name}
+          width={image.width}
+          height={image.height}
+          className="effect-zoom"
+        />
       </div>
-    </div>
-
-    <div>
-      <img
-        src="https://i.picsum.photos/id/397/370/560.jpg"
-        alt="Nome do assessor"
-        title="Nome do assessor"
-        width="370"
-        height="500"
-        className="effect-zoom"
-      />
-    </div>
-  </AdvItem>
-);
+    </AdvItem>
+  );
+};
 
 export default React.memo(cpAdvItem);

@@ -1,41 +1,36 @@
 import React from 'react';
 
+import { useSelector } from 'react-redux';
+
 import History from './style';
 
-const cpHistory: React.FC = () => (
-  <History>
-    <img
-      src="https://i.picsum.photos/id/397/1000/670.jpg"
-      alt="Nossa História - Bravus Investimentos"
-      title="Nossa História - Bravus Investimentos"
-      width="1000"
-      height="670"
-    />
+const cpHistory: React.FC = () => {
+  const { error, data } = useSelector((state: any) => ({
+    error: state.aboutData.error,
+    data: state.aboutData.data
+  }));
 
-    <div className="description-content">
-      <h2>Nossa História</h2>
+  if (error) return null;
 
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec semper,
-        eros eu sollicitudin condimentum, quam tortor iaculis diam, at lacinia
-        enim odio id nunc. Nam sollicitudin volutpat sodales. Nullam aliquam
-        maximus augue. Nullam aliquam risus vitae erat volutpat laoreet. Nunc
-        convallis aliquam purus at dictum. Phasellus ornare magna vel porttitor
-        vestibulum. Nullam et ex lorem. Mauris fermentum porttitor scelerisque.
-        Nunc eget urna velit. Maecenas enim ante, egestas nec augue at, blandit
-        dignissim tellus. Praesent laoreet tortor eu enim laoreet, non varius mi
-        sodales. Nullam urna risus, posuere ut dignissim in, ultricies vel
-        ligula. Mauris vitae neque at est placerat viverra.
-      </p>
+  const { our_story, imagem_our_story } = data.acf;
 
-      <p>
-        Phasellus feugiat risus vel tellus rhoncus facilisis. Ut luctus auctor
-        aliquam. Maecenas aliquet sem id rutrum tempor. Aliquam lacinia sapien
-        ante, vel luctus lorem ullamcorper nec. Nam sed laoreet turpis. Etiam
-        consequat, massa sed pharetra consectetur, metus n
-      </p>
-    </div>
-  </History>
-);
+  return (
+    <History>
+      <img
+        src={imagem_our_story.url}
+        alt="Nossa História - Bravus Investimentos"
+        title="Nossa História - Bravus Investimentos"
+        width={imagem_our_story.width}
+        height={imagem_our_story.height}
+      />
+
+      <div className="description-content">
+        <h2>Nossa História</h2>
+
+        <div dangerouslySetInnerHTML={{ __html: our_story }} />
+      </div>
+    </History>
+  );
+};
 
 export default cpHistory;

@@ -74,8 +74,8 @@ export default styled.article`
     }
     div {
       width: 100%;
-      transition: height 0.5s ease-in-out;
-      height: 0px;
+      transition: all 0.5s ease-in-out;
+      max-height: 0px;
       overflow: hidden;
       display: flex;
       justify-content: center;
@@ -102,17 +102,17 @@ export default styled.article`
           opacity: 1;
         }
         div {
-          height: auto;
+          max-height: 110px;
           padding-bottom: 20px;
         }
       }
       &:last-child {
-        transform: scale(1.1);
+        transform: scale(1.2);
       }
     }
     & ~ article,
     & + article {
-      opacity: 0.5;
+      opacity: 0.3;
     }
   }
   @media (max-width: 1200px) {

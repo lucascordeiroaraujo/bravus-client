@@ -9,6 +9,7 @@ export default styled.article`
   img {
     width: 52%;
     height: auto;
+    pointer-events: none;
   }
   & > div {
     width: 35%;

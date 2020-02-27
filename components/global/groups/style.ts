@@ -7,11 +7,7 @@ export default styled.section`
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    /* h1.default-title {
-      font-size: calc(60px + (100 - 60) * ((100vw - 100px) / (1920 - 100)));
-      line-height: calc(50px + (100 - 50) * ((100vw - 100px) / (1920 - 100)));
-    } */
-    & > div:not(.logos) {
+    & > div:first-child {
       width: 100%;
       display: flex;
       justify-content: space-between;
@@ -42,6 +38,7 @@ export default styled.section`
             width: 100%;
             height: auto;
             transition: 0.5s;
+            pointer-events: none;
             &:last-child {
               margin-top: -4px;
             }
@@ -85,8 +82,14 @@ export default styled.section`
       align-items: center;
       flex-wrap: wrap;
       img {
+        max-width: 130px;
+        height: auto;
         margin: 10px 15px;
         pointer-events: none;
+        &.secure,
+        &.companies {
+          filter: brightness(0%);
+        }
       }
     }
   }

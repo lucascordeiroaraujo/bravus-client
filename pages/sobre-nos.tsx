@@ -18,7 +18,17 @@ import Footer from '~/components/global/footer';
 
 import Groups from '~/components/global/groups';
 
-const About: React.FC = () => (
+import { loadAboutData } from '~/store/about/actions';
+
+import { loadContactData } from '~/store/contact/actions';
+
+interface Iprops {
+  dispatch: any;
+  ctx: any;
+  getInitialProps: any;
+}
+
+const About: any = () => (
   <>
     <Seo
       title="Bravus Investimentos - Sua XP Investimentos em Londrina"
@@ -44,5 +54,19 @@ const About: React.FC = () => (
     <Groups type="about" />
   </>
 );
+
+About.getInitialProps = async (props: Iprops) => {
+  const { store, isServer } = props.ctx;
+
+  if (!store.getState().data) {
+    store.dispatch(loadAboutData());
+  }
+
+  if (!store.getState().data) {
+    store.dispatch(loadContactData());
+  }
+
+  return { isServer };
+};
 
 export default About;

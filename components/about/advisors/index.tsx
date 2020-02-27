@@ -1,41 +1,46 @@
 import React from 'react';
 
+import { useSelector } from 'react-redux';
+
 import Advisors from './style';
 
 import { Container } from '~/public/styles/global';
 
 import AdvItem from './components/advItem';
 
-const cpAdvisors: React.FC = () => (
-  <Advisors>
-    <Container>
-      <h1 className="default-title before-info">
-        <strong>Assessores</strong>
-      </h1>
-    </Container>
+interface Iprops {
+  name: string;
+  image: any;
+  whatsapp: string;
+  phone: string;
+  email: string;
+}
 
-    <div>
-      <AdvItem />
+const cpAdvisors: React.FC = () => {
+  const { error, data } = useSelector((state: any) => ({
+    error: state.aboutData.error,
+    data: state.aboutData.data
+  }));
 
-      <AdvItem />
+  if (error) return null;
 
-      <AdvItem />
+  const { advisors } = data.acf;
 
-      <AdvItem />
+  return (
+    <Advisors>
+      <Container>
+        <h1 className="default-title before-info">
+          <strong>Assessores</strong>
+        </h1>
+      </Container>
 
-      <AdvItem />
-
-      <AdvItem />
-
-      <AdvItem />
-
-      <AdvItem />
-
-      <AdvItem />
-
-      <AdvItem />
-    </div>
-  </Advisors>
-);
+      <div>
+        {advisors.map((item: Iprops, index: number) => (
+          <AdvItem key={index} {...item} />
+        ))}
+      </div>
+    </Advisors>
+  );
+};
 
 export default cpAdvisors;

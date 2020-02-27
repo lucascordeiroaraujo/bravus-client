@@ -54,6 +54,7 @@ export default styled.article`
     & > img {
       width: 61%;
       height: auto;
+      pointer-events: none;
     }
     @media (max-width: 1390px) {
       max-width: 1270px;
