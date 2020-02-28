@@ -4,51 +4,56 @@ import Head from 'next/head';
 
 import { DOMAIN, ROBOTS } from '~/utils/config';
 
+import { useRouter } from 'next/router';
+
 interface Iprops {
   title: string;
   description: string;
   image: string;
-  slug: string;
 }
 
-const Seo: React.FC<Iprops> = ({ title, description, image, slug }) => (
-  <Head>
-    <title>{title}</title>
+const Seo: React.FC<Iprops> = ({ title, description, image }) => {
+  const router = useRouter();
 
-    <meta name="description" content={description} />
+  return (
+    <Head>
+      <title>{title}</title>
 
-    <link rel="canonical" href={`${DOMAIN}/${slug}`} />
+      <meta name="description" content={description} />
 
-    <meta property="og:locale" content="pt_BR" />
+      <link rel="canonical" href={`${DOMAIN}/${router.pathname}`} />
 
-    <meta property="og:type" content="website" />
+      <meta property="og:locale" content="pt_BR" />
 
-    <meta property="og:title" content={title} />
+      <meta property="og:type" content="website" />
 
-    <meta property="og:description" content={description} />
+      <meta property="og:title" content={title} />
 
-    <meta property="og:url" content="https://octadesk.com" />
+      <meta property="og:description" content={description} />
 
-    <meta property="og:site_name" content={title} />
+      <meta property="og:url" content="https://octadesk.com" />
 
-    <meta property="og:image" content={image} />
+      <meta property="og:site_name" content={title} />
 
-    <meta property="og:image:secure_url" content={image} />
+      <meta property="og:image" content={image} />
 
-    <meta property="og:image:width" content="484" />
+      <meta property="og:image:secure_url" content={image} />
 
-    <meta property="og:image:height" content="252" />
+      <meta property="og:image:width" content="484" />
 
-    <meta name="twitter:card" content="summary_large_image" />
+      <meta property="og:image:height" content="252" />
 
-    <meta name="twitter:description" content={description} />
+      <meta name="twitter:card" content="summary_large_image" />
 
-    <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
 
-    <meta name="twitter:image" content={image} />
+      <meta name="twitter:title" content={title} />
 
-    {ROBOTS && <meta name="robots" content="noindex" />}
-  </Head>
-);
+      <meta name="twitter:image" content={image} />
+
+      {ROBOTS && <meta name="robots" content="noindex" />}
+    </Head>
+  );
+};
 
 export default Seo;

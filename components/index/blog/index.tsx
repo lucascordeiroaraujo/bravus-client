@@ -1,23 +1,32 @@
 import React from 'react';
 
+import { useSelector } from 'react-redux';
+
 import Blog from './style';
 
 import BlogItem from './components/blogItem';
 
-const cpBlog: React.FC = () => (
-  <Blog>
-    <h1 className="default-title">
-      <strong>Últimas no Blog</strong>
-    </h1>
+const cpBlog: React.FC = () => {
+  const { error, data } = useSelector((state: any) => ({
+    error: state.blogData.error,
+    data: state.blogData.data
+  }));
 
-    <div>
-      <BlogItem />
+  if (error) return null;
 
-      <BlogItem />
+  return (
+    <Blog>
+      <h1 className="default-title">
+        <strong>Últimas no Blog</strong>
+      </h1>
 
-      <BlogItem />
-    </div>
-  </Blog>
-);
+      <div>
+        {data.map((item: any, index: number) => (
+          <BlogItem key={index} {...item} />
+        ))}
+      </div>
+    </Blog>
+  );
+};
 
 export default cpBlog;

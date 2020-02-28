@@ -8,7 +8,7 @@ interface Iprops {
   title: string;
   description: string;
   slug: string;
-  image: string;
+  image: any;
 }
 
 const cpBlogItem: React.FC<Iprops> = ({ title, description, slug, image }) => (
@@ -28,7 +28,13 @@ const cpBlogItem: React.FC<Iprops> = ({ title, description, slug, image }) => (
     <div>
       <Link href={`/blog/${slug}`}>
         <a href={`/blog/${slug}`} title="Confira">
-          <img src={image} alt={title} title={title} />
+          <img
+            src={image.sizes['blog-list-page']}
+            alt={title}
+            title={title}
+            width={image.sizes['blog-list-page-width']}
+            height={image.sizes['blog-list-page-height']}
+          />
         </a>
       </Link>
     </div>

@@ -86,18 +86,18 @@ export default styled.section`
         height: auto;
         margin: 10px 15px;
         pointer-events: none;
-        &.secure,
+        &.safe,
         &.companies {
           filter: brightness(0%);
         }
       }
     }
   }
-  &.secure,
+  &.safe,
   &.companies {
     background-color: ${props => props.theme.colors.light};
     h1.default-title strong {
-      color: ${props => props.theme.secure.secondary};
+      color: ${props => props.theme.safe.secondary};
     }
     div.container {
       h2,

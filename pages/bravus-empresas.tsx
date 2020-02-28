@@ -14,6 +14,16 @@ import Groups from '~/components/global/groups';
 
 import styled from 'styled-components';
 
+import { loadCompaniesData } from '~/store/companies/actions';
+
+import { loadContactData } from '~/store/contact/actions';
+
+interface Iprops {
+  dispatch: any;
+  ctx: any;
+  getInitialProps: any;
+}
+
 const ContainerBravusCompanies = styled.div`
   width: 100%;
   background: url(${require('~/public/images/background-bravus-companies.jpg')})
@@ -25,13 +35,12 @@ const ContainerBravusCompanies = styled.div`
   }
 `;
 
-const BravusSeguros: React.FC = () => (
+const BravusCompanies: any = () => (
   <>
     <Seo
       title="Bravus Investimentos - Sua XP Investimentos em Londrina"
       description="A Bravus Investimentos é o maior escritório credenciado da XP Investimentos em Londrina e Região Metropolitana. Nós ajudamos nossos clientes a investir melhor. Agende uma assessoria, invista de acordo com seu perfil, acesse e saiba mais."
       image="http://localhost/bravus-server/wp-content/uploads/2020/02/bravus-social.jpg"
-      slug="/"
     />
 
     <ContainerBravusCompanies>
@@ -50,4 +59,18 @@ const BravusSeguros: React.FC = () => (
   </>
 );
 
-export default BravusSeguros;
+BravusCompanies.getInitialProps = async (props: Iprops) => {
+  const { store, isServer } = props.ctx;
+
+  if (!store.getState().data) {
+    store.dispatch(loadCompaniesData());
+  }
+
+  if (!store.getState().data) {
+    store.dispatch(loadContactData());
+  }
+
+  return { isServer };
+};
+
+export default BravusCompanies;

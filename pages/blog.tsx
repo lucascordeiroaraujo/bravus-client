@@ -14,13 +14,22 @@ import Footer from '~/components/global/footer';
 
 import Groups from '~/components/global/groups';
 
-const Blog: React.FC = () => (
+import { loadBlogData } from '~/store/blog/actions';
+
+import { loadContactData } from '~/store/contact/actions';
+
+interface Iprops {
+  dispatch: any;
+  ctx: any;
+  getInitialProps: any;
+}
+
+const Blog: any = () => (
   <>
     <Seo
       title="Bravus Investimentos - Sua XP Investimentos em Londrina"
       description="A Bravus Investimentos é o maior escritório credenciado da XP Investimentos em Londrina e Região Metropolitana. Nós ajudamos nossos clientes a investir melhor. Agende uma assessoria, invista de acordo com seu perfil, acesse e saiba mais."
       image="http://localhost/bravus-server/wp-content/uploads/2020/02/bravus-social.jpg"
-      slug="/"
     />
 
     <Container>
@@ -34,5 +43,19 @@ const Blog: React.FC = () => (
     <Groups type="blog" />
   </>
 );
+
+Blog.getInitialProps = async (props: Iprops) => {
+  const { store, isServer } = props.ctx;
+
+  if (!store.getState().data) {
+    store.dispatch(loadBlogData());
+  }
+
+  if (!store.getState().data) {
+    store.dispatch(loadContactData());
+  }
+
+  return { isServer };
+};
 
 export default Blog;

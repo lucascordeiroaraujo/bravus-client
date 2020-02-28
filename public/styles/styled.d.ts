@@ -9,7 +9,7 @@ declare module 'styled-components' {
       info: string;
       light: string;
     };
-    secure: {
+    safe: {
       primary: string;
       secondary: string;
     };

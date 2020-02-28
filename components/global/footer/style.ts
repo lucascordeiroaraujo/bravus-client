@@ -166,14 +166,14 @@ export default styled.footer`
   @media (max-width: 992px) {
     padding: 50px 0px;
   }
-  &.secure,
+  &.safe,
   &.companies {
     background-image: url(${require('~/public/images/background-city-footer-companies.png')});
     background-color: ${props => props.theme.colors.light};
     h1.default-title {
       padding: 0px;
       strong {
-        color: ${props => props.theme.secure.primary};
+        color: ${props => props.theme.safe.primary};
         text-align: center;
       }
       &:before {
@@ -192,7 +192,7 @@ export default styled.footer`
         }
       }
       form {
-        background: ${props => props.theme.secure.secondary};
+        background: ${props => props.theme.safe.secondary};
       }
     }
   }

@@ -4,37 +4,50 @@ import Link from 'next/link';
 
 import BlogItem from './style';
 
-const cpBlogItem: React.FC = () => (
-  <BlogItem>
-    <Link href="/sobre-nos">
-      <a href="sobre-nos" title="Confira">
-        <img src="https://picsum.photos/300/300?random=2" alt="" />
-      </a>
-    </Link>
+import { truncate } from '~/utils';
 
-    <h2>
-      <Link href="/sobre-nos">
-        <a href="sobre-nos" title="Confira">
-          análise e recomendações
+const cpBlogItem: React.FC = (props: any) => {
+  return (
+    <BlogItem>
+      <Link href={`/blog/${props.slug}`}>
+        <a href={`/blog/${props.slug}`} title="Confira">
+          <img
+            src={props.acf.image.sizes['blog-list-home']}
+            alt={props.title.rendered}
+            title={props.title.rendered}
+            width={props.acf.image.sizes['blog-list-home-width']}
+            height={props.acf.image.sizes['blog-list-home-height']}
+          />
         </a>
       </Link>
-    </h2>
 
-    <p>
-      <Link href="/sobre-nos">
-        <a href="sobre-nos" title="Confira">
-          Fique por dentro dos melhores conteúdos de investimentos, seja você
-          iniciante ou especialista.
+      <h2>
+        <Link href={`/blog/${props.slug}`}>
+          <a href={`/blog/${props.slug}`} title="Confira">
+            {props.title.rendered}
+          </a>
+        </Link>
+      </h2>
+
+      <p>
+        <Link href={`/blog/${props.slug}`}>
+          <a href={`/blog/${props.slug}`} title="Confira">
+            {truncate(props.acf.description, 100)}
+          </a>
+        </Link>
+      </p>
+
+      <Link href={`/blog/${props.slug}`}>
+        <a
+          href={`/blog/${props.slug}`}
+          title="Confira"
+          className="default-button"
+        >
+          saiba mais..
         </a>
       </Link>
-    </p>
-
-    <Link href="/sobre-nos">
-      <a href="/sobre-nos" title="Confira" className="default-button">
-        saiba mais..
-      </a>
-    </Link>
-  </BlogItem>
-);
+    </BlogItem>
+  );
+};
 
 export default React.memo(cpBlogItem);

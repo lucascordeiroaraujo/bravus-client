@@ -1,44 +1,46 @@
 import React from 'react';
 
+import { useSelector } from 'react-redux';
+
 import HowItsWorks from './style';
 
 interface Iprops {
   type: string;
 }
 
-const cpHowItsWorks: React.FC<Iprops> = ({ type }) => (
-  <HowItsWorks>
-    <h1 className={type}>Faça seus seguros com a Bravus!</h1>
+const cpHowItsWorks: React.FC<Iprops> = ({ type }) => {
+  const { error, data } = useSelector((state: any) => ({
+    error: state[`${type}Data`].error,
+    data: state[`${type}Data`].data
+  }));
 
-    <h2 className={type}>Como Funciona?</h2>
+  if (error) return null;
 
-    <div>
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it{' '}
-      </p>
+  const {
+    how_it_works_title,
+    how_it_works_description,
+    how_it_works_image
+  } = data.acf;
 
-      <p>
-        It has survived not only five centuries, but also the leap into
-        electronic typesetting, remaining essentially unchanged. It was
-        popularised in the 1960s with the release of Letraset sheets containing
-        Lorem Ipsum passages, and more recently with desktop publishing software
-        like Aldus PageMaker including versions of Lorem Ipsum.
-      </p>
+  return (
+    <HowItsWorks>
+      <h1 className={type}>{how_it_works_title}</h1>
 
-      <p>Where does it come from?</p>
-    </div>
+      <h2 className={type}>Como Funciona?</h2>
 
-    <div>
-      <img
-        src="https://picsum.photos/800/530?random=2"
-        alt="Como Funciona?"
-        title="Como Funciona?"
-      />
-    </div>
-  </HowItsWorks>
-);
+      <div dangerouslySetInnerHTML={{ __html: how_it_works_description }} />
+
+      <div>
+        <img
+          src={how_it_works_image.url}
+          alt="Como Funciona?"
+          title="Como Funciona?"
+          width={how_it_works_image.width}
+          height={how_it_works_image.height}
+        />
+      </div>
+    </HowItsWorks>
+  );
+};
 
 export default cpHowItsWorks;

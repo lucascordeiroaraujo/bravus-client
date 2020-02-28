@@ -24,8 +24,8 @@ export default styled.article`
         font-size: 88px;
         line-height: 88px;
       }
-      &.secure {
-        color: ${props => props.theme.secure.primary};
+      &.safe {
+        color: ${props => props.theme.safe.primary};
       }
       &.companies {
         color: ${props => props.theme.companies.primary};
@@ -56,10 +56,10 @@ export default styled.article`
         font-size: 50px;
         line-height: 50px;
       }
-      &.secure {
-        background: ${props => props.theme.secure.primary};
+      &.safe {
+        background: ${props => props.theme.safe.primary};
         &:hover {
-          background: ${props => props.theme.secure.secondary};
+          background: ${props => props.theme.safe.secondary};
         }
       }
       &.companies {

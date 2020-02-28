@@ -21,8 +21,8 @@ export default styled.article`
     @media (min-width: 1920px) {
       font-size: 60px;
     }
-    &.secure {
-      color: ${props => props.theme.secure.primary};
+    &.safe {
+      color: ${props => props.theme.safe.primary};
     }
     &.companies {
       color: ${props => props.theme.companies.primary};
@@ -35,8 +35,8 @@ export default styled.article`
     @media (min-width: 1920px) {
       font-size: 100px;
     }
-    &.secure {
-      color: ${props => props.theme.secure.secondary};
+    &.safe {
+      color: ${props => props.theme.safe.secondary};
     }
     &.companies {
       color: ${props => props.theme.companies.secondary};
@@ -57,6 +57,7 @@ export default styled.article`
     img {
       width: 100%;
       height: auto;
+      box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.5);
     }
     &:last-child {
       padding-top: 60px;

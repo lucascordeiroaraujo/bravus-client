@@ -10,8 +10,8 @@ export default styled.section`
   & > div {
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-wrap: wrap;
     @media (max-width: 1270px) {
       padding: 0px 15px;

@@ -7,7 +7,7 @@ export default {
     info: '#d7d7ad',
     light: '#ffffff'
   },
-  secure: {
+  safe: {
     primary: '#00522a',
     secondary: '#02381e'
   },

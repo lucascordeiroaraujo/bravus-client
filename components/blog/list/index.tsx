@@ -1,33 +1,34 @@
 import React from 'react';
 
+import { useSelector } from 'react-redux';
+
 import BlogList from './style';
 
 import BlogItem from '../item';
 
-const cpBlogList: React.FC = () => (
-  <BlogList>
-    <BlogItem
-      title="como começar a investir"
-      description="Investir em uma das maiores instituições financeiras do país é muito
-        simples. Em poucos passos, você já estará pronto para começar."
-      slug="como-comecar-a-investir"
-      image="https://picsum.photos/530/290?random=2"
-    />
-    <BlogItem
-      title="como começar a investir"
-      description="Investir em uma das maiores instituições financeiras do país é muito
-        simples. Em poucos passos, você já estará pronto para começar."
-      slug="como-comecar-a-investir-2"
-      image="https://picsum.photos/530/290?random=3"
-    />
-    <BlogItem
-      title="como começar a investir"
-      description="Investir em uma das maiores instituições financeiras do país é muito
-        simples. Em poucos passos, você já estará pronto para começar."
-      slug="como-comecar-a-investir-3"
-      image="https://picsum.photos/530/290?random=1"
-    />
-  </BlogList>
-);
+import { truncate } from '~/utils';
+
+const cpBlogList: React.FC = () => {
+  const { error, data } = useSelector((state: any) => ({
+    error: state.blogData.error,
+    data: state.blogData.data
+  }));
+
+  if (error) return null;
+
+  return (
+    <BlogList>
+      {data.map((item: any, index: number) => (
+        <BlogItem
+          key={index}
+          title={item.title.rendered}
+          description={truncate(item.acf.description, 100)}
+          slug={item.slug}
+          image={item.acf.image}
+        />
+      ))}
+    </BlogList>
+  );
+};
 
 export default cpBlogList;

@@ -14,9 +14,19 @@ import Groups from '~/components/global/groups';
 
 import styled from 'styled-components';
 
-const ContainerBravusSecure = styled.div`
+import { loadSafeData } from '~/store/safe/actions';
+
+import { loadContactData } from '~/store/contact/actions';
+
+interface Iprops {
+  dispatch: any;
+  ctx: any;
+  getInitialProps: any;
+}
+
+const ContainerBravusSafe = styled.div`
   width: 100%;
-  background: url(${require('~/public/images/background-bravus-secure.jpg')})
+  background: url(${require('~/public/images/background-bravus-safe.jpg')})
     center top no-repeat fixed;
   section {
     width: 100%;
@@ -25,29 +35,42 @@ const ContainerBravusSecure = styled.div`
   }
 `;
 
-const BravusSeguros: React.FC = () => (
+const BravusSafe: any = () => (
   <>
     <Seo
       title="Bravus Investimentos - Sua XP Investimentos em Londrina"
       description="A Bravus Investimentos é o maior escritório credenciado da XP Investimentos em Londrina e Região Metropolitana. Nós ajudamos nossos clientes a investir melhor. Agende uma assessoria, invista de acordo com seu perfil, acesse e saiba mais."
       image="http://localhost/bravus-server/wp-content/uploads/2020/02/bravus-social.jpg"
-      slug="/"
     />
 
-    <ContainerBravusSecure>
-      <Header type="secure" />
+    <ContainerBravusSafe>
+      <Header type="safe" />
 
       <section>
-        <HowItsWorks type="secure" />
+        <HowItsWorks type="safe" />
 
-        <CallToAction type="secure" />
+        <CallToAction type="safe" />
       </section>
-    </ContainerBravusSecure>
+    </ContainerBravusSafe>
 
-    <Footer type="secure" />
+    <Footer type="safe" />
 
-    <Groups type="secure" />
+    <Groups type="safe" />
   </>
 );
 
-export default BravusSeguros;
+BravusSafe.getInitialProps = async (props: Iprops) => {
+  const { store, isServer } = props.ctx;
+
+  if (!store.getState().data) {
+    store.dispatch(loadSafeData());
+  }
+
+  if (!store.getState().data) {
+    store.dispatch(loadContactData());
+  }
+
+  return { isServer };
+};
+
+export default BravusSafe;

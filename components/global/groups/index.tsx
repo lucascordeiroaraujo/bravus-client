@@ -37,7 +37,7 @@ const cpCompanies: React.FC<Iprops> = ({ type }) => {
           </div>
 
           <div>
-            {(type === 'secure' || type === 'companies') && (
+            {(type === 'safe' || type === 'companies') && (
               <Link href="/">
                 <a href="/" title="Confira">
                   <img
@@ -51,11 +51,11 @@ const cpCompanies: React.FC<Iprops> = ({ type }) => {
               </Link>
             )}
 
-            {type !== 'secure' && (
+            {type !== 'safe' && (
               <Link href="/bravus-seguros">
                 <a href="/bravus-seguros" title="Confira">
                   <img
-                    src={require('~/public/images/bravus-secure.jpg')}
+                    src={require('~/public/images/bravus-safe.jpg')}
                     alt="Bravus Seguros"
                     title="Bravus Seguros"
                     width="500"

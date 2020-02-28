@@ -108,10 +108,10 @@ export default styled.article`
       }
       &:last-child {
         transform: scale(1.2);
+        box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5);
       }
     }
-    & ~ article,
-    & + article {
+    & ~ article {
       opacity: 0.3;
     }
   }
