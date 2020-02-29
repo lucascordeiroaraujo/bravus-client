@@ -62,13 +62,9 @@ const BravusCompanies: any = () => (
 BravusCompanies.getInitialProps = async (props: Iprops) => {
   const { store, isServer } = props.ctx;
 
-  if (!store.getState().data) {
-    store.dispatch(loadCompaniesData());
-  }
+  store.dispatch(loadCompaniesData());
 
-  if (!store.getState().data) {
-    store.dispatch(loadContactData());
-  }
+  store.dispatch(loadContactData());
 
   return { isServer };
 };

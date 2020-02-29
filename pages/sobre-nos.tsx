@@ -18,9 +18,13 @@ import Footer from '~/components/global/footer';
 
 import Groups from '~/components/global/groups';
 
-import { loadAboutData } from '~/store/about/actions';
+import { loadIndexData } from '~/store/index/actions';
+
+import { loadBlogData } from '~/store/blog/actions';
 
 import { loadContactData } from '~/store/contact/actions';
+
+import { loadAboutData } from '~/store/about/actions';
 
 interface Iprops {
   dispatch: any;
@@ -57,13 +61,13 @@ const About: any = () => (
 About.getInitialProps = async (props: Iprops) => {
   const { store, isServer } = props.ctx;
 
-  if (!store.getState().data) {
-    store.dispatch(loadAboutData());
-  }
+  store.dispatch(loadIndexData());
 
-  if (!store.getState().data) {
-    store.dispatch(loadContactData());
-  }
+  store.dispatch(loadBlogData());
+
+  store.dispatch(loadContactData());
+
+  store.dispatch(loadAboutData());
 
   return { isServer };
 };

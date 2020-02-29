@@ -26,6 +26,8 @@ import { loadBlogData } from '~/store/blog/actions';
 
 import { loadContactData } from '~/store/contact/actions';
 
+import { loadAboutData } from '~/store/about/actions';
+
 interface Iprops {
   dispatch: any;
   ctx: any;
@@ -67,17 +69,13 @@ const Home: any = () => (
 Home.getInitialProps = async (props: Iprops) => {
   const { store, isServer } = props.ctx;
 
-  if (!store.getState().data) {
-    store.dispatch(loadIndexData());
-  }
+  store.dispatch(loadIndexData());
 
-  if (!store.getState().data) {
-    store.dispatch(loadBlogData());
-  }
+  store.dispatch(loadBlogData());
 
-  if (!store.getState().data) {
-    store.dispatch(loadContactData());
-  }
+  store.dispatch(loadContactData());
+
+  store.dispatch(loadAboutData());
 
   return { isServer };
 };

@@ -47,13 +47,9 @@ const Blog: any = () => (
 Blog.getInitialProps = async (props: Iprops) => {
   const { store, isServer } = props.ctx;
 
-  if (!store.getState().data) {
-    store.dispatch(loadBlogData());
-  }
+  store.dispatch(loadBlogData());
 
-  if (!store.getState().data) {
-    store.dispatch(loadContactData());
-  }
+  store.dispatch(loadContactData());
 
   return { isServer };
 };

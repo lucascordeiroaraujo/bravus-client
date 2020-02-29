@@ -2,8 +2,6 @@ import React from 'react';
 
 import Head from 'next/head';
 
-import { DOMAIN, ROBOTS } from '~/utils/config';
-
 import { useRouter } from 'next/router';
 
 interface Iprops {
@@ -21,7 +19,10 @@ const Seo: React.FC<Iprops> = ({ title, description, image }) => {
 
       <meta name="description" content={description} />
 
-      <link rel="canonical" href={`${DOMAIN}/${router.pathname}`} />
+      <link
+        rel="canonical"
+        href={`https://bravusinvestimentos.com.br/${router.pathname}`}
+      />
 
       <meta property="og:locale" content="pt_BR" />
 
@@ -50,8 +51,6 @@ const Seo: React.FC<Iprops> = ({ title, description, image }) => {
       <meta name="twitter:title" content={title} />
 
       <meta name="twitter:image" content={image} />
-
-      {ROBOTS && <meta name="robots" content="noindex" />}
     </Head>
   );
 };
