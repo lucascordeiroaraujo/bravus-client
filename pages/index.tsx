@@ -24,9 +24,15 @@ import { loadIndexData } from '~/store/index/actions';
 
 import { loadBlogData } from '~/store/blog/actions';
 
+import { loadBlogCategoriesData } from '~/store/blog-categories/actions';
+
 import { loadContactData } from '~/store/contact/actions';
 
 import { loadAboutData } from '~/store/about/actions';
+
+import { loadSafeData } from '~/store/safe/actions';
+
+import { loadCompaniesData } from '~/store/companies/actions';
 
 interface Iprops {
   dispatch: any;
@@ -67,17 +73,21 @@ const Home: any = () => (
 );
 
 Home.getInitialProps = async (props: Iprops) => {
-  const { store, isServer } = props.ctx;
+  const { store } = props.ctx;
 
   store.dispatch(loadIndexData());
 
   store.dispatch(loadBlogData());
 
+  store.dispatch(loadBlogCategoriesData());
+
   store.dispatch(loadContactData());
 
   store.dispatch(loadAboutData());
 
-  return { isServer };
+  store.dispatch(loadSafeData());
+
+  store.dispatch(loadCompaniesData());
 };
 
 export default Home;

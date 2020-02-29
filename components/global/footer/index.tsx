@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import InputMask from 'react-input-mask';
 
@@ -20,6 +20,10 @@ import WhatsApp from '~/public/images/svg/whatsapp';
 
 import Email from '~/public/images/svg/email';
 
+import { URL_API } from '~/utils/config';
+
+import { toggleLoader } from '~/store/global/actions';
+
 interface Iprops {
   type: string;
 }
@@ -37,6 +41,58 @@ const cpFooter: React.FC<Iprops> = ({ type }) => {
   const splitPhone = phone.split(' ');
 
   const splitWhatsApp = whatsapp.split(' ');
+
+  const [state, setState] = React.useState({
+    name: {
+      key: 'Nome',
+      value: ''
+    },
+    email: {
+      key: 'E-mail',
+      value: ''
+    },
+    phone: {
+      key: 'Telefone',
+      value: ''
+    },
+    message: {
+      key: 'Mensagem',
+      value: ''
+    }
+  });
+
+  const dispatch = useDispatch();
+
+  const sendContact = async (event: any) => {
+    event.preventDefault();
+
+    dispatch(toggleLoader('Aguarde, enviando seu contato', true, false));
+
+    const response = await fetch(`${URL_API}/wp/v2/bravus/sendContact`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      mode: 'cors',
+      body: JSON.stringify({
+        body: Object.values(state)
+      })
+    });
+
+    if (response.ok) {
+      dispatch(toggleLoader('', false, false));
+    } else {
+      dispatch(
+        toggleLoader(
+          '<span class="emoji">⚠</span><br/> Falha ao enviar seu contato.',
+          false,
+          true
+        )
+      );
+    }
+
+    console.log('ok', Object.values(state), state, response);
+  };
 
   return (
     <Footer id="contato" className={type}>
@@ -116,10 +172,24 @@ const cpFooter: React.FC<Iprops> = ({ type }) => {
           )}
         </div>
 
-        <form method="post">
+        <form method="post" onSubmit={sendContact}>
           <strong>Envie uma mensagem</strong>
 
-          <input type="text" placeholder="NOME" required />
+          <input
+            type="text"
+            placeholder="NOME"
+            required
+            value={state.name.value}
+            onChange={e =>
+              setState({
+                ...state,
+                name: {
+                  ...state.name,
+                  value: e.target.value
+                }
+              })
+            }
+          />
 
           <InputMask
             type="tel"
@@ -129,11 +199,48 @@ const cpFooter: React.FC<Iprops> = ({ type }) => {
               9: '[0-9]',
               '?': '[0-9]'
             }}
+            value={state.phone.value}
+            onChange={e =>
+              setState({
+                ...state,
+                phone: {
+                  ...state.phone,
+                  value: e.target.value
+                }
+              })
+            }
           />
 
-          <input type="email" placeholder="E-MAIL" required />
+          <input
+            type="email"
+            placeholder="E-MAIL"
+            required
+            value={state.email.value}
+            onChange={e =>
+              setState({
+                ...state,
+                email: {
+                  ...state.email,
+                  value: e.target.value
+                }
+              })
+            }
+          />
 
-          <textarea placeholder="MENSAGEM" />
+          <textarea
+            placeholder="MENSAGEM"
+            required
+            value={state.message.value}
+            onChange={e =>
+              setState({
+                ...state,
+                message: {
+                  ...state.message,
+                  value: e.target.value
+                }
+              })
+            }
+          />
 
           <input type="submit" value="Enviar" />
         </form>

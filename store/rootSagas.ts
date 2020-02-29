@@ -4,6 +4,8 @@ import indexSagas from './index/sagas';
 
 import blogSagas from './blog/sagas';
 
+import blogCategoriesSagas from './blog-categories/sagas';
+
 import contactSagas from './contact/sagas';
 
 import aboutSagas from './about/sagas';
@@ -18,6 +20,7 @@ function* rootSaga() {
     ...contactSagas,
     ...aboutSagas,
     ...blogSagas,
+    ...blogCategoriesSagas,
     ...safeSagas,
     ...companiesSagas
   ]);

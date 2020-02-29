@@ -14,9 +14,19 @@ import Groups from '~/components/global/groups';
 
 import styled from 'styled-components';
 
-import { loadSafeData } from '~/store/safe/actions';
+import { loadIndexData } from '~/store/index/actions';
+
+import { loadBlogData } from '~/store/blog/actions';
+
+import { loadBlogCategoriesData } from '~/store/blog-categories/actions';
 
 import { loadContactData } from '~/store/contact/actions';
+
+import { loadAboutData } from '~/store/about/actions';
+
+import { loadSafeData } from '~/store/safe/actions';
+
+import { loadCompaniesData } from '~/store/companies/actions';
 
 interface Iprops {
   dispatch: any;
@@ -60,13 +70,21 @@ const BravusSafe: any = () => (
 );
 
 BravusSafe.getInitialProps = async (props: Iprops) => {
-  const { store, isServer } = props.ctx;
+  const { store } = props.ctx;
 
-  store.dispatch(loadSafeData());
+  store.dispatch(loadIndexData());
+
+  store.dispatch(loadBlogData());
+
+  store.dispatch(loadBlogCategoriesData());
 
   store.dispatch(loadContactData());
 
-  return { isServer };
+  store.dispatch(loadAboutData());
+
+  store.dispatch(loadSafeData());
+
+  store.dispatch(loadCompaniesData());
 };
 
 export default BravusSafe;

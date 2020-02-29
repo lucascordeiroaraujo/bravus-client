@@ -27,7 +27,7 @@ const cpCallToAction: React.FC<Iprops> = ({ type }) => {
 
         <div dangerouslySetInnerHTML={{ __html: call_to_action_description }} />
 
-        <a href="#" title="Confira" className={type}>
+        <a href="#contato" title="Confira" className={type}>
           Quero o contato de um acesso
         </a>
       </Container>

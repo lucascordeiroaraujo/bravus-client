@@ -13,8 +13,13 @@ app.prepare().then(() => {
 
   server.get('/blog/:slug', (req, res) =>
     app.render(req, res, '/blog-post', {
-      id: req.params.id,
       slug: req.params.slug
+    })
+  );
+
+  server.get('/blog/categoria/:slug', (req, res) =>
+    app.render(req, res, '/blog-post', {
+      categoria: req.params.slug
     })
   );
 

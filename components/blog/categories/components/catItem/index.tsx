@@ -6,13 +6,13 @@ import CatItem from './style';
 
 interface Iprops {
   title: string;
-  link: string;
+  slug: string;
 }
 
-const cpCatItem: React.FC<Iprops> = ({ title, link }) => (
+const cpCatItem: React.FC<Iprops> = ({ title, slug }) => (
   <CatItem>
-    <Link href={link}>
-      <a href={link} title="Confira">
+    <Link href={`/blog/categoria/${slug}`}>
+      <a href={`/blog/categoria/${slug}`} title="Confira">
         {title}
       </a>
     </Link>

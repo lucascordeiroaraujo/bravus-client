@@ -24,6 +24,8 @@ import NProgress from 'nprogress';
 
 import Router from 'next/router';
 
+import FeedBackForm from '~/components/global/feedbackForm';
+
 Router.events.on('routeChangeStart', () => {
   NProgress.start();
 });
@@ -162,7 +164,7 @@ class MyApp extends App<StoreProps> {
           <ThemeProvider theme={light}>
             <>
               <GlobalStyles />
-
+              <FeedBackForm />
               <Component {...pageProps} />
             </>
           </ThemeProvider>
