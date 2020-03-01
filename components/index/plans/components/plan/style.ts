@@ -64,6 +64,7 @@ export default styled.article`
     margin: 25px 0px;
     & > div {
       max-width: 100%;
+      order: 1 !important;
       h2,
       p {
         width: 100%;
@@ -75,9 +76,9 @@ export default styled.article`
       }
     }
     img {
-      margin-top: 30px;
+      order: 2 !important;
+      margin: 30px 0px 0px 0px !important;
       max-width: 560px;
-      margin-left: 0px;
     }
   }
 `;

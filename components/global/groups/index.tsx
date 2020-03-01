@@ -2,8 +2,6 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 
-import Link from 'next/link';
-
 import Companies from './style';
 
 import { Container } from '~/public/styles/global';
@@ -42,45 +40,39 @@ const cpCompanies: React.FC<Iprops> = ({ type }) => {
 
           <div>
             {(type === 'safe' || type === 'companies') && (
-              <Link href="/">
-                <a href="/" title="Confira">
-                  <img
-                    src={require('~/public/images/bravus-investments.jpg')}
-                    alt="Bravus Empresas"
-                    title="Bravus Empresas"
-                    width="500"
-                    height="200"
-                  />
-                </a>
-              </Link>
+              <a href="/" title="Confira">
+                <img
+                  src={require('~/public/images/bravus-investments.jpg')}
+                  alt="Bravus Empresas"
+                  title="Bravus Empresas"
+                  width="500"
+                  height="200"
+                />
+              </a>
             )}
 
             {type !== 'safe' && (
-              <Link href="/bravus-seguros">
-                <a href="/bravus-seguros" title="Confira">
-                  <img
-                    src={require('~/public/images/bravus-safe.jpg')}
-                    alt="Bravus Seguros"
-                    title="Bravus Seguros"
-                    width="500"
-                    height="200"
-                  />
-                </a>
-              </Link>
+              <a href="/bravus-seguros" title="Confira">
+                <img
+                  src={require('~/public/images/bravus-safe.jpg')}
+                  alt="Bravus Seguros"
+                  title="Bravus Seguros"
+                  width="500"
+                  height="200"
+                />
+              </a>
             )}
 
             {type !== 'companies' && (
-              <Link href="/bravus-empresas">
-                <a href="/bravus-empresas" title="Confira">
-                  <img
-                    src={require('~/public/images/bravus-companies.jpg')}
-                    alt="Bravus Empresas"
-                    title="Bravus Empresas"
-                    width="500"
-                    height="200"
-                  />
-                </a>
-              </Link>
+              <a href="/bravus-empresas" title="Confira">
+                <img
+                  src={require('~/public/images/bravus-companies.jpg')}
+                  alt="Bravus Empresas"
+                  title="Bravus Empresas"
+                  width="500"
+                  height="200"
+                />
+              </a>
             )}
           </div>
         </div>

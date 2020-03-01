@@ -2,8 +2,6 @@ import React from 'react';
 
 import { Menu, MenuMobile } from './style';
 
-// import Link from 'next/link';
-
 import OutsideClickHandler from 'react-outside-click-handler';
 
 import { useRouter } from 'next/router';

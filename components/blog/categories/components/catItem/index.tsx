@@ -1,10 +1,6 @@
 import React from 'react';
 
-import Link from 'next/link';
-
 import CatItem from './style';
-
-import Fade from 'react-reveal/Fade';
 
 interface Iprops {
   title: string;
@@ -12,15 +8,11 @@ interface Iprops {
   index: number;
 }
 
-const cpCatItem: React.FC<Iprops> = ({ title, slug, index }) => (
+const cpCatItem: React.FC<Iprops> = ({ title, slug }) => (
   <CatItem>
-    <Fade delay={index * 200}>
-      <Link href={`/blog/categoria/${slug}`}>
-        <a href={`/blog/categoria/${slug}`} title="Confira">
-          {title}
-        </a>
-      </Link>
-    </Fade>
+    <a href={`/blog/categoria/${slug}`} title="Confira">
+      {title}
+    </a>
   </CatItem>
 );
 

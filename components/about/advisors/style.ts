@@ -17,4 +17,10 @@ export default styled.section`
       padding: 0px 15px;
     }
   }
+  @media (max-width: 992px) {
+    h1.default-title strong {
+      font-size: calc(41px + (110 - 41) * ((100vw - 100px) / (1920 - 100)));
+      line-height: calc(41px + (100 - 41) * ((100vw - 100px) / (1920 - 100)));
+    }
+  }
 `;

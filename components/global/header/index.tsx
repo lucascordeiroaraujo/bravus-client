@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Link from 'next/link';
-
 import Header from './style';
 
 import Menu from './components/menu';
@@ -12,15 +10,13 @@ const cpHeader: React.FC = () => (
   <Header>
     <div>
       <Fade>
-        <Link href="/">
-          <a href="/">
-            <img
-              src={require('~/public/images/bravus-investimentos.png')}
-              alt="Bravus Investimentos"
-              title="Bravus Investimentos"
-            />
-          </a>
-        </Link>
+        <a href="/">
+          <img
+            src={require('~/public/images/bravus-investimentos.png')}
+            alt="Bravus Investimentos"
+            title="Bravus Investimentos"
+          />
+        </a>
       </Fade>
       <Fade delay={200}>
         <img

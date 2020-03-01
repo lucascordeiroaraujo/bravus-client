@@ -125,6 +125,9 @@ export default styled.article`
     width: 50%;
   }
   @media (max-width: 576px) {
+    width: 50%;
+  }
+  @media (max-width: 350px) {
     width: 100%;
   }
 `;

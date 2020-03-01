@@ -73,6 +73,10 @@ export default styled.section`
       align-items: center;
       text-align: center;
       margin-bottom: 50px;
+      p {
+        display: flex;
+        justify-content: center;
+      }
     }
   }
   form {

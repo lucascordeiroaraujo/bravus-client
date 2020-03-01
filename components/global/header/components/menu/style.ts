@@ -58,6 +58,9 @@ export const Menu = styled.ul`
       &:hover a {
         color: ${props => props.theme.colors.info};
       }
+      &.active a {
+        color: ${props => props.theme.colors.secondary};
+      }
     }
     &.active {
       opacity: 1;

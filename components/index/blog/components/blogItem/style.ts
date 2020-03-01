@@ -66,10 +66,14 @@ export default styled.article`
     align-items: center;
     text-align: center;
     img {
-      max-height: 350px;
+      max-height: none;
     }
     a.default-button {
       opacity: 1;
+    }
+    div.react-reveal {
+      display: flex;
+      justify-content: center;
     }
     &:last-child {
       margin-bottom: 0px;

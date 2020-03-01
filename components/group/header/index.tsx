@@ -4,8 +4,6 @@ import { useSelector } from 'react-redux';
 
 import Header from './style';
 
-import Link from 'next/link';
-
 import { Container } from '~/public/styles/global';
 
 import Fade from 'react-reveal/Fade';
@@ -28,19 +26,15 @@ const cpHeader: React.FC<Iprops> = ({ type }) => {
     <Header>
       <Container className="container">
         <div>
-          <Link href="/">
-            <a href="/">
-              <Fade>
-                <img
-                  src={logo.url}
-                  alt="Bravus Seguros"
-                  title="Bravus Seguros"
-                  width={logo.width}
-                  height={logo.height}
-                />
-              </Fade>
-            </a>
-          </Link>
+          <a href="/">
+            <img
+              src={logo.url}
+              alt="Bravus Seguros"
+              title="Bravus Seguros"
+              width={logo.width}
+              height={logo.height}
+            />
+          </a>
         </div>
 
         <div>

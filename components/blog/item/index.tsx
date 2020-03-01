@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Link from 'next/link';
-
 import BlogItem from './style';
 
 import Fade from 'react-reveal/Fade';
@@ -22,27 +20,23 @@ const cpBlogItem: React.FC<Iprops> = ({ title, description, slug, image }) => (
       <Fade delay={200}>
         <p>{description}</p>
       </Fade>
-      <Link href={`/blog/${slug}`}>
-        <a href={`/blog/${slug}`} title="Confira" className="default-button">
-          saiba mais..
-        </a>
-      </Link>
+      <a href={`/blog/${slug}`} title="Confira" className="default-button">
+        saiba mais..
+      </a>
     </div>
 
     <div>
-      <Link href={`/blog/${slug}`}>
-        <a href={`/blog/${slug}`} title="Confira">
-          <Fade>
-            <img
-              src={image.sizes['blog-list-page']}
-              alt={title}
-              title={title}
-              width={image.sizes['blog-list-page-width']}
-              height={image.sizes['blog-list-page-height']}
-            />
-          </Fade>
-        </a>
-      </Link>
+      <a href={`/blog/${slug}`} title="Confira">
+        <Fade>
+          <img
+            src={image.sizes['blog-list-page']}
+            alt={title}
+            title={title}
+            width={image.sizes['blog-list-page-width']}
+            height={image.sizes['blog-list-page-height']}
+          />
+        </Fade>
+      </a>
     </div>
   </BlogItem>
 );
