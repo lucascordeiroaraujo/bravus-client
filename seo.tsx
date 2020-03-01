@@ -1,23 +1,32 @@
 import React from 'react';
 
+import { useSelector } from 'react-redux';
+
 import Head from 'next/head';
 
 import { useRouter } from 'next/router';
 
 interface Iprops {
-  title: string;
-  description: string;
-  image: string;
+  page: string;
 }
 
-const Seo: React.FC<Iprops> = ({ title, description, image }) => {
+const Seo: React.FC<Iprops> = ({ page }) => {
   const router = useRouter();
+
+  const { error, data } = useSelector((state: any) => ({
+    error: state[`${page}Data`].error,
+    data: state[`${page}Data`].data
+  }));
+
+  if (error) return null;
+
+  const { seo_title, seo_description, seo_image } = data.acf;
 
   return (
     <Head>
-      <title>{title}</title>
+      <title>{seo_title}</title>
 
-      <meta name="description" content={description} />
+      <meta name="description" content={seo_description} />
 
       <link
         rel="canonical"
@@ -28,17 +37,17 @@ const Seo: React.FC<Iprops> = ({ title, description, image }) => {
 
       <meta property="og:type" content="website" />
 
-      <meta property="og:title" content={title} />
+      <meta property="og:title" content={seo_title} />
 
-      <meta property="og:description" content={description} />
+      <meta property="og:description" content={seo_description} />
 
-      <meta property="og:url" content="https://octadesk.com" />
+      <meta property="og:url" content="https://bravusinvestimentos.com.br" />
 
-      <meta property="og:site_name" content={title} />
+      <meta property="og:site_name" content={seo_title} />
 
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={seo_image.url} />
 
-      <meta property="og:image:secure_url" content={image} />
+      <meta property="og:image:secure_url" content={seo_image.url} />
 
       <meta property="og:image:width" content="484" />
 
@@ -46,11 +55,11 @@ const Seo: React.FC<Iprops> = ({ title, description, image }) => {
 
       <meta name="twitter:card" content="summary_large_image" />
 
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:description" content={seo_description} />
 
-      <meta name="twitter:title" content={title} />
+      <meta name="twitter:title" content={seo_title} />
 
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={seo_image.url} />
     </Head>
   );
 };

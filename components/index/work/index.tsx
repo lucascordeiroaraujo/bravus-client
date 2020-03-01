@@ -30,8 +30,8 @@ const cpWork: React.FC = () => {
 
       <ul>
         {section_2_itens.map((item: Iprops, index: number) => (
-          <Fade bottom delay={index * 200}>
-            <li key={index}>
+          <Fade key={index} bottom delay={index * 200}>
+            <li>
               <span>{item.description}</span>
             </li>
           </Fade>

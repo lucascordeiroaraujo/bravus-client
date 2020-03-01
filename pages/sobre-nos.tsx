@@ -22,9 +22,15 @@ import { loadIndexData } from '~/store/index/actions';
 
 import { loadBlogData } from '~/store/blog/actions';
 
+import { loadBlogCategoriesData } from '~/store/blog-categories/actions';
+
 import { loadContactData } from '~/store/contact/actions';
 
 import { loadAboutData } from '~/store/about/actions';
+
+import { loadSafeData } from '~/store/safe/actions';
+
+import { loadCompaniesData } from '~/store/companies/actions';
 
 interface Iprops {
   dispatch: any;
@@ -34,11 +40,7 @@ interface Iprops {
 
 const About: any = () => (
   <>
-    <Seo
-      title="Bravus Investimentos - Sua XP Investimentos em Londrina"
-      description="A Bravus Investimentos é o maior escritório credenciado da XP Investimentos em Londrina e Região Metropolitana. Nós ajudamos nossos clientes a investir melhor. Agende uma assessoria, invista de acordo com seu perfil, acesse e saiba mais."
-      image="http://localhost/bravus-server/wp-content/uploads/2020/02/bravus-social.jpg"
-    />
+    <Seo page="about" />
 
     <Container>
       <Header />
@@ -59,17 +61,21 @@ const About: any = () => (
 );
 
 About.getInitialProps = async (props: Iprops) => {
-  const { store, isServer } = props.ctx;
+  const { store } = props.ctx;
 
   store.dispatch(loadIndexData());
 
   store.dispatch(loadBlogData());
 
+  store.dispatch(loadBlogCategoriesData());
+
   store.dispatch(loadContactData());
 
   store.dispatch(loadAboutData());
 
-  return { isServer };
+  store.dispatch(loadSafeData());
+
+  store.dispatch(loadCompaniesData());
 };
 
 export default About;

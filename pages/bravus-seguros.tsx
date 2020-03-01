@@ -47,11 +47,7 @@ const ContainerBravusSafe = styled.div`
 
 const BravusSafe: any = () => (
   <>
-    <Seo
-      title="Bravus Investimentos - Sua XP Investimentos em Londrina"
-      description="A Bravus Investimentos é o maior escritório credenciado da XP Investimentos em Londrina e Região Metropolitana. Nós ajudamos nossos clientes a investir melhor. Agende uma assessoria, invista de acordo com seu perfil, acesse e saiba mais."
-      image="http://localhost/bravus-server/wp-content/uploads/2020/02/bravus-social.jpg"
-    />
+    <Seo page="safe" />
 
     <ContainerBravusSafe>
       <Header type="safe" />

@@ -195,8 +195,8 @@ export default createGlobalStyle`
 			top: 0;
 			left: 0;
 			width: 100%;
-			height: 4px;
-			background: ${props => props.theme.colors.primary};
+			height: 5px;
+			background: ${props => props.theme.colors.info};
 		}
 	}
 `;
