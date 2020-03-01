@@ -22,7 +22,7 @@ import Email from '~/public/images/svg/email';
 
 import { URL_API } from '~/utils/config';
 
-import { toggleLoader } from '~/store/global/actions';
+import { toggleFeedbackUser } from '~/store/global/actions';
 
 interface Iprops {
   type: string;
@@ -66,9 +66,11 @@ const cpFooter: React.FC<Iprops> = ({ type }) => {
   const sendContact = async (event: any) => {
     event.preventDefault();
 
-    dispatch(toggleLoader('Aguarde, enviando seu contato', true, false));
+    dispatch(
+      toggleFeedbackUser('Aguarde, enviando seu contato', true, false, false)
+    );
 
-    const response = await fetch(`${URL_API}/wp/v2/bravus/sendContact`, {
+    const response = await fetch(`${URL_API}/bravus/sendContact`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -79,19 +81,27 @@ const cpFooter: React.FC<Iprops> = ({ type }) => {
       })
     });
 
-    if (response.ok) {
-      dispatch(toggleLoader('', false, false));
-    } else {
+    const result = await response.json();
+
+    if (response.ok && result.status) {
       dispatch(
-        toggleLoader(
-          '<span class="emoji">⚠</span><br/> Falha ao enviar seu contato.',
+        toggleFeedbackUser(
+          '<span class="emoji success">✔</span><br/> Mensagem enviada com sucesso.',
+          false,
           false,
           true
         )
       );
+    } else {
+      dispatch(
+        toggleFeedbackUser(
+          '<span class="emoji error">⚠</span><br/> Falha ao enviar seu contato.',
+          false,
+          true,
+          false
+        )
+      );
     }
-
-    console.log('ok', Object.values(state), state, response);
   };
 
   return (

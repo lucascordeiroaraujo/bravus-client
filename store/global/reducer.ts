@@ -9,7 +9,8 @@ const reducer = (state = initialState, action: any) => {
         ...state,
         label: action.text,
         loader: action.loader,
-        error: action.error
+        error: action.error,
+        success: action.success
       };
 
     default:

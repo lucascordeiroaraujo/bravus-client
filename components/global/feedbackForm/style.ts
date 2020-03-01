@@ -70,9 +70,14 @@ export default styled.div`
     text-align: center;
     span.emoji {
       font-size: 100px;
-      color: #d8484f;
       position: relative;
       top: -5px;
+      &.error {
+        color: #d8484f;
+      }
+      &.success {
+        color: #479e4f;
+      }
     }
   }
   & > button {
