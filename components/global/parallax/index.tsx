@@ -6,6 +6,8 @@ import { Parallax } from 'react-parallax';
 
 import Container from './style';
 
+import Fade from 'react-reveal/Fade';
+
 interface Iprops {
   item: string;
   type: string;
@@ -27,8 +29,12 @@ const cpParallax: React.FC<Iprops> = ({ item, type }) => {
         strength={400}
       >
         <div>
-          <p>{data.acf[`${item}_description`]}</p>
-          <span>{data.acf[`${item}_author`]}</span>
+          <Fade bottom>
+            <p>{data.acf[`${item}_description`]}</p>
+          </Fade>
+          <Fade bottom delay={200}>
+            <span>{data.acf[`${item}_author`]}</span>
+          </Fade>
         </div>
 
         <div style={{ height: '98vh' }} />

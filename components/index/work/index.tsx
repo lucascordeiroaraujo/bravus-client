@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 
 import Work from './style';
 
+import Fade from 'react-reveal/Fade';
+
 interface Iprops {
   description: string;
 }
@@ -20,15 +22,19 @@ const cpWork: React.FC = () => {
 
   return (
     <Work>
-      <h1 className="default-title">
-        <strong>{section_2_title}</strong>
-      </h1>
+      <Fade bottom>
+        <h1 className="default-title">
+          <strong>{section_2_title}</strong>
+        </h1>
+      </Fade>
 
       <ul>
         {section_2_itens.map((item: Iprops, index: number) => (
-          <li key={index}>
-            <span>{item.description}</span>
-          </li>
+          <Fade bottom delay={index * 200}>
+            <li key={index}>
+              <span>{item.description}</span>
+            </li>
+          </Fade>
         ))}
       </ul>
     </Work>

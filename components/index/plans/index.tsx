@@ -6,6 +6,8 @@ import Plans from './style';
 
 import Plan from './components/plan';
 
+import Fade from 'react-reveal/Fade';
+
 interface Iprops {
   title: string;
   sub_title: string;
@@ -25,8 +27,12 @@ const cpPlans: React.FC = () => {
   return (
     <Plans id="planos">
       <h1 className="default-title">
-        <strong>Planos</strong>
-        <span>Linha fina</span>
+        <Fade bottom>
+          <strong>Planos</strong>
+        </Fade>
+        <Fade bottom delay={200}>
+          <span>Linha fina</span>
+        </Fade>
       </h1>
 
       {section_4_plans.map((item: Iprops, index: number) => (

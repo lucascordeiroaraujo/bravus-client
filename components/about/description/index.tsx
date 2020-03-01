@@ -6,6 +6,8 @@ import Description from './style';
 
 import { Container } from '~/public/styles/global';
 
+import Fade from 'react-reveal/Fade';
+
 const cpDescription: React.FC = () => {
   const { error, data } = useSelector((state: any) => ({
     error: state.aboutData.error,
@@ -19,25 +21,33 @@ const cpDescription: React.FC = () => {
   return (
     <Description>
       <Container>
-        <h1 className="default-title before-info">
-          <strong>Sobre nós</strong>
-        </h1>
+        <Fade>
+          <h1 className="default-title before-info">
+            <strong>Sobre nós</strong>
+          </h1>
+        </Fade>
       </Container>
 
       <div className="description-content">
         <div>
-          <h2>Quem Somos?</h2>
+          <Fade>
+            <h2>Quem Somos?</h2>
+          </Fade>
 
-          <div dangerouslySetInnerHTML={{ __html: who_we_are }} />
+          <Fade delay={200}>
+            <div dangerouslySetInnerHTML={{ __html: who_we_are }} />
+          </Fade>
         </div>
 
-        <img
-          src={imagem_who_we_are.url}
-          alt="Quem Somos? - Bravus Investimentos"
-          title="Quem Somos? - Bravus Investimentos"
-          width={imagem_who_we_are.width}
-          height={imagem_who_we_are.height}
-        />
+        <Fade>
+          <img
+            src={imagem_who_we_are.url}
+            alt="Quem Somos? - Bravus Investimentos"
+            title="Quem Somos? - Bravus Investimentos"
+            width={imagem_who_we_are.width}
+            height={imagem_who_we_are.height}
+          />
+        </Fade>
       </div>
     </Description>
   );

@@ -2,11 +2,9 @@ import styled from 'styled-components';
 
 export default styled.article`
   width: 31%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  position: relative;
+  div.react-reveal {
+    width: 100%;
+  }
   img,
   p,
   a {

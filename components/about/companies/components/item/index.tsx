@@ -2,6 +2,8 @@ import React from 'react';
 
 import Item from './style';
 
+import Fade from 'react-reveal/Fade';
+
 interface Iprops {
   name: string;
   description: string;
@@ -10,22 +12,29 @@ interface Iprops {
 
 const cpItem: React.FC<Iprops> = ({ name, description, image }) => (
   <Item>
-    <img
-      src={image.url}
-      alt={name}
-      title={name}
-      width={image.width}
-      height={image.height}
-    />
-
+    <Fade>
+      <img
+        src={image.url}
+        alt={name}
+        title={name}
+        width={image.width}
+        height={image.height}
+      />
+    </Fade>
     <div>
-      <strong>{name}</strong>
+      <Fade>
+        <strong>{name}</strong>
+      </Fade>
 
-      <div dangerouslySetInnerHTML={{ __html: description }} />
+      <Fade delay={200}>
+        <div dangerouslySetInnerHTML={{ __html: description }} />
+      </Fade>
 
-      <a href="#" title="">
-        Faça uma cotação
-      </a>
+      <Fade delay={400}>
+        <a href="#" title="">
+          Faça uma cotação
+        </a>
+      </Fade>
     </div>
   </Item>
 );

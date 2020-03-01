@@ -6,6 +6,8 @@ import InputMask from 'react-input-mask';
 
 import CallToAction from './style';
 
+import Fade from 'react-reveal/Fade';
+
 const cpCallToAction: React.FC = () => {
   const { error, data } = useSelector((state: any) => ({
     error: state.indexData.error,
@@ -18,31 +20,43 @@ const cpCallToAction: React.FC = () => {
 
   return (
     <CallToAction id="abra-sua-conta">
-      <div dangerouslySetInnerHTML={{ __html: section_1_description }} />
+      <Fade>
+        <div dangerouslySetInnerHTML={{ __html: section_1_description }} />
+      </Fade>
 
       <form>
-        <strong>Abra sua conta</strong>
+        <Fade bottom>
+          <strong>Abra sua conta</strong>
+        </Fade>
 
-        <input type="text" placeholder="NOME" required />
+        <Fade bottom delay={200}>
+          <input type="text" placeholder="NOME" required />
+        </Fade>
 
-        <InputMask
-          type="tel"
-          required
-          mask="99-99999999?"
-          placeholder="TELEFONE"
-          formatChars={{
-            9: '[0-9]',
-            '?': '[0-9]'
-          }}
-        />
+        <Fade bottom delay={400}>
+          <InputMask
+            type="tel"
+            required
+            mask="99-99999999?"
+            placeholder="TELEFONE"
+            formatChars={{
+              9: '[0-9]',
+              '?': '[0-9]'
+            }}
+          />
+        </Fade>
 
-        <input type="submit" value="Cadastrar" />
+        <Fade bottom delay={600}>
+          <input type="submit" value="Cadastrar" />
+        </Fade>
 
-        <span>
-          Fique tranquilo! Seus dados não serão utilizados
-          <br />
-          para envio de qualquer tipo de SPAM.
-        </span>
+        <Fade bottom delay={800}>
+          <span>
+            Fique tranquilo! Seus dados não serão utilizados
+            <br />
+            para envio de qualquer tipo de SPAM.
+          </span>
+        </Fade>
       </form>
     </CallToAction>
   );

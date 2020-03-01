@@ -5,4 +5,7 @@ export default styled.section`
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+  div.react-reveal {
+    width: 100%;
+  }
 `;

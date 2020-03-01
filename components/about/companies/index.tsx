@@ -8,6 +8,8 @@ import { Container } from '~/public/styles/global';
 
 import Item from './components/item';
 
+import Fade from 'react-reveal/Fade';
+
 interface Iprops {
   name: string;
   description: string;
@@ -27,9 +29,11 @@ const cpCompanies: React.FC = () => {
   return (
     <Companies>
       <Container>
-        <h1 className="default-title before-info">
-          <strong>Outras empresas</strong>
-        </h1>
+        <Fade>
+          <h1 className="default-title before-info">
+            <strong>Outras empresas</strong>
+          </h1>
+        </Fade>
       </Container>
 
       <div className="container-companies">

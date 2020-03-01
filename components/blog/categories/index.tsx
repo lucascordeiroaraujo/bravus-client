@@ -17,7 +17,7 @@ const cpCategories: React.FC = () => {
   return (
     <Categories>
       {data.map((item: any, index: number) => (
-        <CatItem key={index} title={item.name} slug={item.slug} />
+        <CatItem key={index} title={item.name} slug={item.slug} index={index} />
       ))}
     </Categories>
   );

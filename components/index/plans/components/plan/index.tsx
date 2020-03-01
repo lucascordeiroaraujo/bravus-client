@@ -2,6 +2,8 @@ import React from 'react';
 
 import Plan from './style';
 
+import Fade from 'react-reveal/Fade';
+
 interface Iprops {
   title: string;
   sub_title: string;
@@ -12,19 +14,25 @@ const cpPlan: React.FC<Iprops> = ({ title, sub_title, image }) => (
   <Plan>
     <div>
       <div>
-        <h2>{title}</h2>
+        <Fade bottom>
+          <h2>{title}</h2>
+        </Fade>
       </div>
 
-      <p>{sub_title}</p>
+      <Fade bottom delay={200}>
+        <p>{sub_title}</p>
+      </Fade>
     </div>
 
-    <img
-      src={image.sizes.medium_large}
-      alt={image.alt}
-      title={image.description}
-      width={image.sizes['medium_large-width']}
-      height={image.sizes['medium_large-height']}
-    />
+    <Fade>
+      <img
+        src={image.sizes.medium_large}
+        alt={image.alt}
+        title={image.description}
+        width={image.sizes['medium_large-width']}
+        height={image.sizes['medium_large-height']}
+      />
+    </Fade>
   </Plan>
 );
 

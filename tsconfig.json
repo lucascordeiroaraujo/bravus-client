@@ -26,5 +26,5 @@
   },
   "exclude": ["dist", ".next", "out", "next.config.js", "node_modules"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "server.js"],
-  "files": ["public/styles/styled.d.ts"]
+  "files": ["public/styles/styled.d.ts", "public/styles/reveal.d.ts"]
 }

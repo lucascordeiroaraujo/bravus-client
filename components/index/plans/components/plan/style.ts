@@ -12,6 +12,7 @@ export default styled.article`
     align-items: flex-start;
     flex-direction: column;
     max-width: 50%;
+    order: 1;
     div {
       width: 100%;
       h2 {
@@ -38,6 +39,7 @@ export default styled.article`
     width: 100%;
     max-width: 47%;
     margin-left: 3%;
+    order: 2;
   }
   &:last-child {
     div {
@@ -45,6 +47,15 @@ export default styled.article`
         color: ${props => props.theme.colors.secondary};
         background-color: ${props => props.theme.colors.light};
       }
+    }
+  }
+  &:nth-child(even) {
+    & > div {
+      order: 2;
+    }
+    img {
+      order: 1;
+      margin: 0px 3% 0px 0px;
     }
   }
   @media (max-width: 992px) {

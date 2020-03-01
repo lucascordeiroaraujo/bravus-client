@@ -8,6 +8,8 @@ import Link from 'next/link';
 
 import { Container } from '~/public/styles/global';
 
+import Fade from 'react-reveal/Fade';
+
 interface Iprops {
   type: string;
 }
@@ -28,39 +30,49 @@ const cpHeader: React.FC<Iprops> = ({ type }) => {
         <div>
           <Link href="/">
             <a href="/">
-              <img
-                src={logo.url}
-                alt="Bravus Seguros"
-                title="Bravus Seguros"
-                width={logo.width}
-                height={logo.height}
-              />
+              <Fade>
+                <img
+                  src={logo.url}
+                  alt="Bravus Seguros"
+                  title="Bravus Seguros"
+                  width={logo.width}
+                  height={logo.height}
+                />
+              </Fade>
             </a>
           </Link>
         </div>
 
         <div>
-          <h1>O que fazemos?</h1>
+          <Fade>
+            <h1>O que fazemos?</h1>
+          </Fade>
 
-          <div dangerouslySetInnerHTML={{ __html: what_we_do }} />
+          <Fade delay={200}>
+            <div dangerouslySetInnerHTML={{ __html: what_we_do }} />
+          </Fade>
         </div>
 
         <div>
-          <img
-            src={require('~/public/images/xp-investimentos.png')}
-            alt="XP Investimentos"
-            title="XP Investimentos"
-            width="239"
-            height="95"
-          />
+          <Fade>
+            <img
+              src={require('~/public/images/xp-investimentos.png')}
+              alt="XP Investimentos"
+              title="XP Investimentos"
+              width="239"
+              height="95"
+            />
+          </Fade>
 
-          <img
-            src={require('~/public/images/s20.png')}
-            alt="S20"
-            title="S20"
-            width="227"
-            height="58"
-          />
+          <Fade delay={200}>
+            <img
+              src={require('~/public/images/s20.png')}
+              alt="S20"
+              title="S20"
+              width="227"
+              height="58"
+            />
+          </Fade>
         </div>
       </Container>
     </Header>

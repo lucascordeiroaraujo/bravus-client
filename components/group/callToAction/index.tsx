@@ -6,6 +6,8 @@ import CallToAction from './style';
 
 import { Container } from '~/public/styles/global';
 
+import Fade from 'react-reveal/Fade';
+
 interface Iprops {
   type: string;
 }
@@ -23,13 +25,19 @@ const cpCallToAction: React.FC<Iprops> = ({ type }) => {
   return (
     <CallToAction>
       <Container className="container">
-        <h1 className={type}>{call_to_action_title}</h1>
-
-        <div dangerouslySetInnerHTML={{ __html: call_to_action_description }} />
-
-        <a href="#contato" title="Confira" className={type}>
-          Quero o contato de um acesso
-        </a>
+        <Fade>
+          <h1 className={type}>{call_to_action_title}</h1>
+        </Fade>
+        <Fade delay={200}>
+          <div
+            dangerouslySetInnerHTML={{ __html: call_to_action_description }}
+          />
+        </Fade>
+        <Fade delay={400}>
+          <a href="#contato" title="Confira" className={type}>
+            Quero o contato de um acesso
+          </a>
+        </Fade>
       </Container>
     </CallToAction>
   );

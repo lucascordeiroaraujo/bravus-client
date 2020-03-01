@@ -8,6 +8,8 @@ import Companies from './style';
 
 import { Container } from '~/public/styles/global';
 
+import Fade from 'react-reveal/Fade';
+
 interface Iprops {
   type: string;
 }
@@ -27,13 +29,15 @@ const cpCompanies: React.FC<Iprops> = ({ type }) => {
       <Container className="container">
         <div>
           <div>
-            <h1 className="default-title before-info">
-              <strong>
-                Mais
-                <br /> empresas
-                <br /> do Grupo
-              </strong>
-            </h1>
+            <Fade>
+              <h1 className="default-title before-info">
+                <strong>
+                  Mais
+                  <br /> empresas
+                  <br /> do Grupo
+                </strong>
+              </h1>
+            </Fade>
           </div>
 
           <div>
@@ -81,27 +85,34 @@ const cpCompanies: React.FC<Iprops> = ({ type }) => {
           </div>
         </div>
 
-        <h2>Informações Legais</h2>
+        <Fade>
+          <h2>Informações Legais</h2>
+        </Fade>
 
-        <div dangerouslySetInnerHTML={{ __html: description }} />
+        <Fade delay={200}>
+          <div dangerouslySetInnerHTML={{ __html: description }} />
+        </Fade>
 
-        <strong>
-          Copyright &copy;
-          {new Date().getFullYear()}| Bravus Investimentos | Todos os direitos
-          reservados.
-        </strong>
+        <Fade delay={400}>
+          <strong>
+            Copyright &copy;
+            {new Date().getFullYear()}| Bravus Investimentos | Todos os direitos
+            reservados.
+          </strong>
+        </Fade>
 
         <div className="logos">
           {logos.map((item: any, index: number) => (
-            <img
-              src={item.image.url}
-              alt={item.image.alt}
-              title={item.image.title}
-              width={item.image.width}
-              height={item.image.height}
-              className={type}
-              key={index}
-            />
+            <Fade bottom delay={index * 100} key={index}>
+              <img
+                src={item.image.url}
+                alt={item.image.alt}
+                title={item.image.title}
+                width={item.image.width}
+                height={item.image.height}
+                className={type}
+              />
+            </Fade>
           ))}
         </div>
       </Container>

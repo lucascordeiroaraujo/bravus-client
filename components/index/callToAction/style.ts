@@ -83,6 +83,9 @@ export default styled.section`
     align-items: flex-start;
     flex-direction: column;
     background-color: #fff;
+    .react-reveal {
+      width: 100%;
+    }
     strong {
       width: 100%;
       font-family: 'DINProBold';

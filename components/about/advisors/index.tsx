@@ -8,6 +8,8 @@ import { Container } from '~/public/styles/global';
 
 import AdvItem from './components/advItem';
 
+import Fade from 'react-reveal/Fade';
+
 interface Iprops {
   name: string;
   image: any;
@@ -29,9 +31,11 @@ const cpAdvisors: React.FC = () => {
   return (
     <Advisors>
       <Container>
-        <h1 className="default-title before-info">
-          <strong>Assessores</strong>
-        </h1>
+        <Fade>
+          <h1 className="default-title before-info">
+            <strong>Assessores</strong>
+          </h1>
+        </Fade>
       </Container>
 
       <div>

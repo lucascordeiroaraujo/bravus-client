@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 
 import History from './style';
 
+import Fade from 'react-reveal/Fade';
+
 const cpHistory: React.FC = () => {
   const { error, data } = useSelector((state: any) => ({
     error: state.aboutData.error,
@@ -16,18 +18,23 @@ const cpHistory: React.FC = () => {
 
   return (
     <History>
-      <img
-        src={imagem_our_story.url}
-        alt="Nossa História - Bravus Investimentos"
-        title="Nossa História - Bravus Investimentos"
-        width={imagem_our_story.width}
-        height={imagem_our_story.height}
-      />
-
+      <Fade>
+        <img
+          src={imagem_our_story.url}
+          alt="Nossa História - Bravus Investimentos"
+          title="Nossa História - Bravus Investimentos"
+          width={imagem_our_story.width}
+          height={imagem_our_story.height}
+        />
+      </Fade>
       <div className="description-content">
-        <h2>Nossa História</h2>
+        <Fade>
+          <h2>Nossa História</h2>
+        </Fade>
 
-        <div dangerouslySetInnerHTML={{ __html: our_story }} />
+        <Fade delay={200}>
+          <div dangerouslySetInnerHTML={{ __html: our_story }} />
+        </Fade>
       </div>
     </History>
   );
