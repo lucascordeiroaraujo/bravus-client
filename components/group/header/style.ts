@@ -73,7 +73,9 @@ export default styled.header`
           a {
             width: 100%;
             display: flex;
+            align-items: center;
             justify-content: center;
+            flex-direction: column;
           }
         }
         &:last-child {
