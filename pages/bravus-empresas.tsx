@@ -14,17 +14,7 @@ import Groups from '~/components/global/groups';
 
 import styled from 'styled-components';
 
-import { loadIndexData } from '~/store/index/actions';
-
-import { loadBlogData } from '~/store/blog/actions';
-
-import { loadBlogCategoriesData } from '~/store/blog-categories/actions';
-
 import { loadContactData } from '~/store/contact/actions';
-
-import { loadAboutData } from '~/store/about/actions';
-
-import { loadSafeData } from '~/store/safe/actions';
 
 import { loadCompaniesData } from '~/store/companies/actions';
 
