@@ -11,19 +11,21 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   const server = express();
 
-  server.get('/blog/:slug', (req, res) =>
-    app.render(req, res, '/blog-post', {
+  server.get('/blog/:slug', (req, res) => {
+    return app.render(req, res, '/blog-post', {
       slug: req.params.slug
-    })
-  );
+    });
+  });
 
-  server.get('/blog/categoria/:slug', (req, res) =>
-    app.render(req, res, '/blog-post', {
+  server.get('/blog/categoria/:slug', (req, res) => {
+    return app.render(req, res, '/blog-post', {
       categoria: req.params.slug
-    })
-  );
+    });
+  });
 
-  server.get('*', (req, res) => handle(req, res));
+  server.all('*', (req, res) => {
+    return handle(req, res);
+  });
 
   server.listen(3000, err => {
     if (err) throw err;

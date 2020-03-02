@@ -70,6 +70,8 @@ export default styled.article`
     }
     a.default-button {
       opacity: 1;
+      left: 50%;
+      margin-left: -65px;
     }
     div.react-reveal {
       display: flex;
