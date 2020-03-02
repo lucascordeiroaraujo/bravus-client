@@ -6,6 +6,8 @@ import blogSagas from './blog/sagas';
 
 import blogCategoriesSagas from './blog-categories/sagas';
 
+import blogPostSagas from './blog-post/sagas';
+
 import contactSagas from './contact/sagas';
 
 import aboutSagas from './about/sagas';
@@ -17,10 +19,11 @@ import companiesSagas from './companies/sagas';
 function* rootSaga() {
   yield all([
     ...indexSagas,
-    ...contactSagas,
-    ...aboutSagas,
     ...blogSagas,
     ...blogCategoriesSagas,
+    ...blogPostSagas,
+    ...contactSagas,
+    ...aboutSagas,
     ...safeSagas,
     ...companiesSagas
   ]);

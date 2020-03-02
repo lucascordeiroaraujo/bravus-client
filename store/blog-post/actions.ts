@@ -4,9 +4,10 @@ export const actionTypes = {
   LOAD_BLOG_POST_DATA_FAILURE: 'LOAD_BLOG_POST_DATA_FAILURE'
 };
 
-export function loadBlogPostData() {
+export function loadBlogPostData(slug: string) {
   return {
-    type: actionTypes.LOAD_BLOG_POST_DATA
+    type: actionTypes.LOAD_BLOG_POST_DATA,
+    slug
   };
 }
 

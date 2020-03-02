@@ -68,19 +68,9 @@ const BravusCompanies: any = () => (
 BravusCompanies.getInitialProps = async (props: Iprops) => {
   const { store } = props.ctx;
 
-  store.dispatch(loadIndexData());
-
-  store.dispatch(loadBlogData());
-
-  store.dispatch(loadBlogCategoriesData());
+  store.dispatch(loadCompaniesData());
 
   store.dispatch(loadContactData());
-
-  store.dispatch(loadAboutData());
-
-  store.dispatch(loadSafeData());
-
-  store.dispatch(loadCompaniesData());
 };
 
 export default BravusCompanies;

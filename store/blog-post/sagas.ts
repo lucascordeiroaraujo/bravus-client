@@ -14,9 +14,9 @@ import 'isomorphic-unfetch';
 
 es6promise.polyfill();
 
-function* loadDataSaga() {
+function* loadDataSaga(actions: any) {
   try {
-    const response = yield fetch(`${URL_API}/wp/v2/blog-category`);
+    const response = yield fetch(`${URL_API}/wp/v2/blog&slug=${actions.slug}`);
 
     const result = yield response.json();
 

@@ -20,7 +20,8 @@ const Seo: React.FC<Iprops> = ({ page }) => {
 
   if (error) return null;
 
-  const { seo_title, seo_description, seo_image } = data.acf;
+  const { seo_title, seo_description, seo_image } =
+    page === 'blogPost' ? data[0].acf : data.acf;
 
   return (
     <Head>

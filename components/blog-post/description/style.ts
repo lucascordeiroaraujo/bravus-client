@@ -8,6 +8,14 @@ export default styled.article`
   flex-direction: column;
   text-align: center;
   margin-top: 100px;
+  & > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
   h1,
   h2,
   h3,
