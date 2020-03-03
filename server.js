@@ -18,8 +18,8 @@ app.prepare().then(() => {
   });
 
   server.get('/blog/categoria/:slug', (req, res) => {
-    return app.render(req, res, '/blog-post', {
-      categoria: req.params.slug
+    return app.render(req, res, '/blog', {
+      category: req.params.slug
     });
   });
 

@@ -18,6 +18,7 @@ export default styled.div`
     width: 100%;
     max-width: 170px;
     height: auto;
+    border: 1px solid #333;
   }
   div {
     width: calc(100% - 170px);

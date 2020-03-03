@@ -12,12 +12,12 @@ const cpBlogPost: React.FC = () => {
 
   if (error) return null;
 
-  const { image, description } = data[0].acf;
+  const { image, description } = data.post[0].acf;
 
   return (
     <Description>
       <h1>
-        <span>{data[0].title.rendered}</span>
+        <span>{data.post[0].title.rendered}</span>
       </h1>
       <img
         src={image.url}

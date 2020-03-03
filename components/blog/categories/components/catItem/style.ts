@@ -17,10 +17,8 @@ export default styled.li`
       background-color: #576473 !important;
     }
   }
-  &:first-child a {
-    background-color: ${props => props.theme.colors.light};
-  }
-  &:last-child a {
+  &.active a {
+    color: ${props => props.theme.colors.light};
     background-color: ${props => props.theme.colors.primary};
   }
   @media (max-width: 992px) {

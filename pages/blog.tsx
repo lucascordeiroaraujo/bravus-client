@@ -47,9 +47,9 @@ const Blog: any = () => (
 );
 
 Blog.getInitialProps = async (props: Iprops) => {
-  const { store } = props.ctx;
+  const { store, query } = props.ctx;
 
-  store.dispatch(loadBlogData());
+  store.dispatch(loadBlogData(query.category ? query.category : ''));
 
   store.dispatch(loadBlogCategoriesData());
 

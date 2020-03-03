@@ -1,22 +1,37 @@
 import React from 'react';
 
+import { useSelector } from 'react-redux';
+
 import Author from './style';
 
-const cpAuthor: React.FC = () => (
-  <Author>
-    <img src="https://i.picsum.photos/id/700/170/140.jpg" alt="" />
-    <div>
-      <strong>Gabriel Vansolini Soldado</strong>
+const cpAuthor: React.FC = () => {
+  const { error, data } = useSelector((state: any) => ({
+    error: state.blogPostData.error,
+    data: state.blogPostData.data
+  }));
 
-      <span className="line" />
+  if (error) return null;
 
-      <p>
-        Ros ac lacinia ornare. Sed vestibulum imperdiet ligula sit amet
-        eleifend. Donec condimentum fermentum finibus. Nunc sollicitudin tortor
-        dui, ve.
-      </p>
-    </div>
-  </Author>
-);
+  const { user_firstname, user_avatar, user_description } = data.author.acf;
+
+  return (
+    <Author>
+      <img
+        src={user_avatar.sizes.medium}
+        alt={user_avatar.alt}
+        title={user_avatar.title}
+        width={user_avatar.sizes['medium-width']}
+        height={user_avatar.sizes['medium-height']}
+      />
+      <div>
+        <strong>{user_firstname}</strong>
+
+        <span className="line" />
+
+        <p>{user_description}</p>
+      </div>
+    </Author>
+  );
+};
 
 export default cpAuthor;

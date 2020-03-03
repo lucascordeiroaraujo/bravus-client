@@ -65,7 +65,7 @@ Home.getInitialProps = async (props: Iprops) => {
 
   store.dispatch(loadIndexData());
 
-  store.dispatch(loadBlogData());
+  store.dispatch(loadBlogData(''));
 
   store.dispatch(loadContactData());
 };

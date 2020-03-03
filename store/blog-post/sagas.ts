@@ -16,9 +16,22 @@ es6promise.polyfill();
 
 function* loadDataSaga(actions: any) {
   try {
-    const response = yield fetch(`${URL_API}/wp/v2/blog&slug=${actions.slug}`);
+    const responsePost = yield fetch(
+      `${URL_API}/wp/v2/blog&slug=${actions.slug}`
+    );
 
-    const result = yield response.json();
+    const resultPost = yield responsePost.json();
+
+    const responseAuthor = yield fetch(
+      `${URL_API}/wp/v2/users/${resultPost[0].acf.author}`
+    );
+
+    const resultAuthor = yield responseAuthor.json();
+
+    const result = {
+      post: resultPost,
+      author: resultAuthor
+    };
 
     yield put(loadBlogPostDataSuccess(result));
   } catch (err) {
