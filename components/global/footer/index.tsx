@@ -44,7 +44,7 @@ const cpFooter: React.FC<Iprops> = ({ type }) => {
 
   const splitWhatsApp = whatsapp.split(' ');
 
-  const [state, setState] = React.useState({
+  const INITIAL_STATE = {
     name: {
       key: 'Nome',
       value: ''
@@ -61,7 +61,9 @@ const cpFooter: React.FC<Iprops> = ({ type }) => {
       key: 'Mensagem',
       value: ''
     }
-  });
+  };
+
+  const [state, setState] = React.useState(INITIAL_STATE);
 
   const dispatch = useDispatch();
 
@@ -94,6 +96,8 @@ const cpFooter: React.FC<Iprops> = ({ type }) => {
           true
         )
       );
+
+      setState(INITIAL_STATE);
     } else {
       dispatch(
         toggleFeedbackUser(

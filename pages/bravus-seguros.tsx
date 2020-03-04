@@ -14,9 +14,9 @@ import Groups from '~/components/global/groups';
 
 import styled from 'styled-components';
 
-import { loadContactData } from '~/store/contact/actions';
-
 import { loadSafeData } from '~/store/safe/actions';
+
+import { loadContactData } from '~/store/contact/actions';
 
 interface Iprops {
   dispatch: any;
