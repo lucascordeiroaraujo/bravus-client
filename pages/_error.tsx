@@ -16,32 +16,23 @@ interface Iprops {
   getInitialProps: any;
 }
 
-const ErrorPage: any = (props: any) => {
-  console.log(props);
-
-  return (
-    <>
-      <Head>
-        <title>Bravus Investimentos</title>
-        <meta name="robots" content="noindex" />
-      </Head>
-      <Container>
-        <Header />
-      </Container>
-      <Footer type="" />
-    </>
-  );
-};
+const ErrorPage: any = () => (
+  <>
+    <Head>
+      <title>Bravus Investimentos</title>
+      <meta name="robots" content="noindex" />
+    </Head>
+    <Container>
+      <Header />
+    </Container>
+    <Footer type="" />
+  </>
+);
 
 ErrorPage.getInitialProps = async (props: Iprops) => {
-  const { store, err, query } = props.ctx;
+  const { store } = props.ctx;
 
   store.dispatch(loadContactData());
-
-  return {
-    err,
-    query
-  };
 };
 
 export default ErrorPage;

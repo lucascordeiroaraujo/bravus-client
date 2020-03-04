@@ -25,7 +25,6 @@ _bravusinvestimentos.com.br_
 - [x] editorconfig
 - [x] Root Import, alias ~
 - [x] Dotenv for .env's
-- [x] Custom server with express
 - [x] Custom config for vscode
 
 #### 3. Back-End

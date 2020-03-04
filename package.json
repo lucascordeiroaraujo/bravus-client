@@ -2,14 +2,13 @@
   "name": "bravus-client",
   "version": "1.0.0",
   "scripts": {
-    "dev": "node server.js",
-    "build": "next build && tsc --project tsconfig.server.json",
-    "start": "cross-env NODE_ENV=production node server.js"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "add": "^2.0.6",
-    "cross-env": "^7.0.0",
     "es6-promise": "^4.2.8",
     "express": "^4.17.1",
     "isomorphic-unfetch": "^3.0.0",

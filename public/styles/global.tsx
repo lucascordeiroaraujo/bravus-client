@@ -199,6 +199,9 @@ export default createGlobalStyle`
 			background: ${props => props.theme.colors.info};
 		}
 	}
+  .react-reveal{
+		opacity: 0;
+	}
 `;
 
 export const Container = styled.div`

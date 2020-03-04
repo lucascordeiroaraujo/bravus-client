@@ -169,6 +169,14 @@ class MyApp extends App<StoreProps> {
             </>
           </ThemeProvider>
         </Provider>
+
+        <noscript>
+          <style
+            dangerouslySetInnerHTML={{
+              __html: '.react-reveal {opacity: 1}'
+            }}
+          />
+        </noscript>
       </>
     );
   }
