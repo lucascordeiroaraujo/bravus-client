@@ -1,4 +1,10 @@
 {
   "version": 2,
-  "alias": ["bravus-investimentos"]
+  "alias": ["bravus-investimentos"],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/server.js"
+    }
+  ]
 }
