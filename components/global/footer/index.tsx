@@ -85,9 +85,7 @@ const cpFooter: React.FC<Iprops> = ({ type }) => {
       })
     });
 
-    const result = await response.json();
-
-    if (response.ok && result.status) {
+    if (response.status === 200) {
       dispatch(
         toggleFeedbackUser(
           '<span class="emoji success">✔</span><br/> Mensagem enviada com sucesso.',
