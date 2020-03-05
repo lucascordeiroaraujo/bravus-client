@@ -46,7 +46,7 @@ const Home: any = () => (
 
     <Parallax item="section_3" type="first-index" />
 
-    <Container>
+    <Container id="planos">
       <Plans />
 
       <Blog />

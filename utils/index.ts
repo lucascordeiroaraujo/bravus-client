@@ -17,3 +17,14 @@ export const truncate = (txt: string, limit: number) => {
   }
   return txt.replace(/(<([^>]+)>)/gi, '');
 };
+
+export const handleCustomScroll = (e: any) => {
+  e.preventDefault();
+
+  window.scrollTo({
+    top:
+      document.querySelector(e.target.getAttribute('data-element')).offsetTop -
+      20,
+    behavior: 'smooth'
+  });
+};

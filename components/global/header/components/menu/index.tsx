@@ -8,6 +8,8 @@ import { useRouter } from 'next/router';
 
 import Fade from 'react-reveal/Fade';
 
+import { handleCustomScroll } from '~/utils';
+
 const cpMenu: React.FC = () => {
   const [state, setState] = React.useState(false);
 
@@ -30,7 +32,16 @@ const cpMenu: React.FC = () => {
 
         <Fade delay={600}>
           <li>
-            <a href="/#planos" onClick={() => setState(false)}>
+            <a
+              href="/#planos"
+              data-element="#planos"
+              onClick={e => {
+                if (router.pathname === '/') {
+                  handleCustomScroll(e);
+                }
+                setState(false);
+              }}
+            >
               Planos
             </a>
           </li>
@@ -52,7 +63,14 @@ const cpMenu: React.FC = () => {
 
         <Fade delay={200}>
           <li>
-            <a href="/#contato" onClick={() => setState(false)}>
+            <a
+              href="/#contato"
+              data-element="footer#contato"
+              onClick={e => {
+                handleCustomScroll(e);
+                setState(false);
+              }}
+            >
               Contato
             </a>
           </li>
@@ -60,7 +78,16 @@ const cpMenu: React.FC = () => {
 
         <Fade>
           <li>
-            <a href="/#abra-sua-conta" onClick={() => setState(false)}>
+            <a
+              href="/#abra-sua-conta"
+              data-element="#abra-sua-conta"
+              onClick={e => {
+                if (router.pathname === '/') {
+                  handleCustomScroll(e);
+                }
+                setState(false);
+              }}
+            >
               Abra sua conta
             </a>
           </li>

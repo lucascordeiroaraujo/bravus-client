@@ -25,7 +25,7 @@ const cpPlans: React.FC = () => {
   const { section_4_plans } = data.acf;
 
   return (
-    <Plans id="planos">
+    <Plans>
       <h1 className="default-title">
         <Fade bottom>
           <strong>Planos</strong>

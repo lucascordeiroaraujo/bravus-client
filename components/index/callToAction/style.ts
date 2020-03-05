@@ -86,6 +86,7 @@ export default styled.section`
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
+    transition: 0.5s;
     background-color: #fff;
     .react-reveal {
       width: 100%;
@@ -166,6 +167,20 @@ export default styled.section`
       input {
         text-align: center;
       }
+    }
+    @keyframes blink-animation {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    &.active {
+      animation: blink-animation 1s;
     }
   }
   @media (max-width: 992px) {

@@ -8,6 +8,8 @@ import CallToAction from './style';
 
 import Fade from 'react-reveal/Fade';
 
+import { useRouter } from 'next/router';
+
 const cpCallToAction: React.FC = () => {
   const { error, data } = useSelector((state: any) => ({
     error: state.indexData.error,
@@ -18,13 +20,15 @@ const cpCallToAction: React.FC = () => {
 
   const { section_1_description } = data.acf;
 
+  const router = useRouter();
+
   return (
     <CallToAction id="abra-sua-conta">
       <Fade>
         <div dangerouslySetInnerHTML={{ __html: section_1_description }} />
       </Fade>
 
-      <form>
+      <form className={(router.asPath = '/#abra-sua-conta' ? 'active' : '')}>
         <Fade bottom>
           <strong>Abra sua conta</strong>
         </Fade>
