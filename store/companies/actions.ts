@@ -1,6 +1,6 @@
 export const actionTypes = {
   LOAD_COMPANIES_DATA: 'LOAD_COMPANIES_DATA',
-  LOAD_COMPANIES_DATA_SUCCESS: 'LOAD_COMPANIES_DATA_SUCCESS',
+  LOAD_SAFE_DATA_SUCCESS: 'LOAD_SAFE_DATA_SUCCESS',
   LOAD_COMPANIES_DATA_FAILURE: 'LOAD_COMPANIES_DATA_FAILURE'
 };
 
@@ -12,7 +12,7 @@ export function loadCompaniesData() {
 
 export function loadCompaniesDataSuccess(data: any) {
   return {
-    type: actionTypes.LOAD_COMPANIES_DATA_SUCCESS,
+    type: actionTypes.LOAD_SAFE_DATA_SUCCESS,
     data
   };
 }

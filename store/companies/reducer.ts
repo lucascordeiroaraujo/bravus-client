@@ -10,7 +10,7 @@ const reducer = (state = initialState, action: any) => {
         error: action.error
       };
 
-    case actionTypes.LOAD_COMPANIES_DATA_SUCCESS:
+    case actionTypes.LOAD_SAFE_DATA_SUCCESS:
       return {
         ...state,
         ...{

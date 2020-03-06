@@ -8,6 +8,8 @@ import { Container } from '~/public/styles/global';
 
 import Fade from 'react-reveal/Fade';
 
+import { handleCustomScroll } from '~/utils';
+
 interface Iprops {
   type: string;
 }
@@ -34,7 +36,13 @@ const cpCallToAction: React.FC<Iprops> = ({ type }) => {
           />
         </Fade>
         <Fade delay={400}>
-          <a href="#contato" title="Confira" className={type}>
+          <a
+            href="#contato"
+            title="Confira"
+            className={type}
+            data-element="footer#contato"
+            onClick={e => handleCustomScroll(e)}
+          >
             Quero o contato de um acesso
           </a>
         </Fade>
