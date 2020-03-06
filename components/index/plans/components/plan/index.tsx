@@ -14,9 +14,7 @@ const cpPlan: React.FC<Iprops> = ({ title, sub_title, image }) => (
   <Plan>
     <div>
       <div>
-        <Fade bottom>
-          <h2>{title}</h2>
-        </Fade>
+        <h2>{title}</h2>
       </div>
 
       <Fade bottom delay={200}>

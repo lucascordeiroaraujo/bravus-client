@@ -17,11 +17,10 @@ export default styled.article`
       width: 100%;
       h2 {
         font-family: 'DINProBold';
-        font-size: calc(60px + (120 - 50) * ((100vw - 100px) / (1920 - 100)));
-        line-height: calc(60px + (120 - 50) * ((100vw - 100px) / (1920 - 100)));
+        font-size: calc(60px + (120 - 60) * ((100vw - 100px) / (1920 - 100)));
+        line-height: calc(60px + (120 - 60) * ((100vw - 100px) / (1920 - 100)));
         color: ${props => props.theme.colors.light};
         text-transform: uppercase;
-        margin: 0px 0px 10px -10px;
         display: inline;
         @media (min-width: 1920px) {
           font-size: 120px;
@@ -41,12 +40,14 @@ export default styled.article`
     margin-left: 3%;
     order: 2;
   }
-  &:last-child {
-    div {
-      h2 {
-        color: ${props => props.theme.colors.secondary};
-        background-color: ${props => props.theme.colors.light};
-      }
+  &:last-child > div div {
+    margin-bottom: 30px;
+    h2 {
+      color: ${props => props.theme.colors.secondary};
+      background-color: ${props => props.theme.colors.light};
+    }
+    @media (max-width: 992px) {
+      margin-bottom: 5px;
     }
   }
   &:nth-child(even) {
