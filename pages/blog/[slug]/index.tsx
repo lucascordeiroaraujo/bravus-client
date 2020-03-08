@@ -12,7 +12,7 @@ import Description from '~/components/blog-post/description';
 
 import Author from '~/components/blog-post/author';
 
-// import Relateds from '~/components/blog-post/relateds';
+import Relateds from '~/components/blog-post/relateds';
 
 import Footer from '~/components/global/footer';
 
@@ -21,6 +21,8 @@ import Groups from '~/components/global/groups';
 import { loadBlogCategoriesData } from '~/store/blog-categories/actions';
 
 import { loadBlogPostData } from '~/store/blog-post/actions';
+
+// import { loadBlogData } from '~/store/blog/actions';
 
 import { loadContactData } from '~/store/contact/actions';
 
@@ -43,7 +45,7 @@ const BlogPost: any = () => (
 
       <Author />
 
-      {/* <Relateds /> */}
+      <Relateds />
     </Container>
 
     <Footer type="blog-post" />
@@ -58,6 +60,8 @@ BlogPost.getInitialProps = async (props: Iprops) => {
   store.dispatch(loadBlogCategoriesData());
 
   store.dispatch(loadBlogPostData(query.slug));
+
+  // store.dispatch(loadBlogData(''));
 
   store.dispatch(loadContactData());
 };

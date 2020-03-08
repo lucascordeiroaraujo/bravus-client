@@ -28,9 +28,24 @@ function* loadDataSaga(actions: any) {
 
     const resultAuthor = yield responseAuthor.json();
 
+    const responseRelateds = yield fetch(
+      `${URL_API}/bravus/relatedPosts/${resultPost[0].id}/${resultPost[0]['blog-category'][0]}`,
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        mode: 'cors'
+      }
+    );
+
+    const resultRelateds = yield responseRelateds.json();
+
     const result = {
       post: resultPost,
-      author: resultAuthor
+      author: resultAuthor,
+      relateds: resultRelateds,
+      teste: resultPost[0]['blog-category'][0]
     };
 
     yield put(loadBlogPostDataSuccess(result));

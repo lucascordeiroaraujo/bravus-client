@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export default styled.article`
   width: 31%;
+  margin-right: 3.5%;
   div.react-reveal {
     width: 100%;
   }
@@ -59,9 +60,12 @@ export default styled.article`
       opacity: 1;
     }
   }
+  &:last-child {
+    margin-right: 0px;
+  }
   @media (max-width: 992px) {
     width: 100%;
-    margin-bottom: 40px;
+    margin: 0px 0px 40px 0px;
     justify-content: center;
     align-items: center;
     text-align: center;

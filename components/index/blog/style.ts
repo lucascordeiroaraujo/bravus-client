@@ -9,7 +9,7 @@ export default styled.section`
   & > div {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-content: flex-start;
     flex-wrap: wrap;
   }

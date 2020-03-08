@@ -1,21 +1,30 @@
 import React from 'react';
 
+import { useSelector } from 'react-redux';
+
 import Relateds from './style';
 
 import BlogItem from '../../index/blog/components/blogItem';
 
-const cpRelateds: React.FC = () => (
-  <Relateds>
-    <h2>Confira também:</h2>
+const cpRelateds: React.FC = () => {
+  const { error, data } = useSelector((state: any) => ({
+    error: state.blogPostData.error,
+    data: state.blogPostData.data
+  }));
 
-    <div>
-      <BlogItem />
+  if (error || data.relateds.length === 0) return null;
 
-      <BlogItem />
+  return (
+    <Relateds>
+      <h2>Confira também:</h2>
 
-      <BlogItem />
-    </div>
-  </Relateds>
-);
+      <div className={data.relateds.length <= 2 ? 'alignment-start' : ''}>
+        {data.relateds.map((item: any, index: number) => (
+          <BlogItem key={index} {...item} {...index} />
+        ))}
+      </div>
+    </Relateds>
+  );
+};
 
 export default cpRelateds;

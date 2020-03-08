@@ -21,8 +21,8 @@ export default styled.section`
   div {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     @media (max-width: 992px) {
       flex-direction: column;
     }
