@@ -53,9 +53,13 @@ const About: any = () => (
 About.getInitialProps = async (props: Iprops) => {
   const { store } = props.ctx;
 
-  store.dispatch(loadAboutData());
+  if (!store.getState().aboutData.data) {
+    store.dispatch(loadAboutData());
+  }
 
-  store.dispatch(loadContactData());
+  if (!store.getState().contactData.data) {
+    store.dispatch(loadContactData());
+  }
 };
 
 export default About;

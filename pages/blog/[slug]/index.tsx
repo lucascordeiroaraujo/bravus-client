@@ -57,13 +57,19 @@ const BlogPost: any = () => (
 BlogPost.getInitialProps = async (props: Iprops) => {
   const { store, query } = props.ctx;
 
-  store.dispatch(loadBlogCategoriesData());
+  if (!store.getState().blogCategoriesData.data) {
+    store.dispatch(loadBlogCategoriesData());
+  }
 
-  store.dispatch(loadBlogPostData(query.slug));
+  if (!store.getState().blogPostData.data) {
+    store.dispatch(loadBlogPostData(query.slug));
+  }
 
   // store.dispatch(loadBlogData(''));
 
-  store.dispatch(loadContactData());
+  if (!store.getState().contactData.data) {
+    store.dispatch(loadContactData());
+  }
 };
 
 export default BlogPost;

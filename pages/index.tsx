@@ -63,11 +63,17 @@ const Home: any = () => (
 Home.getInitialProps = async (props: Iprops) => {
   const { store } = props.ctx;
 
-  store.dispatch(loadIndexData());
+  if (!store.getState().indexData.data) {
+    store.dispatch(loadIndexData());
+  }
 
-  store.dispatch(loadBlogData(''));
+  if (!store.getState().blogData.data) {
+    store.dispatch(loadBlogData(''));
+  }
 
-  store.dispatch(loadContactData());
+  if (!store.getState().contactData.data) {
+    store.dispatch(loadContactData());
+  }
 };
 
 export default Home;

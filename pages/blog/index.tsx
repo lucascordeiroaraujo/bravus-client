@@ -49,11 +49,17 @@ const Blog: any = () => (
 Blog.getInitialProps = async (props: Iprops) => {
   const { store, query } = props.ctx;
 
-  store.dispatch(loadBlogData(query.slug ? query.slug : ''));
+  if (!store.getState().blogData.data) {
+    store.dispatch(loadBlogData(query.slug ? query.slug : ''));
+  }
 
-  store.dispatch(loadBlogCategoriesData());
+  if (!store.getState().blogCategoriesData.data) {
+    store.dispatch(loadBlogCategoriesData());
+  }
 
-  store.dispatch(loadContactData());
+  if (!store.getState().contactData.data) {
+    store.dispatch(loadContactData());
+  }
 };
 
 export default Blog;
