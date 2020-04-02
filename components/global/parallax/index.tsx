@@ -2,8 +2,6 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 
-import { Parallax } from 'react-parallax';
-
 import Container from './style';
 
 import Fade from 'react-reveal/Fade';
@@ -22,23 +20,22 @@ const cpParallax: React.FC<Iprops> = ({ item, type }) => {
   if (error) return null;
 
   return (
-    <Container className={type}>
-      <Parallax
-        bgImage={data.acf[`${item}_image`].url}
-        bgImageAlt="Bravus"
-        strength={400}
-      >
-        <div>
-          <Fade bottom>
-            <p>{data.acf[`${item}_description`]}</p>
-          </Fade>
-          <Fade bottom delay={200}>
-            <span>{data.acf[`${item}_author`]}</span>
-          </Fade>
-        </div>
+    <Container
+      className={type}
+      style={{
+        backgroundImage: `url(${data.acf[`${item}_image`].url})`
+      }}
+    >
+      <img src={data.acf[`${item}_image`].url} alt="" />
 
-        <div style={{ height: '98vh' }} />
-      </Parallax>
+      <div>
+        <Fade bottom>
+          <p>{data.acf[`${item}_description`]}</p>
+        </Fade>
+        <Fade bottom delay={200}>
+          <span>{data.acf[`${item}_author`]}</span>
+        </Fade>
+      </div>
     </Container>
   );
 };
