@@ -26,29 +26,29 @@ const cpDescription: React.FC = () => {
             <strong>Sobre nós</strong>
           </h1>
         </Fade>
-      </Container>
 
-      <div className="description-content">
-        <div>
+        <div className="description-content">
+          <div>
+            <Fade>
+              <h2>Quem Somos?</h2>
+            </Fade>
+
+            <Fade delay={200}>
+              <div dangerouslySetInnerHTML={{ __html: who_we_are }} />
+            </Fade>
+          </div>
+
           <Fade>
-            <h2>Quem Somos?</h2>
-          </Fade>
-
-          <Fade delay={200}>
-            <div dangerouslySetInnerHTML={{ __html: who_we_are }} />
+            <img
+              src={imagem_who_we_are.url}
+              alt="Quem Somos? - Bravus Investimentos"
+              title="Quem Somos? - Bravus Investimentos"
+              width={imagem_who_we_are.width}
+              height={imagem_who_we_are.height}
+            />
           </Fade>
         </div>
-
-        <Fade>
-          <img
-            src={imagem_who_we_are.url}
-            alt="Quem Somos? - Bravus Investimentos"
-            title="Quem Somos? - Bravus Investimentos"
-            width={imagem_who_we_are.width}
-            height={imagem_who_we_are.height}
-          />
-        </Fade>
-      </div>
+      </Container>
     </Description>
   );
 };

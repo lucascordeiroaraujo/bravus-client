@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export default styled.div`
-  width: calc(100% - 30px);
-  margin: 60px 15px;
+  width: calc(100% - 4%);
+  margin: 60px 0px;
+  margin-left: 2%;
   background-size: cover;
   background-attachment: fixed;
   background-position: center;

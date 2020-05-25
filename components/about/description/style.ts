@@ -13,13 +13,13 @@ export default styled.article`
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 0px 3% 0px 5%;
     & > div {
-      width: 29%;
+      width: 100%;
       display: flex;
       justify-content: flex-start;
       align-items: flex-start;
       flex-direction: column;
+      margin-bottom: 50px;
       h2,
       p {
         width: 100%;
@@ -30,7 +30,7 @@ export default styled.article`
         font-size: calc(25px + (50 - 25) * ((100vw - 250px) / (1920 - 250)));
         line-height: calc(25px + (50 - 25) * ((100vw - 250px) / (1920 - 250)));
         color: ${props => props.theme.colors.info};
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         @media (min-width: 1920px) {
           font-size: 50px;
           line-height: 50px;
@@ -52,7 +52,7 @@ export default styled.article`
       }
     }
     & > img {
-      width: 61%;
+      width: 100%;
       height: auto;
       pointer-events: none;
     }

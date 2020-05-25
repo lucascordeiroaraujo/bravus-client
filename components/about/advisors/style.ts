@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export default styled.section`
-  width: 100%;
+  width: 96%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 100px;
+  margin: 100px 0px 0px 2%;
   & > div {
     width: 100%;
     display: flex;
@@ -15,6 +15,15 @@ export default styled.section`
     flex-wrap: wrap;
     @media (max-width: 1270px) {
       padding: 0px 15px;
+    }
+    &:hover > *,
+    &:focus-within > * {
+      opacity: 0.3;
+    }
+    &:hover > :hover,
+    &:focus-within > :focus,
+    &:hover > :focus:not(:hover) {
+      opacity: 1;
     }
   }
   @media (max-width: 992px) {

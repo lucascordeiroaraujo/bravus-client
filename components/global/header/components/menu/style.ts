@@ -13,7 +13,7 @@ export const Menu = styled.ul`
       font-size: 21px;
       line-height: 20px;
       font-family: 'DINProBold';
-      color: ${props => props.theme.colors.primary};
+      color: ${props => props.theme.colors.light};
     }
     &:hover a {
       color: ${props => props.theme.colors.light};

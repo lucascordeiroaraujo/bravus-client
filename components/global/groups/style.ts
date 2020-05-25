@@ -19,13 +19,10 @@ export default styled.section`
         justify-content: flex-start;
         align-items: flex-start;
         flex-wrap: wrap;
-        &:first-child {
-          width: 53%;
-        }
+        width: 100%;
         &:last-child {
-          width: 45%;
           a {
-            width: 100%;
+            width: 33.33%;
             @media (max-width: 992px) {
               width: 50%;
             }
@@ -61,10 +58,20 @@ export default styled.section`
       line-height: calc(24px + (30 - 24) * ((100vw - 250px) / (1920 - 250)));
       color: ${props => props.theme.colors.light};
       text-align: center;
+      a {
+        color: ${props => props.theme.colors.primary};
+        &:hover {
+          text-decoration: underline;
+        }
+      }
       @media (min-width: 1920px) {
         font-size: 24px;
         line-height: 30px;
       }
+    }
+    p:last-child {
+      font-size: 18px;
+      line-height: 28px;
     }
     h2 {
       font-family: 'DINProMedium';
@@ -75,6 +82,10 @@ export default styled.section`
       font-family: 'DINProBold';
       margin: 50px 0px;
     }
+    div.social-networks {
+      margin-bottom: 30px;
+    }
+    div.social-networks,
     div.logos {
       width: 100%;
       display: flex;
@@ -89,6 +100,16 @@ export default styled.section`
         &.safe,
         &.companies {
           filter: brightness(0%);
+        }
+      }
+      svg {
+        width: 30px;
+        height: 30px;
+        margin: 0px 10px;
+        fill: ${props => props.theme.colors.light};
+        transition: 0.5s;
+        &:hover {
+          fill: ${props => props.theme.colors.info};
         }
       }
     }

@@ -7,24 +7,24 @@ export default styled.article`
   align-items: center;
   flex-wrap: wrap;
   img {
-    width: 52%;
+    width: 100%;
     height: auto;
     pointer-events: none;
   }
-  & > div {
-    width: 35%;
-    margin-left: 4%;
+  div.description-content {
+    width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
+    margin-bottom: 50px;
     h2 {
       font-family: 'DINProBold';
       font-weight: normal;
       font-size: calc(25px + (50 - 25) * ((100vw - 250px) / (1920 - 250)));
       line-height: calc(25px + (50 - 25) * ((100vw - 250px) / (1920 - 250)));
       color: ${props => props.theme.colors.info};
-      margin-bottom: 50px;
+      margin-bottom: 30px;
       @media (min-width: 1920px) {
         font-size: 50px;
         line-height: 50px;

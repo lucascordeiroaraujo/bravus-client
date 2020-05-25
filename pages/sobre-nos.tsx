@@ -40,7 +40,9 @@ const About: any = () => (
 
     <History />
 
-    <Advisors />
+    <Advisors title="Sócios" type="partners" />
+
+    <Advisors title="Assessores" type="advisors" />
 
     <Companies />
 

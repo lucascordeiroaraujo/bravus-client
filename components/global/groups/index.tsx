@@ -8,6 +8,12 @@ import { Container } from '~/public/styles/global';
 
 import Fade from 'react-reveal/Fade';
 
+import Facebook from '~/public/images/svg/facebook';
+
+import Instagram from '~/public/images/svg/instagram';
+
+import LinkedIn from '~/public/images/svg/linkedin';
+
 interface Iprops {
   type: string;
 }
@@ -30,9 +36,8 @@ const cpCompanies: React.FC<Iprops> = ({ type }) => {
             <Fade>
               <h1 className="default-title before-info">
                 <strong>
-                  Mais
-                  <br /> empresas
-                  <br /> do Grupo
+                  Empresas do
+                  <br /> Grupo Bravus
                 </strong>
               </h1>
             </Fade>
@@ -92,6 +97,35 @@ const cpCompanies: React.FC<Iprops> = ({ type }) => {
             reservados.
           </strong>
         </Fade>
+
+        <div className="social-networks">
+          <a
+            href="#"
+            title="Curta no Facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Facebook />
+          </a>
+
+          <a
+            href="#"
+            title="Siga no Instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Instagram />
+          </a>
+
+          <a
+            href="#"
+            title="Acesse nossa página no LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LinkedIn />
+          </a>
+        </div>
 
         <div className="logos">
           {logos.map((item: any, index: number) => (

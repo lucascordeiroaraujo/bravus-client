@@ -76,19 +76,14 @@ const cpMenu: React.FC = () => {
           </li>
         </Fade>
 
-        <Fade>
+        <Fade delay={400}>
           <li>
             <a
-              href="/#abra-sua-conta"
-              data-element="#abra-sua-conta"
-              onClick={e => {
-                if (router.pathname === '/') {
-                  handleCustomScroll(e);
-                }
-                setState(false);
-              }}
+              href="https://portal.xpi.com.br/?_ga=2.233800986.588288096.1588179279-1417239632.1584447659&_gac=1.213511584.1588179280.EAIaIQobChMIw5GS7IyO6QIViw6RCh0U0ApKEAAYASAAEgLXz_D_BwE"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Abra sua conta
+              Login
             </a>
           </li>
         </Fade>

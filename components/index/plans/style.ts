@@ -8,4 +8,8 @@ export default styled.section`
   div.react-reveal {
     width: 100%;
   }
+  img {
+    width: 100%;
+    height: auto;
+  }
 `;

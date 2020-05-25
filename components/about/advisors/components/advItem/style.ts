@@ -111,9 +111,6 @@ export default styled.article`
         box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5);
       }
     }
-    & ~ article {
-      opacity: 0.3;
-    }
   }
   @media (max-width: 1200px) {
     width: 25%;

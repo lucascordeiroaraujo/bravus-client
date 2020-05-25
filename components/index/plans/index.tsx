@@ -4,15 +4,7 @@ import { useSelector } from 'react-redux';
 
 import Plans from './style';
 
-import Plan from './components/plan';
-
 import Fade from 'react-reveal/Fade';
-
-interface Iprops {
-  title: string;
-  sub_title: string;
-  image: any;
-}
 
 const cpPlans: React.FC = () => {
   const { error, data } = useSelector((state: any) => ({
@@ -22,7 +14,7 @@ const cpPlans: React.FC = () => {
 
   if (error) return null;
 
-  const { section_4_plans } = data.acf;
+  const { section_4_image } = data.acf;
 
   return (
     <Plans>
@@ -35,9 +27,7 @@ const cpPlans: React.FC = () => {
         </Fade>
       </h1>
 
-      {section_4_plans.map((item: Iprops, index: number) => (
-        <Plan key={index} {...item} />
-      ))}
+      <img src={section_4_image} alt="" />
     </Plans>
   );
 };

@@ -92,7 +92,7 @@ export default styled.footer`
         text-transform: uppercase;
         color: ${props => props.theme.colors.light};
         margin-bottom: 40px;
-        text-align: center;
+        text-align: right;
         @media (min-width: 1920px) {
           font-size: 50px;
           line-height: 50px;

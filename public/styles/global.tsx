@@ -30,10 +30,27 @@ export default createGlobalStyle`
   footer, header, hgroup, menu, nav, section{
     display: block;
   }
+  body, input, select, textarea{
+    font-family: 'DINProLight';
+    outline: none;
+  }
   body{
     overflow-x: hidden;
     transition: 0.5s;
-    background-color: ${props => props.theme.colors.secondary};
+    background-image: url('https://www.tinostone.com/wp-content/uploads/2017/03/saint-laurent.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    &:before {
+      content: '';
+      width: 96%;
+      height: calc(100% - 30px);
+      position: fixed;
+      top: 15px;
+      left: 2%;
+      background-color: rgba(18, 23, 31, 0.9);
+    }
   }
   ol, ul{
     list-style: none;
@@ -84,10 +101,6 @@ export default createGlobalStyle`
     font-style: normal;
     font-display: auto;
   }
-  body, input, select, textarea{
-    font-family: 'DINProLight';
-    outline: none;
-  }
   /*
     ## Formula font-size calculator
 
@@ -98,6 +111,8 @@ export default createGlobalStyle`
     @media (min-width: 1920px) {
       font-size: 50px;
     }
+
+    https://websemantics.uk/tools/responsive-font-calculator/
   */
   h1.default-title {
     width: 100%;
@@ -205,9 +220,8 @@ export default createGlobalStyle`
 `;
 
 export const Container = styled.div`
-  width: 100%;
+  width: 96%;
   max-width: 1270px;
   margin: 0px auto;
   position: relative;
-  padding: 0px 15px;
 `;
