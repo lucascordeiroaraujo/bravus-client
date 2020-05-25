@@ -6,9 +6,9 @@ import { loadContactData } from '~/store/contact/actions';
 
 import { Container } from '~/public/styles/global';
 
-import Header from '~/components/global/header';
+import Header from '~/components/header';
 
-import Footer from '~/components/global/footer';
+import Footer from '~/components/footer';
 
 interface Iprops {
   dispatch: any;

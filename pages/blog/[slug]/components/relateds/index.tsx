@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import Relateds from './style';
 
-import BlogItem from '../../index/blog/components/blogItem';
+import BlogItem from '../../../components/item';
 
 const cpRelateds: React.FC = () => {
   const { error, data } = useSelector((state: any) => ({

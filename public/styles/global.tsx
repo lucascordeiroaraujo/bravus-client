@@ -37,7 +37,7 @@ export default createGlobalStyle`
   body{
     overflow-x: hidden;
     transition: 0.5s;
-    background-image: url('https://www.tinostone.com/wp-content/uploads/2017/03/saint-laurent.jpg');
+    background-image: url('http://bravusinvestimentos-com-br.umbler.net/wp-content/uploads/2020/05/WhatsApp-Image-2020-05-25-at-08.13.19.jpeg');
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;

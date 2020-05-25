@@ -4,15 +4,15 @@ import { Container } from '~/public/styles/global';
 
 // import Seo from '~/seo';
 
-import Header from '~/components/global/header';
+import Header from '~/components/header';
 
-import BlogHeader from '~/components/blog/header';
+import BlogHeader from './components/header';
 
-import BlogList from '~/components/blog/list';
+import BlogList from './components/list';
 
-import Footer from '~/components/global/footer';
+import Footer from '~/components/footer';
 
-import Groups from '~/components/global/groups';
+import Groups from '~/components/groups';
 
 import { loadBlogData } from '~/store/blog/actions';
 

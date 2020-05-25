@@ -29,11 +29,11 @@ const cpBlogItem: React.FC<Iprops> = ({ title, description, slug, image }) => (
       <a href={`/blog/${slug}`} title="Confira">
         <Fade>
           <img
-            src={image.sizes['blog-list-page']}
+            src={image ? image.sizes['blog-list-page'] : ''}
             alt={title}
             title={title}
-            width={image.sizes['blog-list-page-width']}
-            height={image.sizes['blog-list-page-height']}
+            width={image ? image.sizes['blog-list-page-width'] : ''}
+            height={image ? image.sizes['blog-list-page-height'] : ''}
           />
         </Fade>
       </a>

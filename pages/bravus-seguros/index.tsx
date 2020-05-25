@@ -2,15 +2,15 @@ import * as React from 'react';
 
 import Seo from '~/seo';
 
-import Header from '~/components/group/header';
+import Header from '../bravus-empresas/components/header';
 
-import HowItsWorks from '~/components/group/how-its-works';
+import HowItsWorks from '../bravus-empresas/components/how-its-works';
 
-import CallToAction from '~/components/group/callToAction';
+import CallToAction from '../bravus-empresas/components/callToAction';
 
-import Footer from '~/components/global/footer';
+import Footer from '~/components/footer';
 
-import Groups from '~/components/global/groups';
+import Groups from '~/components/groups';
 
 import styled from 'styled-components';
 

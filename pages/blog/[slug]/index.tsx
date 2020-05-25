@@ -4,19 +4,19 @@ import { Container } from '~/public/styles/global';
 
 import Seo from '~/seo';
 
-import Header from '~/components/global/header';
+import Header from '~/components/header';
 
-import BlogHeader from '~/components/blog/header';
+import BlogHeader from '../components/header';
 
-import Description from '~/components/blog-post/description';
+import Description from './components/description';
 
-import Author from '~/components/blog-post/author';
+import Author from './components/author';
 
-import Relateds from '~/components/blog-post/relateds';
+import Relateds from './components/relateds';
 
-import Footer from '~/components/global/footer';
+import Footer from '~/components/footer';
 
-import Groups from '~/components/global/groups';
+import Groups from '~/components/groups';
 
 import { loadBlogCategoriesData } from '~/store/blog-categories/actions';
 

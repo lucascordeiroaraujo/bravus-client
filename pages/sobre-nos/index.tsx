@@ -4,19 +4,19 @@ import { Container } from '~/public/styles/global';
 
 import Seo from '~/seo';
 
-import Header from '~/components/global/header';
+import Header from '~/components/header';
 
-import Description from '~/components/about/description';
+import Description from './components/description';
 
-import History from '~/components/about/history';
+import History from './components/history';
 
-import Advisors from '~/components/about/advisors';
+import Advisors from './components/advisors';
 
-import Companies from '~/components/about/companies';
+import Companies from './components/companies';
 
-import Footer from '~/components/global/footer';
+import Footer from '~/components/footer';
 
-import Groups from '~/components/global/groups';
+import Groups from '~/components/groups';
 
 import { loadContactData } from '~/store/contact/actions';
 
