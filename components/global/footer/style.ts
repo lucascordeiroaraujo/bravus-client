@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export default styled.footer`
   width: 100%;
-  background-image: url(${require('~/public/images/background-city-footer.jpg')});
   background-attachment: scroll;
   background-position: center;
   background-repeat: no-repeat;
@@ -165,53 +164,5 @@ export default styled.footer`
   }
   @media (max-width: 992px) {
     padding: 50px 0px;
-  }
-  &.safe,
-  &.companies {
-    background-image: url(${require('~/public/images/background-city-footer-companies.png')});
-    background-color: ${props => props.theme.colors.light};
-    h1.default-title {
-      padding: 0px;
-      strong {
-        color: ${props => props.theme.safe.primary};
-        text-align: center;
-      }
-      &:before {
-        display: none;
-      }
-    }
-    div.container {
-      & > div {
-        div.address-icons svg {
-          fill: ${props => props.theme.colors.primary};
-        }
-        address,
-        p,
-        a {
-          color: ${props => props.theme.colors.primary};
-        }
-      }
-      form {
-        background: ${props => props.theme.safe.secondary};
-      }
-    }
-  }
-  &.companies {
-    background-color: ${props => props.theme.colors.info};
-    h1.default-title strong {
-      color: ${props => props.theme.companies.primary};
-    }
-    div.container {
-      & > div {
-        address,
-        p,
-        a {
-          color: ${props => props.theme.companies.primary};
-        }
-      }
-      form {
-        background: ${props => props.theme.companies.primary};
-      }
-    }
   }
 `;

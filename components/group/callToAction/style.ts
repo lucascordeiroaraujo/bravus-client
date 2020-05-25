@@ -34,7 +34,7 @@ export default styled.article`
     p {
       font-size: calc(18px + (24 - 18) * ((100vw - 250px) / (1920 - 250)));
       line-height: calc(26px + (32 - 26) * ((100vw - 250px) / (1920 - 250)));
-      color: ${props => props.theme.colors.secondary};
+      color: ${props => props.theme.colors.light};
       margin: 60px 0px;
       @media (min-width: 1920px) {
         font-size: 24px;

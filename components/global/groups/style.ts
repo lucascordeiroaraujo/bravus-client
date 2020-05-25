@@ -97,10 +97,6 @@ export default styled.section`
         height: auto;
         margin: 10px 15px;
         pointer-events: none;
-        &.safe,
-        &.companies {
-          filter: brightness(0%);
-        }
       }
       svg {
         width: 30px;
@@ -113,22 +109,5 @@ export default styled.section`
         }
       }
     }
-  }
-  &.safe,
-  &.companies {
-    background-color: ${props => props.theme.colors.light};
-    h1.default-title strong {
-      color: ${props => props.theme.safe.secondary};
-    }
-    div.container {
-      h2,
-      p,
-      strong {
-        color: ${props => props.theme.colors.secondary};
-      }
-    }
-  }
-  &.companies h1.default-title strong {
-    color: ${props => props.theme.companies.secondary};
   }
 `;

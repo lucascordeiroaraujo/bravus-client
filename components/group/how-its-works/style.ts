@@ -50,6 +50,7 @@ export default styled.article`
       font-size: 18px;
       line-height: 32px;
       margin-bottom: 25px;
+      color: ${props => props.theme.colors.light};
       &:last-child {
         margin-bottom: 0px;
       }

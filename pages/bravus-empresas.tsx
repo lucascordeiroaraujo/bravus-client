@@ -26,12 +26,9 @@ interface Iprops {
 
 const ContainerBravusCompanies = styled.div`
   width: 100%;
-  background: url(${require('~/public/images/background-bravus-companies.jpg')})
-    center top no-repeat fixed;
   section {
     width: 100%;
     padding: 100px 0px;
-    background: ${props => props.theme.colors.info};
   }
 `;
 
