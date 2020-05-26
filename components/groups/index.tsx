@@ -14,6 +14,8 @@ import Instagram from '~/public/images/svg/instagram';
 
 import LinkedIn from '~/public/images/svg/linkedin';
 
+import YouTube from '~/public/images/svg/youtube';
+
 interface Iprops {
   type: string;
 }
@@ -26,7 +28,14 @@ const cpCompanies: React.FC<Iprops> = ({ type }) => {
 
   if (error) return null;
 
-  const { description, logos } = data.acf;
+  const {
+    description,
+    logos,
+    facebook,
+    instagram,
+    linkedin,
+    youtube
+  } = data.acf;
 
   return (
     <Companies className={type}>
@@ -98,34 +107,53 @@ const cpCompanies: React.FC<Iprops> = ({ type }) => {
           </strong>
         </Fade>
 
-        <div className="social-networks">
-          <a
-            href="#"
-            title="Curta no Facebook"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Facebook />
-          </a>
+        {(facebook || instagram || linkedin || youtube) && (
+          <div className="social-networks">
+            {facebook && (
+              <a
+                href={facebook}
+                title="Curta no Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Facebook />
+              </a>
+            )}
 
-          <a
-            href="#"
-            title="Siga no Instagram"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Instagram />
-          </a>
+            {instagram && (
+              <a
+                href={instagram}
+                title="Siga no Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Instagram />
+              </a>
+            )}
 
-          <a
-            href="#"
-            title="Acesse nossa página no LinkedIn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <LinkedIn />
-          </a>
-        </div>
+            {linkedin && (
+              <a
+                href={linkedin}
+                title="Acesse nossa página no LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkedIn />
+              </a>
+            )}
+
+            {youtube && (
+              <a
+                href={youtube}
+                title="Inscreva-se no canal da Bravus no YouTube"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <YouTube />
+              </a>
+            )}
+          </div>
+        )}
 
         <div className="logos">
           {logos.map((item: any, index: number) => (
