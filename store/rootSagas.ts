@@ -1,31 +1,31 @@
-import { all } from 'redux-saga/effects';
+import { all, fork } from 'redux-saga/effects';
 
-import indexSagas from './index/sagas';
+import { indexSagas } from './ducks/index';
 
-import blogSagas from './blog/sagas';
+import { blogSagas } from './ducks/blog';
 
-import blogCategoriesSagas from './blog-categories/sagas';
+import { blogCategoriesSagas } from './ducks/blog-categories';
 
-import blogPostSagas from './blog-post/sagas';
+import { blogPostSagas } from './ducks/blog-post';
 
-import contactSagas from './contact/sagas';
+import { contactSagas } from './ducks/contact';
 
-import aboutSagas from './about/sagas';
+import { aboutSagas } from './ducks/about';
 
-import safeSagas from './safe/sagas';
+import { safeSagas } from './ducks/safe';
 
-import companiesSagas from './companies/sagas';
+import { companiesSagas } from './ducks/companies';
 
 function* rootSaga() {
   yield all([
-    ...indexSagas,
-    ...blogSagas,
-    ...blogCategoriesSagas,
-    ...blogPostSagas,
-    ...contactSagas,
-    ...aboutSagas,
-    ...safeSagas,
-    ...companiesSagas
+    fork(indexSagas),
+    fork(blogSagas),
+    fork(blogCategoriesSagas),
+    fork(blogPostSagas),
+    fork(contactSagas),
+    fork(aboutSagas),
+    fork(safeSagas),
+    fork(companiesSagas)
   ]);
 }
 

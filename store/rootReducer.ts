@@ -1,24 +1,24 @@
 import { combineReducers } from 'redux';
 
-import indexData from './index/reducer';
+import indexData from './ducks/index';
 
-import blogData from './blog/reducer';
+import blogData from './ducks/blog';
 
-import blogCategoriesData from './blog-categories/reducer';
+import blogCategoriesData from './ducks/blog-categories';
 
-import blogPostData from './blog-post/reducer';
+import blogPostData from './ducks/blog-post';
 
-import contactData from './contact/reducer';
+import contactData from './ducks/contact';
 
-import aboutData from './about/reducer';
+import aboutData from './ducks/about';
 
-import safeData from './safe/reducer';
+import safeData from './ducks/safe';
 
-import companiesData from './safe/reducer';
+import companiesData from './ducks/safe';
 
-import globalData from './global/reducer';
+import globalData from './ducks/global';
 
-const rootReducer = combineReducers({
+export default combineReducers({
   indexData,
   blogData,
   blogCategoriesData,
@@ -29,5 +29,3 @@ const rootReducer = combineReducers({
   companiesData,
   globalData
 });
-
-export default rootReducer;
