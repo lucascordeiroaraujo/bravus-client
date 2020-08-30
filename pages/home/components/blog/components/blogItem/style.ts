@@ -5,7 +5,7 @@ export default styled.article`
   margin-right: 3.5%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   div.react-reveal {
     width: 100%;
@@ -27,7 +27,7 @@ export default styled.article`
   }
   div {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
     h2 {
