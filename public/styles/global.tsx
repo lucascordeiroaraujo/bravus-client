@@ -47,6 +47,7 @@ export default createGlobalStyle`
       width: 96%;
       height: calc(100% - 30px);
       position: fixed;
+      z-index: -1;
       top: 15px;
       left: 2%;
       background-color: rgba(18, 23, 31, 0.9);
