@@ -4,15 +4,14 @@ import Item from './style';
 
 import Fade from 'react-reveal/Fade';
 
-import { handleCustomScroll } from '~/utils';
-
 interface Iprops {
   name: string;
   description: string;
   image: any;
+  link: string;
 }
 
-const cpItem: React.FC<Iprops> = ({ name, description, image }) => (
+const cpItem: React.FC<Iprops> = ({ name, description, image, link }) => (
   <Item>
     <Fade>
       <img
@@ -33,12 +32,7 @@ const cpItem: React.FC<Iprops> = ({ name, description, image }) => (
       </Fade>
 
       <Fade delay={400}>
-        <a
-          href="#contato"
-          title=""
-          data-element="footer#contato"
-          onClick={e => handleCustomScroll(e)}
-        >
+        <a href={link} title="" target="_blank" rel="noopener noreferrer">
           Faça uma cotação
         </a>
       </Fade>

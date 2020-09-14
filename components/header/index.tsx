@@ -27,15 +27,6 @@ const cpHeader: React.FC = () => (
           height="62"
         />
       </Fade>
-      <Fade delay={400}>
-        <img
-          src={require('~/public/images/s20.png')}
-          alt="S20"
-          title="S20"
-          width="148"
-          height="38"
-        />
-      </Fade>
     </div>
 
     <Menu />

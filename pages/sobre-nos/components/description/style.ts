@@ -41,6 +41,7 @@ export default styled.article`
         line-height: 26px;
         color: ${props => props.theme.colors.light};
         margin: 0px 0px 30px 0px;
+        text-align: justify;
         &:last-child {
           margin-bottom: 0px;
         }

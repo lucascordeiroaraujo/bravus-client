@@ -39,7 +39,6 @@ export default styled.article`
         line-height: calc(30px + (52 - 30) * ((100vw - 250px) / (1920 - 250)));
         color: ${props => props.theme.colors.light};
         display: inline;
-        text-transform: lowercase;
         @media (min-width: 1920px) {
           font-size: 52px;
           line-height: 52px;

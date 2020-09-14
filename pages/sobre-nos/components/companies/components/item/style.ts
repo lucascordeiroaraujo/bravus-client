@@ -34,6 +34,7 @@ export default styled.div`
       line-height: 26px;
       color: ${props => props.theme.colors.light};
       margin: 30px 0px;
+      text-align: justify;
     }
     a {
       width: 100%;

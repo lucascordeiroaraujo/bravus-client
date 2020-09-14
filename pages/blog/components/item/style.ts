@@ -16,7 +16,6 @@ export default styled.article`
     font-size: calc(25px + (50 - 25) * ((100vw - 250px) / (1920 - 250)));
     color: ${props => props.theme.colors.light};
     font-weight: normal;
-    text-transform: lowercase;
     margin: 0px 0px 30px 0px;
     display: inline;
     @media (min-width: 1920px) {

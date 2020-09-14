@@ -1,6 +1,10 @@
 import * as React from 'react';
 
+import { Container } from '~/public/styles/global';
+
 import Seo from '~/seo';
+
+import SiteHeader from '~/components/header';
 
 import Header from './components/header';
 
@@ -37,6 +41,10 @@ const BravusCompanies: any = () => (
     <Seo page="companies" />
 
     <ContainerBravusCompanies>
+      <Container>
+        <SiteHeader />
+      </Container>
+
       <Header type="companies" />
 
       <section>

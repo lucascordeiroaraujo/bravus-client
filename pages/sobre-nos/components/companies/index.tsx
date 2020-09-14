@@ -14,6 +14,7 @@ interface Iprops {
   name: string;
   description: string;
   image: any;
+  link: string;
 }
 
 const cpCompanies: React.FC = () => {

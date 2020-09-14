@@ -40,56 +40,63 @@ const cpCompanies: React.FC<Iprops> = ({ type }) => {
   return (
     <Companies className={type}>
       <Container className="container">
-        <div>
+        {!['index', 'about'].includes(type) && (
           <div>
-            <Fade>
-              <h1 className="default-title before-info">
-                <strong>
-                  Empresas do
-                  <br /> Grupo Bravus
-                </strong>
-              </h1>
-            </Fade>
+            <div>
+              <Fade>
+                <h1 className="default-title before-info">
+                  <strong>
+                    Empresas do
+                    <br /> Grupo Bravus
+                  </strong>
+                </h1>
+              </Fade>
+            </div>
+
+            <div>
+              {(type === 'safe' || type === 'companies') && (
+                <a href="/" title="Confira">
+                  <img
+                    src={require('~/public/images/bravus-investments.jpg')}
+                    alt="Bravus Empresas"
+                    title="Bravus Empresas"
+                    width="500"
+                    height="200"
+                  />
+                </a>
+              )}
+
+              {type !== 'safe' && (
+                <a
+                  href="https://bravusseguros.com.br"
+                  title="Confira"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={require('~/public/images/bravus-safe.jpg')}
+                    alt="Bravus Seguros"
+                    title="Bravus Seguros"
+                    width="500"
+                    height="200"
+                  />
+                </a>
+              )}
+
+              {type !== 'companies' && (
+                <a href="/bravus-empresas" title="Confira">
+                  <img
+                    src={require('~/public/images/bravus-companies.jpg')}
+                    alt="Bravus Empresas"
+                    title="Bravus Empresas"
+                    width="500"
+                    height="200"
+                  />
+                </a>
+              )}
+            </div>
           </div>
-
-          <div>
-            {(type === 'safe' || type === 'companies') && (
-              <a href="/" title="Confira">
-                <img
-                  src={require('~/public/images/bravus-investments.jpg')}
-                  alt="Bravus Empresas"
-                  title="Bravus Empresas"
-                  width="500"
-                  height="200"
-                />
-              </a>
-            )}
-
-            {type !== 'safe' && (
-              <a href="/bravus-seguros" title="Confira">
-                <img
-                  src={require('~/public/images/bravus-safe.jpg')}
-                  alt="Bravus Seguros"
-                  title="Bravus Seguros"
-                  width="500"
-                  height="200"
-                />
-              </a>
-            )}
-
-            {type !== 'companies' && (
-              <a href="/bravus-empresas" title="Confira">
-                <img
-                  src={require('~/public/images/bravus-companies.jpg')}
-                  alt="Bravus Empresas"
-                  title="Bravus Empresas"
-                  width="500"
-                  height="200"
-                />
-              </a>
-            )}
-          </div>
-        </div>
+        )}
 
         <Fade>
           <h2>Informações Legais</h2>
