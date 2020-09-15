@@ -11,5 +11,6 @@ export default styled.section`
   img {
     width: 100%;
     height: auto;
+    max-width: 960px;
   }
 `;
